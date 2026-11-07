@@ -3,9 +3,9 @@
 **Project:** [Facet] Personal Finance App  
 **Stage:** Project-level Discovery, before Iteration 001  
 **Status:** WORKING DRAFT — NOT SUBMITTED FOR APPROVAL  
-**Draft version:** 0.3  
+**Draft version:** 0.4  
 **Draft started:** 2026-11-07  
-**Latest Discovery revision:** 2026-11-07 (Round 5: financial measures, full transaction visibility, single-user scope)  
+**Latest Discovery revision:** 2026-11-07 (Round 6: forecast acceptance boundary and minimum surplus explanation)  
 **Source context:** `docs/discovery/PROJECT_DISCOVERY.md` and direct Creative Discovery discussion with the user  
 **Initial repository context:** `main` at `03fe927df8781ba000b918487f5b4307fdb30e37`
 
@@ -60,7 +60,7 @@ Facet should help a user distinguish current balances, observed cash flows, anti
 
 The user explicitly indicated that the following experience would already be very useful:
 
-1. **Unified financial dashboard**: connected account balances; income received; bills identified; expected remaining bills; spending outside bills; and an estimate of money remaining after obligations. **Round 5:** show both (a) currently available money after remaining obligations and (b) projected month-end cash flow, **clearly distinguished and labeled**. The exact calculation, balance treatment, and disclosure of uncertainty are still undecided.
+1. **Unified financial dashboard**: connected account balances; income received; bills identified; expected remaining bills; spending outside bills; and an estimate of money remaining after obligations. **Round 5:** show both (a) currently available money after remaining obligations and (b) projected month-end cash flow, **clearly distinguished and labeled**. **Round 6:** unconfirmed inferred future bills are excluded from the main forecast until the user confirms them. The exact calculation, balance treatment, and disclosure of uncertainty are still undecided.
 2. **Connected-account exploration**: view information across accounts together and examine each connected account individually.
 3. **Transaction visibility**: see the raw transaction list in addition to Facet's categorized/interpreted views. **Round 5:** never hide transaction entries merely because they are pending, unrecognized, or otherwise unresolved; show them with appropriate status labels.
 4. **Recurring income and bill identification**: detect recurring paychecks, recurring bills, and potentially irregular obligations from connected data.
@@ -79,6 +79,7 @@ These are candidate minimum useful release outcomes derived from the user's expr
 - Confirmation should be a **one-time step for each discovery event** when appropriate, avoiding overwhelming repetitive notices.
 - Facet may make inferences, but the raw transactions must remain viewable.
 - **Round 5:** every transaction should remain visible and appropriately labeled, including pending and unidentified transactions. Lack of a confirmed interpretation must not make a source transaction disappear.
+- **Round 6:** a *future obligation inferred from patterns* is distinct from an already-recorded transaction. The former does **not** count in main bill forecasts before confirmation, while all recorded transactions remain visible with their appropriate labels. Unconfirmed proposed bills may still be surfaced for review.
 - Users should be able to make corrections easily and intuitively when needed.
 - Irregular bills should also be discoverable, subject to how the concept is clarified.
 - **Discovery presentation (Round 4):** the user chose an **initial review plus a quiet discovery inbox for new or changed findings**, rather than repetitive immediate notifications or periodic prompts. Exact reconsideration rules and batching remain open.
@@ -94,7 +95,7 @@ These are candidate minimum useful release outcomes derived from the user's expr
 ### Open
 
 - What qualifies as a new or materially changed pattern, and how the inbox avoids repetitive approvals.
-- **Unresolved from Round 5:** the user's response establishes transaction visibility, but does not yet specify whether an **unconfirmed inferred bill** contributes to projected bill totals. Explicitly distinguish source transaction display from acceptance of an inferred obligation.
+- The user has now resolved the Round 5 ambiguity: **unconfirmed inferred future bills are excluded from main bill totals and projections until user confirmation**. Outstanding: whether/how to display pending discovery estimates separately from confirmed totals, and how to warn that projections may omit unconfirmed obligations.
 - How to distinguish irregular-but-predictable bills from one-off expenses.
 - How missing, ambiguous, late, or disputed payments are reconciled and how 'potentially overdue' is explained and corrected.
 
@@ -103,13 +104,13 @@ These are candidate minimum useful release outcomes derived from the user's expr
 ### User-stated direction
 
 - The user wants to know if funds remain after bills and what might be done with that surplus.
-- Savings, debt repayment, future expenses, and discretionary spending sound like potentially useful suggestions.
-- The user **has not decided** the desired degree of suggestion or guidance.
+- **Round 6 minimum:** the first release should calculate and clearly explain estimated surplus and how it was derived; financial action recommendations are **not required**.
+- **Optional exploration, not committed scope:** the user is open to simple informational suggestions (e.g., savings, debt repayment, or upcoming expenses) *if they are not too complicated*. This is not approval for expanded scope, personalized advice, or implementation; if feasibility is uncertain or the feature materially increases effort, defer it pending later user approval.
 
 ### Open
 
-- Whether first release offers only a surplus estimate, lightweight options, or actionable recommendations.
-- How the app should avoid implying that estimated surplus is guaranteed available cash.
+- Confirm how the current and projected surplus calculations are explained in the interface; the numbers are estimates and should not imply guaranteed available cash.
+- Determine during future planning whether simple nonpersonalized suggestions are truly low-effort; the first-release minimum must remain complete without them.
 
 ## 7. Product accessibility and tentative deferrals
 
@@ -127,7 +128,7 @@ The following may be set aside for future builds:
 - Budget creation and advanced budgeting.
 - Long-term financial projections.
 - Investment tracking.
-- Advanced financial advice or sophisticated surplus guidance.
+- Advanced financial advice or sophisticated surplus guidance; basic suggestions are only an optional feasibility-dependent possibility, not a first-release acceptance requirement.
 
 This deferral is a strong scope preference, **not an approved out-of-scope list**. The initial dashboard may still need enough basic calculations to show the monthly financial picture.
 
@@ -141,14 +142,13 @@ This deferral is a strong scope preference, **not an approved out-of-scope list*
 
 ## 9. Outstanding questions and unresolved boundaries
 
-1. **Unconfirmed inferred bills:** clearly visible source transactions are required, but it remains undecided whether estimated future obligations count toward dashboard projections before confirmation.
-2. **Financial measures:** current available-after-obligations estimates and projected month-end cash flow must be distinctly labeled, but calculation inputs, timing, and uncertainty rules need later clarification.
-3. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
-4. **Discovery inbox details:** how new or changed findings are recognized, grouped, and re-presented without repeated prompts.
-5. **Bill-status explanations:** clarify confidence, missed-payment signals, correction behavior, and what can legitimately be labeled 'potentially overdue'.
-6. **First-release boundary:** confirm the precise minimum outcomes and what is formally deferred.
-7. **Surplus guidance:** confirm whether any recommendation functionality belongs in the first useful release.
-8. **Future sharing:** multi-user and multi-household capabilities are not requested for the first release; later direction is open.
+1. **Financial measures:** current available-after-obligations estimates and projected month-end cash flow must be distinctly labeled; exact inputs, timing, and uncertainty rules need later clarification. Unconfirmed inferred future bills remain outside the main projection until confirmed.
+2. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
+3. **Discovery inbox details:** how new or changed findings are recognized, grouped, and re-presented without repeated prompts; how unconfirmed future bills are shown without counting them in main forecasts.
+4. **Bill-status explanations:** clarify confidence, missed-payment signals, correction behavior, and what can legitimately be labeled 'potentially overdue'.
+5. **First-release boundary:** review and confirm the precise minimum outcomes, deferrals, and any privacy/security product expectations.
+6. **Optional surplus guidance:** simple informational suggestions are *not required* for the first useful release; assess feasibility later and seek separate scope approval if material.
+7. **Future sharing:** multi-user and multi-household capabilities are not requested for the first release; later direction is open.
 
 ## 10. Approval and workflow status
 
