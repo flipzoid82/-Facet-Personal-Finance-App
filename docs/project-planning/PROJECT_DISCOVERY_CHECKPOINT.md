@@ -3,8 +3,9 @@
 **Project:** [Facet] Personal Finance App  
 **Stage:** Project-level Discovery, before Iteration 001  
 **Status:** WORKING DRAFT — NOT SUBMITTED FOR APPROVAL  
-**Draft version:** 0.1  
+**Draft version:** 0.2  
 **Draft started:** 2026-11-07  
+**Latest Discovery revision:** 2026-11-07 (Round 4: review inbox, overdue uncertainty, browser access)  
 **Source context:** `docs/discovery/PROJECT_DISCOVERY.md` and direct Creative Discovery discussion with the user  
 **Initial repository context:** `main` at `03fe927df8781ba000b918487f5b4307fdb30e37`
 
@@ -65,6 +66,7 @@ The user explicitly indicated that the following experience would already be ver
 4. **Recurring income and bill identification**: detect recurring paychecks, recurring bills, and potentially irregular obligations from connected data.
 5. **Dedicated bill calendar**: visualize upcoming bills separately from the main dashboard.
 6. **Straightforward corrections**: allow the user to intuitively review and correct Facet's interpretations where possible.
+7. **Browser-based access**: a web application accessible from desktop and phone browsers is the user's first-release platform preference (responsive details and deployment are not yet defined).
 
 These are candidate minimum useful release outcomes derived from the user's expressed preferences; the exact boundaries, acceptance conditions, and prioritization remain to be confirmed.
 
@@ -78,19 +80,21 @@ These are candidate minimum useful release outcomes derived from the user's expr
 - Facet may make inferences, but the raw transactions must remain viewable.
 - Users should be able to make corrections easily and intuitively when needed.
 - Irregular bills should also be discoverable, subject to how the concept is clarified.
+- **Discovery presentation (Round 4):** the user chose an **initial review plus a quiet discovery inbox for new or changed findings**, rather than repetitive immediate notifications or periodic prompts. Exact reconsideration rules and batching remain open.
+- **Uncertain bill status (Round 4):** when an expected payment is not found, Facet should show **potentially overdue**, explain why it believes that, and let the user correct the status. This is an inference, not proof a payment was missed.
 
 ### Proposed safeguards to discuss (not approved)
 
 - Distinguish original source transactions from Facet's classifications, estimates, and user corrections; corrections should not silently rewrite bank-supplied source records.
 - Clearly label expected dates, amounts, and payment statuses as inferred when not confirmed.
-- Use a low-friction review surface for new and materially changed discoveries rather than repetitive confirmation prompts.
+- The chosen quiet inbox should minimize repeated confirmations for findings the user already addressed; its precise triggers and grouping still need definition.
 
 ### Open
 
-- The exact discovery review rhythm, grouping, and what counts as a newly changed pattern.
+- What qualifies as a new or materially changed pattern, and how the inbox avoids repetitive approvals.
 - The treatment of unconfirmed discoveries in dashboard totals and bill forecasts.
 - How to distinguish irregular-but-predictable bills from one-off expenses.
-- Handling missing, ambiguous, late, or disputed bill payments.
+- How missing, ambiguous, late, or disputed payments are reconciled and how 'potentially overdue' is explained and corrected.
 
 ## 6. Surplus and next-step guidance
 
@@ -105,7 +109,14 @@ These are candidate minimum useful release outcomes derived from the user's expr
 - Whether first release offers only a surplus estimate, lightweight options, or actionable recommendations.
 - How the app should avoid implying that estimated surplus is guaranteed available cash.
 
-## 7. Tentative deferrals and boundaries
+## 7. Product accessibility and tentative deferrals
+
+### User-stated platform preference (Round 4)
+
+- The user chose a **browser-based application accessible on desktop and phone**.
+- This is a product-access requirement preference, not a choice of frontend framework, hosting vendor, backend, security architecture, or other technical implementation.
+
+### Candidate later-release scope
 
 ### User-stated direction
 
@@ -121,20 +132,19 @@ This deferral is a strong scope preference, **not an approved out-of-scope list*
 ## 8. Tentative core journey (Creative synthesis, not approved)
 
 1. Connect financial accounts via Plaid.
-2. Review newly inferred recurring income, bills, and other discoveries with manageable confirmations.
+2. Review newly inferred recurring income, bills, and other discoveries in an initial review, then use a quiet discovery inbox for new or changed findings.
 3. Open a consolidated dashboard for balances, income, bills, expenses, and estimated remaining money.
-4. Navigate to an account, raw transaction history, or separate bill calendar.
+4. Navigate to an account, raw transaction history, or separate bill calendar, from desktop or phone browsers.
 5. Correct misinterpretations and review changes without losing the original transaction evidence.
 
 ## 9. Outstanding questions and unresolved boundaries
 
-1. **Discovery attention model:** prefer an onboarding review plus quiet discovery inbox, or another notification/review approach?
-2. **Uncertain bill status:** how should potential missed payments and inferred due dates be labeled, and what can a user correct?
-3. **Access experience:** browser/mobile-responsive web, desktop application, or eventually both?
-4. **Audience and sharing:** single household initially vs multiple users/households, and the boundary for personal vs shared access.
-5. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
-6. **First-release boundary:** confirm the precise minimum outcomes and what is formally deferred.
-7. **Surplus guidance:** confirm whether any recommendation functionality belongs in the first useful release.
+1. **Audience and sharing:** single household initially vs multiple users/households, and the boundary for personal vs shared access.
+2. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
+3. **Discovery inbox details:** how new or changed findings are recognized, grouped, and re-presented without repeated prompts.
+4. **Bill-status explanations:** clarify confidence, missed-payment signals, correction behavior, and what can legitimately be labeled 'potentially overdue'.
+5. **First-release boundary:** confirm the precise minimum outcomes and what is formally deferred.
+6. **Surplus guidance:** confirm whether any recommendation functionality belongs in the first useful release.
 
 ## 10. Approval and workflow status
 
