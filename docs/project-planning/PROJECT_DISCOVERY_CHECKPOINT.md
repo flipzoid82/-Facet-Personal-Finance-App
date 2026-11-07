@@ -1,163 +1,106 @@
-# Project Discovery Checkpoint — Working Draft
+# Facet — Project Discovery Checkpoint
 
-**Project:** [Facet] Personal Finance App  
-**Stage:** Project-level Discovery, before Iteration 001  
-**Status:** WORKING DRAFT — NOT SUBMITTED FOR APPROVAL  
-**Draft version:** 0.4  
-**Draft started:** 2026-11-07  
-**Latest Discovery revision:** 2026-11-07 (Round 6: forecast acceptance boundary and minimum surplus explanation)  
-**Source context:** `docs/discovery/PROJECT_DISCOVERY.md` and direct Creative Discovery discussion with the user  
-**Initial repository context:** `main` at `03fe927df8781ba000b918487f5b4307fdb30e37`
+**Checkpoint version:** 1.0  
+**Status:** APPROVAL CANDIDATE — NOT APPROVED  
+**Project stage:** PROJECT_DISCOVERY (before Iteration 001)  
+**Date:** 2026-11-07  
+**Producer / role:** Creative  
+**Source:** User's direct responses in Discovery Rounds 1–7; `docs/discovery/PROJECT_DISCOVERY.md` as generated starting context; `docs/PROJECT_BRIEF.md` preserved as immutable bootstrap history.  
+**Authority:** User-confirmed preferences are distinguished from proposed product interpretations below. This checkpoint is a version-bound request for product approval, not evidence that approval has already been given.
 
-> This is a living Discovery work record, not a formal approval checkpoint. It captures direct user statements separately from Creative interpretations and unresolved questions. No product scope has been formally approved. Do not treat this draft as authority for Architect planning, implementation, purchases, services, or other later gates.
+## 1. Core problem and product purpose
 
-## 1. Problem and desired outcome
+**Primary user problem:** The user needs a clear, consolidated understanding of the household's financial position without repeatedly navigating financial accounts and tools. Account balances alone do not explain income received, upcoming bills, spending outside bills, or money remaining after obligations.
 
-### User-stated direction
+**Proposed product purpose for approval:** Facet is a read-only, Plaid-connected personal finance web application that helps a user understand the household's finances through a unified overview, account and transaction detail, automatically discovered recurring activity, and an upcoming-bills calendar. It should make estimates understandable and user-correctable without pretending that inferred data is verified.
 
-- The primary problem to solve is **understanding the complete financial position**.
-- A useful opening experience should answer questions such as:
-  - How are all connected accounts doing?
-  - How much income has arrived from paychecks?
-  - Is there enough money to cover this month's bills?
-  - Is there a surplus, and what might be done with it?
-  - What bills are coming due, possibly missed, or due this month in total?
-  - How much is being spent outside of bills?
-- The user wants the underlying financial information consolidated and understandable, with the ability to investigate detail.
+**Initial success experience:** After connecting supported accounts and reviewing detected financial patterns, the user can open Facet on a computer or phone and answer:
+- What do my connected accounts show, individually and together?
+- How much income has actually arrived, and what income is expected?
+- What bills are expected or potentially overdue, and how much remains due this month?
+- How much was spent outside recognized bills?
+- How much money appears available after remaining obligations, and what is the **separately labeled** projected month-end cash flow?
+- Where did any figure come from, and how can I inspect or correct an interpretation?
 
-### Proposed interpretation (not yet explicitly approved)
+This experience is more important initially than budgeting, investing, or sophisticated recommendations.
 
-Facet should help a user distinguish current balances, observed cash flows, anticipated obligations, and **estimated** money remaining after obligations. This goes beyond simply listing account balances, but it must not present uncertain inferences as verified facts.
+## 2. Initial user and platform
 
-## 2. Initial audience
+- **Audience:** One signed-in user managing their household's financial picture; the initiating user's household is the primary initial use case. The user and spouse share bank accounts. Separate household members' logins, invitations, roles, or collaborative editing are not required for the initial release.
+- **Access:** Browser-based application usable on both desktop and phone. Detailed browser compatibility, hosting, and technology choices are not decided here.
+- **Real connections are essential:** Actual Plaid-linked account information, not merely mock data, a manual-only tracker, or CSV-only import, is necessary for the first useful release.
+- **Relevant account types:** Checking, savings, credit cards, mortgages, and loans. Exact supported institutions, fields, freshness, and coverage are subject to feasibility verification; a desire to include an account type is not evidence that every institution or field is available.
 
-### User-stated direction
+## 3. Required first-use and ongoing journey
 
-- The target audience could depend on the eventual user.
-- For the initial user's own use, the financial picture should cover the **whole household**.
-- The user and spouse share bank accounts, so the initial household experience need not assume a separate multi-person account-management feature.
-- **Round 5:** one user account managing the household's financial picture is sufficient for the first useful release; multiple distinct user profiles are not required initially.
+1. **Connect accounts:** The user connects supported financial accounts through Plaid.
+2. **Review initial discoveries:** Facet detects likely recurring income, recurring bills, and recognizable irregular obligations from available financial activity. The user reviews and confirms inferred patterns before they become accepted obligations or income patterns.
+3. **See a clear financial overview:** A unified dashboard presents linked accounts, income received, recognized bills, spending outside bills, and both current-after-obligations and projected-month-end figures with distinct labels.
+4. **Explore and understand:** The user can inspect an individual account, a consolidated transaction view, source-reported pending/unidentified records, and a separate bill calendar.
+5. **Correct interpretations:** The user can easily correct an inferred bill, status, category, due date, or other user-adjustable classification where possible; source-reported information remains distinguishable from Facet's or the user's interpretation.
+6. **Review new changes quietly:** New or materially changed financial patterns appear in a quiet discovery inbox rather than repetitive interruptions. Previously resolved discoveries should not require repeated approval without a meaningful change.
 
-### Open
+This is a product journey, not an implementation sequence or technology design.
 
-- Future household sharing, additional user profiles, and support for other users or households are not part of the stated first-release need; their later shape is undecided.
+## 4. Minimum useful release — candidate acceptance outcomes
 
-## 3. Candidate initial account coverage
+| ID | User-visible outcome | Product boundary |
+| --- | --- | --- |
+| P01 | Real Plaid-connected financial information is available for the user's supported accounts | Do not assume universal institution/account coverage |
+| P02 | Unified dashboard covers account position, income received, recognized bills, non-bill spending, and explained money remaining after obligations | Clearly distinguish observed data from estimates |
+| P03 | Both **currently available after remaining obligations** and **projected month-end cash flow** are presented with distinct names/explanations | Not interchangeable or guaranteed available funds |
+| P04 | The user can inspect each connected account separately and combined activity across accounts | One user/household initially |
+| P05 | Transaction activity remains visible even when pending, unidentified, or not categorized | Display all entries currently available from the connected data source; do not hide them due to classification state. Source updates/replacements/removals may change the underlying records |
+| P06 | Facet identifies likely recurring income and bills, including recognizable irregular obligations where sufficient evidence exists | Discovery is an inference requiring confirmation; unsupported prediction is not asserted as fact |
+| P07 | An initial confirmation review and quiet discovery inbox allow the user to accept or correct newly identified or materially changed patterns | Avoid repeated approval requests for unchanged confirmed findings |
+| P08 | A dedicated bill calendar shows accepted upcoming obligations and flags potentially overdue ones with explanations and correction options | The warning is not confirmation of nonpayment; display uncertainty |
+| P09 | The user can conveniently examine source financial records and correct Facet's user-adjustable interpretations | No silent alteration of bank-reported source meaning; no bank-side changes |
+| P10 | The web application is usable on both desktop and phone browsers | Native desktop/mobile apps not required |
+| P11 | Account update/freshness information is visible; disconnected/stale accounts and materially incomplete financial pictures are clearly flagged | Do not present incomplete data as comprehensive or current |
+| P12 | The app shows an **explainable estimated surplus** with relevant amounts and assumptions | Recommendations and allocation advice are **not** mandatory in the first release |
+| P13 | All account access and user actions are **read-only with respect to external financial institutions** | No transfers, payments, trades, or account-changing bank actions in the initial release |
 
-### User-stated direction
+### Confirmed-versus-inferred information
 
-- **Real Plaid-based financial account connections are essential to the first useful release.**
-- Initial financial picture should consider checking/bank accounts, savings, credit cards, mortgages, and loans.
-- Investments can be considered later; they are not an initial priority.
+- **All available source transactions remain visible**, whether posted, pending, unidentified, or awaiting correction. Visibility of a transaction is distinct from an accepted recurring bill pattern.
+- **Future bills inferred but not confirmed by the user do not count toward the main bill totals or financial projections.** They may appear as proposed discoveries for review, with an indication that projections may omit unconfirmed obligations.
+- A potentially overdue bill can be flagged when expected payment evidence is missing, but the app must explain the basis, allow corrections, and not assert nonpayment as established fact.
+- Source-reported transactions, user-confirmed obligations, Facet predictions, and user corrections must be distinguishable to the user.
+- A financial overview must indicate important freshness/coverage limitations when the available linked data is stale or incomplete.
 
-### Open and caveats
+## 5. Deferred and optional capabilities
 
-- Which institutions and account data must actually be available for the first useful release; connection and data coverage cannot be presumed.
-- How unavailable, disconnected, delayed, or partially synced data is communicated to the user.
-- Real account linking is a product requirement candidate; provider costs, deployment, credentials, infrastructure, and technical feasibility belong to later Architect planning and separate approvals.
+**Not required in the first useful release:**
+- Budget creation, detailed budget management, and advanced budgeting features.
+- Long-horizon projections and financial modeling beyond the basic current/month-end financial picture.
+- Investments and investment tracking.
+- Multi-user or multi-household accounts and shared permissions.
+- Native desktop or mobile applications.
+- Money movement, bill payment, transfers, trades, and other external account-changing actions.
+- Sophisticated personalized financial advice or automated surplus allocations.
 
-## 4. Proposed first useful release — directly requested capabilities, not final approval
+**Optional idea, not committed first-release scope:** Simple informational surplus suggestions such as considering savings or future bills could be evaluated during planning **only if clearly low-cost and low-complexity**. The minimum release must remain useful without them; materially expanding scope or cost requires separate user direction and appropriate approval.
 
-The user explicitly indicated that the following experience would already be very useful:
+The above are candidate deferrals pending explicit approval of this checkpoint. `docs/BACKLOG.md` may record approved deferrals as needed; backlog ideas do not authorize implementation.
 
-1. **Unified financial dashboard**: connected account balances; income received; bills identified; expected remaining bills; spending outside bills; and an estimate of money remaining after obligations. **Round 5:** show both (a) currently available money after remaining obligations and (b) projected month-end cash flow, **clearly distinguished and labeled**. **Round 6:** unconfirmed inferred future bills are excluded from the main forecast until the user confirms them. The exact calculation, balance treatment, and disclosure of uncertainty are still undecided.
-2. **Connected-account exploration**: view information across accounts together and examine each connected account individually.
-3. **Transaction visibility**: see the raw transaction list in addition to Facet's categorized/interpreted views. **Round 5:** never hide transaction entries merely because they are pending, unrecognized, or otherwise unresolved; show them with appropriate status labels.
-4. **Recurring income and bill identification**: detect recurring paychecks, recurring bills, and potentially irregular obligations from connected data.
-5. **Dedicated bill calendar**: visualize upcoming bills separately from the main dashboard.
-6. **Straightforward corrections**: allow the user to intuitively review and correct Facet's interpretations where possible.
-7. **Browser-based access**: a web application accessible from desktop and phone browsers is the user's first-release platform preference (responsive details and deployment are not yet defined).
+## 6. Remaining open matters and implementation-independent constraints
 
-These are candidate minimum useful release outcomes derived from the user's expressed preferences; the exact boundaries, acceptance conditions, and prioritization remain to be confirmed.
+These do **not** silently enlarge the first-release requirement. The Architect must make consequential choices transparently with the user, record unknowns, and route changes in product meaning back to Creative.
 
-## 5. Discovery and confirmation behavior
+- **Plaid reach and service suitability:** Which of the user's actual institutions, account types, loan/mortgage obligations, transaction feeds, due dates, and balance fields can be connected in the chosen operating environment? Plaid connectivity does not guarantee all requested data.
+- **Cost, eligibility and setup:** Provider enrollment/product permissions, possible paid services, deployment/testing runtime, licenses, and maintenance are not established or approved.
+- **Sensitive-data and security envelope:** Storage/retention, authentication, privacy expectations, connection revocation, network exposure, and permissions need user-informed consideration. No credential disclosure or cost/privilege consent is inferred.
+- **Calculations and reconciliation:** Exact definitions of available-after-obligations versus month-end cash flow, expected income, time windows, internal transfers, credit card payment double-counting, uncertainty, and stale-data caveats require review.
+- **Uncertain bill discovery:** Rules for identifying infrequent/irregular obligations, recognizing potentially overdue items, matching payment evidence, and reshowing materially changed patterns require careful scoping. Unconfirmed projected bills remain excluded from the main forecasts.
+- **Data limitations:** Pending transactions can change, post, be replaced or disappear at the institution/provider; source completeness and update frequency vary. User-facing completeness and freshness must be honest, not promised absolutely.
+- **Product detail decisions:** Exact information hierarchy, visual design, correction affordances, and discovery inbox mechanics are intentionally left for suitable later design and planning, without changing the accepted journey or boundary.
 
-### User-stated direction
+If a material first-release outcome proves infeasible within confirmed constraints, return the tradeoff to the user through the appropriate Creative/Architect authority path rather than silently dropping it, inventing coverage, or requiring an unapproved paid or privileged dependency.
 
-- Facet should identify income and bills from connected account information rather than require the user to enter every bill manually.
-- Newly discovered information should be **presented for user approval before being incorporated as accepted interpretations of the financial picture**.
-- Confirmation should be a **one-time step for each discovery event** when appropriate, avoiding overwhelming repetitive notices.
-- Facet may make inferences, but the raw transactions must remain viewable.
-- **Round 5:** every transaction should remain visible and appropriately labeled, including pending and unidentified transactions. Lack of a confirmed interpretation must not make a source transaction disappear.
-- **Round 6:** a *future obligation inferred from patterns* is distinct from an already-recorded transaction. The former does **not** count in main bill forecasts before confirmation, while all recorded transactions remain visible with their appropriate labels. Unconfirmed proposed bills may still be surfaced for review.
-- Users should be able to make corrections easily and intuitively when needed.
-- Irregular bills should also be discoverable, subject to how the concept is clarified.
-- **Discovery presentation (Round 4):** the user chose an **initial review plus a quiet discovery inbox for new or changed findings**, rather than repetitive immediate notifications or periodic prompts. Exact reconsideration rules and batching remain open.
-- **Uncertain bill status (Round 4):** when an expected payment is not found, Facet should show **potentially overdue**, explain why it believes that, and let the user correct the status. This is an inference, not proof a payment was missed.
+## 7. Decision attribution and approval boundary
 
-### Proposed safeguards to discuss (not approved)
+**Direct user direction across Discovery:** The user prioritized understanding their complete position; chose Plaid as essential; specified household coverage and account types; requested automatic bill/income recognition with one-time review; wanted raw transactions including pending/unidentified entries, a bill calendar, and easy corrections; preferred a quiet inbox, explainable potential-overdue warnings, browser access on desktop/phone, clearly separated current and projected figures, and one initial user; excluded unconfirmed future bills from main projections; chose explained surplus as the minimum rather than required advice; agreed to read-only financial operations and data freshness/completeness safeguards; and said the proposed first-release scope looked good so far.
 
-- Distinguish original source transactions from Facet's classifications, estimates, and user corrections; corrections should not silently rewrite bank-supplied source records.
-- Clearly label expected dates, amounts, and payment statuses as inferred when not confirmed.
-- Show observed transactions and pending/unidentified entries separately from any proposed recurring-bill classification. This is a suggested information-trust distinction; exact interface representation is open.
-- The chosen quiet inbox should minimize repeated confirmations for findings the user already addressed; its precise triggers and grouping still need definition.
+**Creative synthesis submitted for approval:** The proposed product purpose, core journey, acceptance outcomes P01–P13, first-release deferrals, and constraint handling organize those preferences into one candidate product scope. They are **not yet an approved product baseline**.
 
-### Open
-
-- What qualifies as a new or materially changed pattern, and how the inbox avoids repetitive approvals.
-- The user has now resolved the Round 5 ambiguity: **unconfirmed inferred future bills are excluded from main bill totals and projections until user confirmation**. Outstanding: whether/how to display pending discovery estimates separately from confirmed totals, and how to warn that projections may omit unconfirmed obligations.
-- How to distinguish irregular-but-predictable bills from one-off expenses.
-- How missing, ambiguous, late, or disputed payments are reconciled and how 'potentially overdue' is explained and corrected.
-
-## 6. Surplus and next-step guidance
-
-### User-stated direction
-
-- The user wants to know if funds remain after bills and what might be done with that surplus.
-- **Round 6 minimum:** the first release should calculate and clearly explain estimated surplus and how it was derived; financial action recommendations are **not required**.
-- **Optional exploration, not committed scope:** the user is open to simple informational suggestions (e.g., savings, debt repayment, or upcoming expenses) *if they are not too complicated*. This is not approval for expanded scope, personalized advice, or implementation; if feasibility is uncertain or the feature materially increases effort, defer it pending later user approval.
-
-### Open
-
-- Confirm how the current and projected surplus calculations are explained in the interface; the numbers are estimates and should not imply guaranteed available cash.
-- Determine during future planning whether simple nonpersonalized suggestions are truly low-effort; the first-release minimum must remain complete without them.
-
-## 7. Product accessibility and tentative deferrals
-
-### User-stated platform preference (Round 4)
-
-- The user chose a **browser-based application accessible on desktop and phone**.
-- This is a product-access requirement preference, not a choice of frontend framework, hosting vendor, backend, security architecture, or other technical implementation.
-
-### Candidate later-release scope
-
-### User-stated direction
-
-The following may be set aside for future builds:
-
-- Budget creation and advanced budgeting.
-- Long-term financial projections.
-- Investment tracking.
-- Advanced financial advice or sophisticated surplus guidance; basic suggestions are only an optional feasibility-dependent possibility, not a first-release acceptance requirement.
-
-This deferral is a strong scope preference, **not an approved out-of-scope list**. The initial dashboard may still need enough basic calculations to show the monthly financial picture.
-
-## 8. Tentative core journey (Creative synthesis, not approved)
-
-1. Connect financial accounts via Plaid.
-2. Review newly inferred recurring income, bills, and other discoveries in an initial review, then use a quiet discovery inbox for new or changed findings.
-3. Open a consolidated dashboard for balances, income, bills, expenses, clearly separated current available-after-obligations estimates and projected month-end cash flow.
-4. Navigate to an account, raw transaction history, or separate bill calendar, from desktop or phone browsers.
-5. Correct misinterpretations and review changes without losing the original transaction evidence.
-
-## 9. Outstanding questions and unresolved boundaries
-
-1. **Financial measures:** current available-after-obligations estimates and projected month-end cash flow must be distinctly labeled; exact inputs, timing, and uncertainty rules need later clarification. Unconfirmed inferred future bills remain outside the main projection until confirmed.
-2. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
-3. **Discovery inbox details:** how new or changed findings are recognized, grouped, and re-presented without repeated prompts; how unconfirmed future bills are shown without counting them in main forecasts.
-4. **Bill-status explanations:** clarify confidence, missed-payment signals, correction behavior, and what can legitimately be labeled 'potentially overdue'.
-5. **First-release boundary:** review and confirm the precise minimum outcomes, deferrals, and any privacy/security product expectations.
-6. **Optional surplus guidance:** simple informational suggestions are *not required* for the first useful release; assess feasibility later and seek separate scope approval if material.
-7. **Future sharing:** multi-user and multi-household capabilities are not requested for the first release; later direction is open.
-
-## 10. Approval and workflow status
-
-- **Phase/state at draft creation:** `PROJECT_DISCOVERY / CREATIVE_DISCOVERY`.
-- **Current role:** `CREATIVE`.
-- **Iteration/WorkPackage:** none / none.
-- **Handoff:** none.
-- **ImplementationAuthorized:** false.
-- **Formal project Discovery approval:** **NOT REQUESTED / NOT GRANTED**.
-- **Architect handoff:** **NOT AUTHORIZED**.
-
-When Discovery is sufficiently resolved, Creative will revise this draft into an exact approval candidate, commit it, record its blob and containing commit in a **separate passive state transition** to `AWAITING_PROJECT_DISCOVERY_APPROVAL`, and provide the required exact-checkpoint approval report. Only an explicit approval of that candidate may trigger the separate approval-ledger and Creative-to-Architect transition. Planning approval does not authorize implementation.
+**Formal checkpoint approval:** **PENDING USER DECISION.** Verbal alignment in Discovery rounds is not explicit approval of this exact document version. Only explicit approval bound to this committed checkpoint can permit Creative to record `PROJECT_DISCOVERY` approval in `docs/project-planning/APPROVALS.md` and, after a separately committed identity-bound handoff and routing state, make Architect project planning available. No implementation, purchase, credential use, deployment, Work Package, Iteration 001 entry, or roadmap approval is authorized by this checkpoint.
