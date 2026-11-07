@@ -3,9 +3,9 @@
 **Project:** [Facet] Personal Finance App  
 **Stage:** Project-level Discovery, before Iteration 001  
 **Status:** WORKING DRAFT — NOT SUBMITTED FOR APPROVAL  
-**Draft version:** 0.2  
+**Draft version:** 0.3  
 **Draft started:** 2026-11-07  
-**Latest Discovery revision:** 2026-11-07 (Round 4: review inbox, overdue uncertainty, browser access)  
+**Latest Discovery revision:** 2026-11-07 (Round 5: financial measures, full transaction visibility, single-user scope)  
 **Source context:** `docs/discovery/PROJECT_DISCOVERY.md` and direct Creative Discovery discussion with the user  
 **Initial repository context:** `main` at `03fe927df8781ba000b918487f5b4307fdb30e37`
 
@@ -36,11 +36,11 @@ Facet should help a user distinguish current balances, observed cash flows, anti
 - The target audience could depend on the eventual user.
 - For the initial user's own use, the financial picture should cover the **whole household**.
 - The user and spouse share bank accounts, so the initial household experience need not assume a separate multi-person account-management feature.
+- **Round 5:** one user account managing the household's financial picture is sufficient for the first useful release; multiple distinct user profiles are not required initially.
 
 ### Open
 
-- Whether the initial release is explicitly single-household/personal or should support distinct user accounts/households from the start.
-- Whether any household sharing, additional profiles, or user permissions are required.
+- Future household sharing, additional user profiles, and support for other users or households are not part of the stated first-release need; their later shape is undecided.
 
 ## 3. Candidate initial account coverage
 
@@ -60,9 +60,9 @@ Facet should help a user distinguish current balances, observed cash flows, anti
 
 The user explicitly indicated that the following experience would already be very useful:
 
-1. **Unified financial dashboard**: connected account balances; income received; bills identified; expected remaining bills; spending outside bills; and an estimate of money remaining after obligations.
+1. **Unified financial dashboard**: connected account balances; income received; bills identified; expected remaining bills; spending outside bills; and an estimate of money remaining after obligations. **Round 5:** show both (a) currently available money after remaining obligations and (b) projected month-end cash flow, **clearly distinguished and labeled**. The exact calculation, balance treatment, and disclosure of uncertainty are still undecided.
 2. **Connected-account exploration**: view information across accounts together and examine each connected account individually.
-3. **Transaction visibility**: see the raw transaction list in addition to Facet's categorized/interpreted views.
+3. **Transaction visibility**: see the raw transaction list in addition to Facet's categorized/interpreted views. **Round 5:** never hide transaction entries merely because they are pending, unrecognized, or otherwise unresolved; show them with appropriate status labels.
 4. **Recurring income and bill identification**: detect recurring paychecks, recurring bills, and potentially irregular obligations from connected data.
 5. **Dedicated bill calendar**: visualize upcoming bills separately from the main dashboard.
 6. **Straightforward corrections**: allow the user to intuitively review and correct Facet's interpretations where possible.
@@ -78,6 +78,7 @@ These are candidate minimum useful release outcomes derived from the user's expr
 - Newly discovered information should be **presented for user approval before being incorporated as accepted interpretations of the financial picture**.
 - Confirmation should be a **one-time step for each discovery event** when appropriate, avoiding overwhelming repetitive notices.
 - Facet may make inferences, but the raw transactions must remain viewable.
+- **Round 5:** every transaction should remain visible and appropriately labeled, including pending and unidentified transactions. Lack of a confirmed interpretation must not make a source transaction disappear.
 - Users should be able to make corrections easily and intuitively when needed.
 - Irregular bills should also be discoverable, subject to how the concept is clarified.
 - **Discovery presentation (Round 4):** the user chose an **initial review plus a quiet discovery inbox for new or changed findings**, rather than repetitive immediate notifications or periodic prompts. Exact reconsideration rules and batching remain open.
@@ -87,12 +88,13 @@ These are candidate minimum useful release outcomes derived from the user's expr
 
 - Distinguish original source transactions from Facet's classifications, estimates, and user corrections; corrections should not silently rewrite bank-supplied source records.
 - Clearly label expected dates, amounts, and payment statuses as inferred when not confirmed.
+- Show observed transactions and pending/unidentified entries separately from any proposed recurring-bill classification. This is a suggested information-trust distinction; exact interface representation is open.
 - The chosen quiet inbox should minimize repeated confirmations for findings the user already addressed; its precise triggers and grouping still need definition.
 
 ### Open
 
 - What qualifies as a new or materially changed pattern, and how the inbox avoids repetitive approvals.
-- The treatment of unconfirmed discoveries in dashboard totals and bill forecasts.
+- **Unresolved from Round 5:** the user's response establishes transaction visibility, but does not yet specify whether an **unconfirmed inferred bill** contributes to projected bill totals. Explicitly distinguish source transaction display from acceptance of an inferred obligation.
 - How to distinguish irregular-but-predictable bills from one-off expenses.
 - How missing, ambiguous, late, or disputed payments are reconciled and how 'potentially overdue' is explained and corrected.
 
@@ -133,18 +135,20 @@ This deferral is a strong scope preference, **not an approved out-of-scope list*
 
 1. Connect financial accounts via Plaid.
 2. Review newly inferred recurring income, bills, and other discoveries in an initial review, then use a quiet discovery inbox for new or changed findings.
-3. Open a consolidated dashboard for balances, income, bills, expenses, and estimated remaining money.
+3. Open a consolidated dashboard for balances, income, bills, expenses, clearly separated current available-after-obligations estimates and projected month-end cash flow.
 4. Navigate to an account, raw transaction history, or separate bill calendar, from desktop or phone browsers.
 5. Correct misinterpretations and review changes without losing the original transaction evidence.
 
 ## 9. Outstanding questions and unresolved boundaries
 
-1. **Audience and sharing:** single household initially vs multiple users/households, and the boundary for personal vs shared access.
-2. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
-3. **Discovery inbox details:** how new or changed findings are recognized, grouped, and re-presented without repeated prompts.
-4. **Bill-status explanations:** clarify confidence, missed-payment signals, correction behavior, and what can legitimately be labeled 'potentially overdue'.
-5. **First-release boundary:** confirm the precise minimum outcomes and what is formally deferred.
-6. **Surplus guidance:** confirm whether any recommendation functionality belongs in the first useful release.
+1. **Unconfirmed inferred bills:** clearly visible source transactions are required, but it remains undecided whether estimated future obligations count toward dashboard projections before confirmation.
+2. **Financial measures:** current available-after-obligations estimates and projected month-end cash flow must be distinctly labeled, but calculation inputs, timing, and uncertainty rules need later clarification.
+3. **Data trust:** source-data visibility, categorization override behavior, incomplete connections, and stale data warnings.
+4. **Discovery inbox details:** how new or changed findings are recognized, grouped, and re-presented without repeated prompts.
+5. **Bill-status explanations:** clarify confidence, missed-payment signals, correction behavior, and what can legitimately be labeled 'potentially overdue'.
+6. **First-release boundary:** confirm the precise minimum outcomes and what is formally deferred.
+7. **Surplus guidance:** confirm whether any recommendation functionality belongs in the first useful release.
+8. **Future sharing:** multi-user and multi-household capabilities are not requested for the first release; later direction is open.
 
 ## 10. Approval and workflow status
 
