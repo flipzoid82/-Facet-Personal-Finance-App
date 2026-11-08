@@ -1,16 +1,16 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: PLANNING
-State: AWAITING_IMPLEMENTATION_APPROVAL
+Phase: MERGE
+State: READY_TO_MERGE
 Iteration: 001
 ActiveRole: none
 WorkPackage: WP01
-Baseline: none
-Branch: main
+Baseline: 1d97c314ffc5cd7650d9ab118e792c082619343c
+Branch: facet/i001-wp01-g0-docs
 NextRole: ARCHITECT
-NextAction: Await actual explicit USER implementation approval of exact I001 WP01 ARCHITECT_PLAN.md v0.1.0 blob 731f30b705b7797b5949dc8d98789b9945272a67 (first containing commit f80d93451715027d04e2b986ee62f8c5cc4e81e3), with the original unchanged BUILDER_PLAN_REVIEW.md blob 9cc7c11893e588b7614374dceafdb6c632c7b25c (BuilderTechnicalHead a369c0578a69b22c806f69dcccd5b6337cc4b2c5, verdict PLAN READY) returned through Clerk state-only commit b4a961a5bae810f4e0ce2f903f7ed0a135cc1c2e, and whole-iteration ITERATION_ACCEPTANCE.md blob 686119e7de51ff496cc5719ec8afaba302ac303e (first containing commit 0b57eebe65ec3b5480bac09d6d9391a15753ea5c). Architect independently accepted plan adequacy only; G0 documentary screen remains NOT PERFORMED. Owner may approve documentary-only WP01 execution on prospectively selected non-main branch facet/i001-wp01-g0-docs, subject to future Clerk compatibility and all separately required consents; do not infer user approval, create technical branch, perform G0 research as WP, access Plaid Dashboard/credentials/Items, link banks, modify host/phone, spend, create PR, merge, UAT, or release. If approved, Architect append distinct exact-plan implementation approval, commit implementation handoff, separately route CLERK_IMPLEMENTATION_PREFLIGHT; otherwise remain passive.
-Handoff: docs/iterations/iteration-001/work-packages/WP01/BUILDER_PLAN_REVIEW.md
+NextAction: Await separate explicit USER authorization for exact-head merge of draft PR #1 facet/i001-wp01-g0-docs -> main. Original substantive Builder evidence G0 dossier blob eac79fbd4b3142e53c2892f7c382e2937d273f70 at 196c6b2383ddc9136961799792003a51af84b1cd and Builder return blob 5f33baa6c268a6485c4c8c414741e5999d34ab17 at 53e3868c4c9c36430d4da48a0f9c43a23a876ac9 remain unchanged. Independent Architect AUDIT PASS for documentary-only report at docs/iterations/iteration-001/work-packages/WP01/ARCHITECT_AUDIT.md blob 6cdf842f3490d721426ce0a4c7c051bb579487ed (containing commit cd25fcaf466a13c991ada7cadc5bb27ca7f2b41a); independent final G0 result INDETERMINATE, DOES NOT CLEAR M0 prerequisite. Before requesting/consuming user merge authorization verify exact current PR/head/base, all intervening changes since Builder delivery, unchanged main 1d97c314ffc5cd7650d9ab118e792c082619343c, unchanged plan/acceptance/approval and no added technical content. User merge approval would merge only that exact documented report and governance artifacts, NOT authorize a Plaid connection, M0, host/device action, paid services, UAT or release. Never merge before explicit exact-head owner approval; any subsequent head movement invalidates it.
+Handoff: docs/iterations/iteration-001/work-packages/WP01/ARCHITECT_AUDIT.md
 ApprovalRequiredFrom: USER
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
