@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: ARCHITECT_PLANNING
+State: CLERK_PLAN_REVIEW_PREFLIGHT
 Iteration: 001
-ActiveRole: ARCHITECT
-WorkPackage: none
+ActiveRole: none
+WorkPackage: WP01
 Baseline: none
 Branch: main
-NextRole: none
-NextAction: Fresh ARCHITECT activation for Iteration 001 PLANNING ONLY. Validate this exact Handoff docs/iterations/iteration-001/ITERATION_CONTEXT.md blob 71cf052f55d25abe2a25b6141146f6d7cbd7d8ab (ArtifactContainingCommit b081ed368070be5806bc382ac939e8e891c638a9), separately recorded ITERATION_001_DIRECTION / APR20261108T110553Z in docs/project-planning/APPROVALS.md blob 7955d80307162606747d8fbc9903793355b52bff (ArtifactContainingCommit 5f5c73d17dfa5922e99dc5e1006dc6732d535dd1), approved conditional roadmap v0.1.1 docs/PROJECT_ROADMAP.md blob 4e00d17702be6ad31b36d47491d777bc2032d77e, independent PLAN READY review blob 2db66fa3d32b554f4bbfd246bb29f51d898ae937, prior roadmap approval PROJECT_ROADMAP / APR20261108T105904Z and project-planning closeout blob d1ba06061ea83356301d3972cb160b179f60ddf1 containing commit 34ebfc9c98fdaad15cb5b247a26bedcd515d29e8. Independently scope the first Iteration 001 roadmap-aligned outcome (initial G0 documentary Production-path screen is proposed, not approved as performed); build one honest ITERATION_ACCEPTANCE.md with I001-Cxx IDs, WorkPackage decomposition, evidence tiers, integration ownership and blocker policy, then prepare any exact scoped plan for Clerk and independent Builder review under existing gates. Preserve approved Discovery v1.0 and user $0/on-demand/privacy bounds. No WorkPackage yet; no implementation, host/device modification, paid services, secrets, Sandbox/Production Items, real-bank connections, or release approval is authorized.
-Handoff: docs/iterations/iteration-001/ITERATION_CONTEXT.md
+NextRole: CLERK
+NextAction: Clerk deterministically preflight Purpose PLAN_REVIEW for Iteration 001 WP01 on authoritative remote main. Validate exact Handoff docs/iterations/iteration-001/work-packages/WP01/ARCHITECT_TO_BUILDER.md blob bb86676d0a0cf1cc76c24ab26119de66f61430a7 (ArtifactContainingCommit 673ae721fa69f21341c99b92a42a41da6561c629); exact WP01 ARCHITECT_PLAN.md v0.1.0 blob 731f30b705b7797b5949dc8d98789b9945272a67 (ArtifactContainingCommit f80d93451715027d04e2b986ee62f8c5cc4e81e3); whole-iteration ITERATION_ACCEPTANCE.md blob 686119e7de51ff496cc5719ec8afaba302ac303e (ArtifactContainingCommit 0b57eebe65ec3b5480bac09d6d9391a15753ea5c); explicit separate owner PLAN_REVIEW permission I001-WP01-PLAN-REVIEW-DIRECTION-20261108 in iteration approvals blob 2423e7d4f72dc42705ea360149031a64a70f2852 (containing commit 68fb31bbe082b39dcccbd840a3f8f40550273413); G0-only scope approval I001-G0-SCOPE-20261108; approved Discovery v1.0 and conditional roadmap v0.1.1. Check exact state/role, main ref/head, WP/baseline, user approval, purpose, planned non-main future Builder technical destination and prohibited Builder implementation on main. On PASS only, Clerk commits CLERK_TO_BUILDER.md clearance and separately enters active BUILDER_PLAN_REVIEW with ImplementationAuthorized false; on failure stop without Builder activation. Original technical review instructions remain in the Architect plan/handoff. No WP execution, host changes, credentials, Plaid Items, bank connections, purchases, PR/merge, UAT or release.
+Handoff: docs/iterations/iteration-001/work-packages/WP01/ARCHITECT_TO_BUILDER.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
