@@ -14,6 +14,7 @@
 - **One-click Windows desktop shortcut** to launch necessary local components and open the browser. No requirement to start automatically at Windows logon.
 - Browser access from desktop and phone; **home Wi-Fi first for the initial release**. Private Tailscale access while away from home is a **deferred enhancement**, not installed or selected. Avoid avoidable architecture coupling that would force a later rebuild.
 - **No owned/controlled internet domain** is available for Facet as of this consultation [USER]. Do not assume domain ownership or authorize registration/purchase. Evaluate a no-domain, local-only HTTPS approach first; trust installation and private CA management require separate approval and security review.
+- [USER] The user is comfortable **considering a one-time guided installation of a trusted local CA certificate on their Dell and phone**, conditional on prior security review, explanation of trust implications, and a safe removal procedure. This is a feasibility preference **only**, not consent to install certificates, change device trust stores, enable services, or alter firewall/DNS configuration.
 - One Facet user; Dell is not ordinarily shared with another Windows user.
 - Facet-specific password and remembered trusted-device sessions. Session expiry, recovery, and reauthentication mechanics require security design and review.
 - Notify before Facet application updates; require explicit approval to install. No automatic host upgrades, software installation, elevated actions or service changes are authorized.
