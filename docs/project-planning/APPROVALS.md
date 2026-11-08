@@ -46,3 +46,23 @@ This is the append-only record of actual project-stage user decisions before Ite
 - **Not authorized:** Iteration 001 entry/direction; a WorkPackage or execution; source implementation, deployment, test host operations, admin privileges, TLS root installation, firewall or Docker/storage changes, purchases, paid services, Plaid Sandbox or Production Items, credentials or bank connections, merges, UAT or release. Host, production-data and expense permissions are separate informed owner gates.
 - **Supersession:** None. Does not supersede the earlier Discovery v1.0 approval.
 
+## APR20261108T110553Z — ITERATION_001_DIRECTION
+
+- **Decision type:** `ITERATION_001_DIRECTION`
+- **Decision:** USER DIRECTS ARCHITECT TO BEGIN ITERATION 001 **PLANNING ONLY**, opening a fresh Architect conversation.
+- **User wording:** "I need you to activate a fresh architect for iteration 001 planning."
+- **Source:** Separate explicit instruction in the Facet Architect conversation, following recorded `PROJECT_ROADMAP / APR20261108T105904Z` and completed planning closeout.
+- **Recorded timestamp (UTC):** `2026-11-08T11:05:53Z`
+- **Direction identity:** `APR20261108T110553Z`
+- **Pre-direction remote main HEAD:** `e01d084c6c3cd0f117239e30a110f5bcef58514a`
+- **Direction stage:** First numbered iteration, `001`, `ARCHITECT_PLANNING`; `WorkPackage: none`; `ImplementationAuthorized: false`.
+- **Approved project roadmap:** `docs/PROJECT_ROADMAP.md`, conditional v0.1.1, blob `4e00d17702be6ad31b36d47491d777bc2032d77e`, containing commit `01944571dbcf9b5d7cd866ec53e02d927171db9f`.
+- **Independent technical review:** `docs/project-planning/BUILDER_ROADMAP_REVIEW.md`, blob `2db66fa3d32b554f4bbfd246bb29f51d898ae937`, containing commit/BuilderTechnicalHead `1f2478c2cd87c017fcedf9532de86a6d820f2077`, `PLAN READY` conditional.
+- **Approved roadmap decision:** `PROJECT_ROADMAP / APR20261108T105904Z`, source ledger blob `42fc02bba92aa1838ce13d329b3b612522c5a226`, containing commit `e3e85935a2b1dd36a55c2a4383f972090ab76da8`.
+- **Approved planning closeout:** `docs/project-planning/ARCHITECT_PROJECT_PLANNING_CLOSEOUT.md`, blob `d1ba06061ea83356301d3972cb160b179f60ddf1`, containing commit `34ebfc9c98fdaad15cb5b247a26bedcd515d29e8`.
+- **Previously approved Discovery:** `PROJECT_DISCOVERY / APR20261107T232700Z`, Discovery v1.0 blob `1cac418428e75a0db7a2551fd6e250dec878e473`. The Discovery record remains unchanged.
+- **Permitted next action:** Establish initial Iteration 001 context and separately activate Architect planning. A **fresh Architect** should independently determine a bounded I001 planning scope and acceptance map aligned to the approved conditional sequence `G0 → M0 → M1 → M2 → M3 → M4`, beginning with the G0 read-only documentary Plaid Production-path dependency where warranted. This is permission for planning, not permission to execute G0 or M0.
+- **Unresolved blockers:** Production OAuth, update-mode repair and institution coverage; Trial terms/cost; physical Windows Home encryption, HTTPS/CA trust, Docker/WSL placement, key/restore; >7-day offline recovery; retention and month-end expected-income semantics. UNKNOWN remains UNKNOWN.
+- **Not authorized:** Any WorkPackage implementation, bank/Plaid connections or Items (Sandbox or Production), credentials, real-data use, hardware/host/phone changes, software installation, privileged commands, paid service/domain, PR/merge/UAT/release. Independent planning review, user implementation approval and all later host/provider consents remain separate gates.
+- **Supersession:** None. Does not alter Discovery or roadmap approval.
+
