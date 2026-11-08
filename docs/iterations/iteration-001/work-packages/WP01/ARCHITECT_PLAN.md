@@ -1,7 +1,7 @@
 # Facet — Iteration 001 WP01 Architect Plan
 
 **Plan version:** WP01 v0.1.0 (FIRST REVIEW CANDIDATE; NOT REVIEWED, NOT APPROVED FOR EXECUTION)  
-**Purpose:** WORK_PACKAGE_PLAN_REVIEW for a strictly documentary G0 Production-path feasibility screen.  
+**Purpose:** PLAN_REVIEW for a strictly documentary G0 Production-path feasibility screen.  
 **Author/role:** I001 ARCHITECT; **phase:** PLANNING; **iteration:** 001; **WorkPackage:** WP01 (proposed first and only I001 WP).  
 **Repository/control branch:** flipzoid82/-Facet-Personal-Finance-App / authoritative remote main; **source HEAD at authorship:** 68fb31bbe082b39dcccbd840a3f8f40550273413. This document does not contain its own Git blob/commit identity.  
 **ImplementationAuthorized:** false. **Baseline:** none (no earlier numbered release).  
