@@ -19,3 +19,16 @@ This iteration-local record preserves actual user decisions from the active I001
 - **Not authorized:** Any WP creation or start based solely on this scope decision; Builder execution, implementation, device/host/phone operations, privileged commands, installations, purchases or paid services, certificate/network changes, Docker/WSL or old PersonalFinanceApp/T7 content changes, credentials, Dashboard access, Plaid Sandbox/Production Items, bank connections, real financial data, source/test changes, PR/merge, UAT, or release. The later ordinary exact plan review/implementation approval and separate informed owner consents remain mandatory.
 - **Supersession:** None.
 
+## I001-WP01-PLAN-REVIEW-DIRECTION-20261108 — Prepare WP01 for independent plan review only
+
+- **Decision type:** `WORK_PACKAGE_PLAN_REVIEW_DIRECTION`.
+- **Decision:** APPROVED — ARCHITECT may author exact `WP01` G0-only documentary WorkPackage plan and an identity-bound Architect-to-Builder review handoff, then separately route through `CLERK_PLAN_REVIEW_PREFLIGHT` for an **independent BUILDER_PLAN_REVIEW only**.
+- **User wording:** "Yes, you are authorized."
+- **Directly answering this specific question:** "Do you separately authorize me to **prepare WP01 and submit it for independent plan review only**, with no implementation or other changes to your devices, accounts, or services?"
+- **Source / date:** Explicit owner instruction in the active Iteration 001 ARCHITECT conversation on 2026-11-08; exact UTC time not independently established.
+- **Decision identity:** `I001-WP01-PLAN-REVIEW-DIRECTION-20261108`; not a substitute for later plan-specific implementation approval.
+- **Repository authority at decision intake:** `flipzoid82/-Facet-Personal-Finance-App` authoritative `main` at `80e306ec8aa40bcb1d0d16bf5c876185ffc0c046`; `PLANNING / ARCHITECT_PLANNING / Iteration 001 / ActiveRole ARCHITECT / WorkPackage none / ImplementationAuthorized false`.
+- **Bound scope:** Approved `I001-G0-SCOPE-20261108`, with `docs/iterations/iteration-001/ITERATION_ACCEPTANCE.md` blob `686119e7de51ff496cc5719ec8afaba302ac303e`, first containing commit `0b57eebe65ec3b5480bac09d6d9391a15753ea5c`, I001-C01 through I001-C08; `docs/PROJECT_ROADMAP.md` approved conditional v0.1.1, blob `4e00d17702be6ad31b36d47491d777bc2032d77e`. G0 is a documentary screen; neither its passage nor future M0 is preapproved.
+- **Permitted next actions:** Architect plan/handoff authorship and a separate control-only routing commit to CLERK. Clerk may perform only deterministic preflight and independently activate Builder **PLAN REVIEW** under its own verified state and existing workflow. A Builder PLAN READY verdict does not itself approve execution.
+- **Not authorized:** Builder implementation or execution of G0 research under a WP, source/test changes, code or host commands/tests, Plaid or bank access (including Dashboard login, Sandbox or Production Items), credentials, phone/Windows/certificate/firewall/WSL/Docker changes, purchases, paid services, PR/merge, UAT, release, or bypassing any later informed owner gate. Any new product/cost/privilege/privacy obligation must return to the correct decision owner.
+- **Supersession:** None. The separate G0-only iteration scope decision and project-stage approvals remain unchanged.
