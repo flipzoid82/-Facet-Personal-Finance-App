@@ -4,7 +4,7 @@ Project: [Facet] Personal Finance App
 Phase: RELEASE
 State: RELEASE_COMPLETE
 Iteration: 001
-ActiveRole: ARCHITECT
+ActiveRole: none
 WorkPackage: none
 Baseline: 1d97c314ffc5cd7650d9ab118e792c082619343c
 Branch: main
