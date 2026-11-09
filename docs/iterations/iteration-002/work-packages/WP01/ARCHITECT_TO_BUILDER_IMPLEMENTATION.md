@@ -1,0 +1,64 @@
+# Facet — Iteration 002 WP01 Architect Implementation Handoff to Clerk / Builder
+
+**Purpose:** IMPLEMENTATION — only the exact, separately user-approved I002-WP01 v0.1.0 isolated synthetic G0 proof; not PLAN_REVIEW, real Plaid tests, M0, Production bank access, device/host modification, paid services or merge.
+**Producer:** I002 ARCHITECT, processing the explicit owner approval in passive PLANNING / AWAITING_IMPLEMENTATION_APPROVAL.
+**Administrative next step:** separately route CLERK_IMPLEMENTATION_PREFLIGHT (ActiveRole none, NextRole CLERK, ImplementationAuthorized false); only a fresh Clerk clearance and distinct release may activate BUILDER_IMPLEMENTATION.
+**Repository:** flipzoid82/-Facet-Personal-Finance-App.
+**Iteration / WP:** 002 / WP01.
+**Authoritative WP technical branch:** facet/i002-wp01-g0-synthetic (non-main). **Exact branch fork / implementation technical Baseline:** 3f1f5b6ef709e56f4df8be3f88af9d02f091f014, the verified I002 owner-approval-ledger commit from continuation/iteration-002-intake. Remote branch was created from that exact SHA after approval; refs compared IDENTICAL (zero ahead/behind) at creation. No Builder technical work at fork.
+**Original preceding released I001 main baseline:** 1e14ff466669ad3d385e6eb3ce65cc3bf7f32e07, verified unchanged remote main at branch creation. The reviewed plan's historical Baseline field names this predecessor, whereas **the current technical branch Baseline** is the exact fork SHA above. Do not conflate them.
+**Source state before user approval:** PLANNING / AWAITING_IMPLEMENTATION_APPROVAL / I002 / WP01 / ActiveRole none / NextRole ARCHITECT / ApprovalRequiredFrom USER / ImplementationAuthorized false, source approval-wait HEAD 113fe157dfc4068925fb478ccf4180cd438cb64c.
+**Current handoff status:** Architect-owned governance output only. It neither grants Clerk clearance nor starts implementation. This document cannot cite its own blob or containing commit; the later separate state-only routing commit must identify those pre-existing SHA values.
+
+## 1. Exact binding and approval provenance
+
+| Source | Exact identity and governing meaning |
+| --- | --- |
+| **Owner's separately affirmative implementation approval** | docs/iterations/iteration-002/approvals/APPROVALS.md record **I002-WP01-IMPLEMENTATION-APPROVAL-20261109**, ArtifactBlob **d390cf5c1d76f5fda35e9d020d12cd8d50e0a375**, ArtifactContainingCommit **3f1f5b6ef709e56f4df8be3f88af9d02f091f014** on continuation ref, inherited into technical branch. Owner said **"Yes"** in answer to the exact Plan v0.1.0 implementation question after an explicit boundary report. |
+| **Exact approved Architect plan** | docs/iterations/iteration-002/work-packages/WP01/ARCHITECT_PLAN.md, **I002-WP01 v0.1.0**, blob **45dab36b244098d57316005a1e8098a9957d33be**, first containing commit **f51bd1a6674f2ffb34bb8c9170be2a696826580c**. No revision or additional user burden approved. |
+| **Independent Builder plan review** | docs/iterations/iteration-002/work-packages/WP01/BUILDER_PLAN_REVIEW.md, blob **19ab6cbf13d3400b1f1cc66c4bbb13f005a082b4**, first containing commit / BuilderTechnicalHead **61c6129cd8b47aa849e1cf8495817d919b637d51**, verdict PLAN READY for WP01 and all I002 criteria. Clerk completion intake **5961de87199541861b50da4191820824fc9de6b7** and passive return **fb012cadc42db74466f2aec0c5faf511e7a0b428**. Architect concurred and entered approval wait at **113fe157dfc4068925fb478ccf4180cd438cb64c**. |
+| **Whole iteration acceptance/decomposition** | docs/iterations/iteration-002/ITERATION_ACCEPTANCE.md blob **112f8f4a9821f0667cbd19d3ae1541bdf5052ad0**, first containing commit **a38b32c934e7e3f8c975a513e032c26412afb762**; exactly one WP01 covers I002-C01–C07, Architect sole final independent integration owner. |
+| **Original Architect PLAN_REVIEW handoff** | docs/iterations/iteration-002/work-packages/WP01/ARCHITECT_TO_BUILDER.md blob **1612fb261af4213b109d90b7ae127ecd8bd92d29**, first containing commit **407ff3c94000f084c2f520f2081bf79e6e8febaf**. |
+| **Prior Clerk PLAN_REVIEW clearance only** | docs/iterations/iteration-002/work-packages/WP01/CLERK_TO_BUILDER.md existing plan-review blob **3b7a6ca75dc96a48213102129d755397ccc4d518**, first containing commit **3042b449482cfef4cfa3b7bc1e8af4b9c2b30a85**, prior BuilderWorkStartHead **8df6b774ea3a4501b18367e3f8334df3a183f626**. **Cannot authorize implementation.** Clerk must replace the current Clerk artifact with a fresh IMPLEMENTATION-purpose clearance after separate preflight. |
+| **Accepted owner/product and historical constraints** | I002 planning direction I002-NEXT-ITERATION-PLANNING-DIRECTION-20261109T002852-0800 preserved in ledger; conditional approved roadmap v0.1.1 original blob **4e00d17702be6ad31b36d47491d777bc2032d77e** and status-only blob **70dfa942f704a07e61d9085925a7f6db8ebd7356**; I001 G0 INDETERMINATE and M0 NOT CLEARED; Discovery v1.0 ultimately requires real read-only Plaid and truthful account/transaction/freshness handling. |
+
+Approved work is a bounded fake-state engineering proof, NOT actual Plaid Production, institution support, credential/token handling, physical host security or the M0 milestone.
+
+## 2. Clerk implementation preflight — deterministic administration only
+
+**After** this handoff is committed and a **separate Architect state-only routing commit** binds its blob and first containing commit:
+
+1. Resolve authoritative remote refs/heads/facet/i002-wp01-g0-synthetic before any local checkout assumptions. Read .project/CURRENT_STATE.md, docs/WORKFLOW.md, chatgpt/roles/CLERK.md and this exact Handoff. Expected: Phase PLANNING / State CLERK_IMPLEMENTATION_PREFLIGHT / Iteration 002 / WorkPackage WP01 / ActiveRole none / NextRole CLERK / Branch facet/i002-wp01-g0-synthetic / Baseline 3f1f5b6ef709e56f4df8be3f88af9d02f091f014 / Handoff this file / ApprovalRequiredFrom none / ImplementationAuthorized false / ProjectLifecycle ACTIVE.
+2. Independently verify this Handoff's exact blob/containing commit from state NextAction; new owner approval ledger blob/containing commit; plan v0.1.0 blob/commit; PLAN READY review blob/BuilderTechnicalHead and Clerk return; I002-C01–C07 acceptance blob/commit; original Architect handoff; conditional roadmap; I001 G0; branch fork and non-main compatibility; remote main and continuation source ref changes. The user approved **only exact fake proof implementation**, not host/service/provider consent.
+3. Apply mandatory fresh WorkflowCompatibilityCheck: expected role/action, Handoff purpose IMPLEMENTATION, exact plan/review/acceptance/user approval, non-main branch and technical fork baseline, parent/diff ancestry and absence of conflicting scope. If FAIL/UNKNOWN, stop and document specific admin defect without beginning Builder technical work.
+4. On deterministic PASS only, replace the historical PLAN_REVIEW Clerk document docs/iterations/iteration-002/work-packages/WP01/CLERK_TO_BUILDER.md with a fresh **IMPLEMENTATION** clearance as a single artifact-only commit directly on top of the externally verified inbound Architect routing HEAD. Separately publish a **state-only direct-child** commit entering active BUILDER_IMPLEMENTATION with ActiveRole BUILDER / NextRole none / Handoff fresh CLERK_TO_BUILDER.md / ImplementationAuthorized true solely for WP01. Verify exact ancestry VerifiedInboundProducerHead → ClerkClearanceArtifactCommit → BuilderWorkStartHead; externally observe authoritative BuilderWorkStartHead and include it in Builder prompt. No implementation before this.
+5. Clerk does not modify Architect plan, judge Builder tests, perform technical implementation, create an early PR, obtain additional consent or waive any system/provider restriction. Later, after actual Builder-pushed implementation and return, use normal Clerk completion intake and one-WP PR representation; Architect independently audits before separate exact-head user merge authorization.
+
+This selected branch and this handoff are NOT Builder release or test permission in isolation.
+
+## 3. Exact approved Builder technical scope (only after Clerk release)
+
+The unchanged ARCHITECT_PLAN.md v0.1.0 governs ALL substantive task details; this Handoff is not a new or revised technical plan. I002 is a **G0 prerequisite-resolution iteration**, **not M0 activation**.
+
+After Clerk clearance, Builder may prepare minimal fake fixtures and self-contained deterministic tests, preferably using Node.js built-in test facilities with no dependency installation in a compatible already-permitted Builder environment. Execute only plan P1–P6 mapped to I002-C01–C07:
+
+- Document dated and attributable T1 official Plaid source/constraint and contradiction register, especially redirectless initial ordinary-browser OAuth versus update-mode redirect requirements. Keep Dashboard 0/20 deferred until material; do not access authenticated Plaid.
+- Fake desktop ordinary-browser and Android ordinary-browser initial Link/repair state machine for popup/tab, cancel, wrong session/origin, nonce expiration, callback replay and consent-update failures. This simulates Facet logic, not Plaid endpoint or physical phone behavior.
+- Deterministic virtual nine-day offline Transactions recovery: multiple added/modified/removed pages, pending-to-posted association only when source evidence supports it, cursor and state committed together after whole pagination, partial/crash rollback, mutation restart from original cursor, bounded retry, idempotence, original-source visibility and preservation of user corrections.
+- Independent non-Transactions recovery: Item/consent/accounts, balances and source timestamps, product-specific liabilities/card/loans, initial-history readiness, missing webhook-only events, partial coverage, explicit UNKNOWN/REQUIRES_REPAIR and no false fresh status.
+- Privacy/security/cost/test permission matrix. Distinguish T1 source/fixture, T2 Builder command/result/environment, future T3 Architect independent evaluation and unperformed T4 host/bank/provider evidence.
+- Record cross-criterion I002-C01–C07 supported/falsified/UNKNOWN evidence, failures and stop conditions, prospective G0 recommendation; Architect remains sole independent final integration verifier. No result here can rewrite I001 INDETERMINATE.
+
+**Builder deliverables (not yet created):** docs/iterations/iteration-002/work-packages/WP01/proof/ isolated fake harness and oracles; docs/iterations/iteration-002/work-packages/WP01/G0_SYNTHETIC_PROOF_REPORT.md dated sources, command transcript/environment, four-browser/mode cells, offline/non-Transactions outcomes, consent gates and criterion trace; ordinary docs/iterations/iteration-002/work-packages/WP01/BUILDER_IMPLEMENTATION_RETURN.md naming pre-existing SubstantiveImplementationHead and exact evidence. No PR until Clerk's later post-Builder completion process.
+
+## 4. Separate permissions, hard stops and nonauthorizations
+
+**Once Clerk releases Builder:** exact isolated, no-network fake-data source authoring and running permitted tests in an already-compatible Builder workspace. No new dependency/privileged installs, process/system modification outside the permitted working tree, or real financial information. Any actual owner-host listener/phone/network use remains separately conditional.
+
+**NOT approved:** authenticated Plaid Dashboard/API, Sandbox or Production Item/Link token creation or real institution linking; owner Dell or Android device configuration/tests; credentials or financial data; root trust/CA, LAN, public endpoint, domain, webhook receiver, persistent service or network alteration; Node/Docker installation, admin privileges, encryption, disk/storage/backup/T7/legacy project manipulation; paid Plaid tiers/fees or hosting; PR merge, M0/M1, UAT, release. Stop and return a separately informed user/Creative choice when any indispensable extra provider, cost, host, public exposure or product-scope obligation arises.
+
+No-owned-domain and $0 incremental monthly targets are accepted constraints, NOT proven provider contracts. Initial/update-mode Production feasibility remains uncertain; fake outputs cannot claim real Plaid support. Maintain security/privacy/retention and historical I001 G0 INDETERMINATE boundaries.
+
+## 5. Next legal transition
+
+Architect commits this Handoff on facet/i002-wp01-g0-synthetic. A **separate, state-only** direct-child commit on the same branch then sets PLANNING / CLERK_IMPLEMENTATION_PREFLIGHT / ActiveRole none / NextRole CLERK / WorkPackage WP01 / Baseline 3f1f5b6ef709e56f4df8be3f88af9d02f091f014 / Branch facet/i002-wp01-g0-synthetic / Handoff this file / ApprovalRequiredFrom none / ImplementationAuthorized false and records the existing approval/plan/review/map/handoff exact identities in NextAction. Verify final remote HEAD and emit fresh CLERK implementation-preflight activation prompt; do not start Builder directly.
