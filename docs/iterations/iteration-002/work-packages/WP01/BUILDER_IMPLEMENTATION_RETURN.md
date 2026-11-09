@@ -1,5 +1,15 @@
 # Facet — I002 WP01 Builder implementation return
 
+## Bounded F01–F03 correction return — 2026-11-09
+
+**Current action:** `BUILDER_CORRECTION` under the original Architect `CHANGES_REQUIRED` audit, blob `6b287f29380ff453a579a6c1b084d429e7af7ef3`, and the fresh Clerk CORRECTION clearance, blob `6db2c3b200c272b5e3bfb358e2c7772005655bc6`. **Branch:** `facet/i002-wp01-g0-synthetic`; existing open, unmerged PR #6 targets `main`. **Current BuilderWorkStartHead:** `a4b45a262d0e1a32c580035ebad5212ac4513134`. **New SubstantiveImplementationHead:** `9b9dd80753b9d2cf690534c0344260a1a75fafc7`, independently observed at the remote branch after the source/test pushes. No source/test semantics follow that head in this correction return. The approved I002-WP01 Plan v0.1.0 and owner approval remain unchanged.
+
+The correction changes only `proof/browser.mjs`, `proof/non-transactions.mjs`, `proof/transactions.mjs` and `proof/proof.test.mjs`. Exact source blobs, F01–F03 adversarial oracles, current public Sync ordering references, reproduction command, test result and limits are in `docs/iterations/iteration-002/work-packages/WP01/BUILDER_CORRECTION_EVIDENCE_001.md`. Final Builder-observed result: `node run-tests.mjs` from `proof/`, Node `v24.18.0 / win32 / x64`, exit `0`, **18 passed, 0 failed**. The original nine-day golden, mutation restart, rollback, replay, pending association and non-Transactions oracles remain green.
+
+Builder asks Clerk only for bounded implementation-completion intake of this correction after the final pushed `BuilderTechnicalHead` is externally observed. Clerk should carry the exact current return and correction evidence paths into the existing PR #6 workflow and route independent Architect audit under its own authority. Builder makes no state/routing commit, PR change, merge or audit. The synthetic corrections do not establish real Plaid Production feasibility; domainless update-mode provider support remains UNKNOWN/BLOCKED, historical I001 G0 INDETERMINATE, and M0 NOT CLEARED.
+
+## Original implementation return — historical record
+
 **Action:** BUILDER_IMPLEMENTATION, exact owner-approved I002-WP01 Architect Plan v0.1.0 (blob `45dab36b244098d57316005a1e8098a9957d33be`) on `facet/i002-wp01-g0-synthetic`. **Technical branch baseline:** `3f1f5b6ef709e56f4df8be3f88af9d02f091f014`. **BuilderWorkStartHead:** `34db35ac2bf345d7bbde847ebcf22bce248eb40a`. **SubstantiveImplementationHead:** `e4a6dd8f1d28046c0deec52370aaeffddacb2ad8`, externally observed on the authoritative remote branch before this return. All source, fixture and test semantics are in that pre-existing commit; this return and its companion report add documentation only.
 
 ## Exact governing inputs
