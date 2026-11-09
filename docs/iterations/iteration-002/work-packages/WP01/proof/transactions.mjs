@@ -40,6 +40,8 @@ function applyCompleteBatch(original, pages, fetchedAt) {
   }
   next.cursor = pages.at(-1).nextCursor;
   next.lastFetchedAt = fetchedAt;
+  next.transactionsSourceAt = pages.at(-1).sourceAt ?? null;
+  next.sourceFreshness = next.transactionsSourceAt == null ? 'UNKNOWN' : 'SYNTHETIC_SOURCE_TIME_REPORTED';
   next.historyStatus = pages.at(-1).historyStatus ?? original.historyStatus ?? 'UNKNOWN';
   next.historyComplete = next.historyStatus === 'HISTORICAL_UPDATE_COMPLETE';
   return next;

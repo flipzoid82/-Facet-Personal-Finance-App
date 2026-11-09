@@ -84,6 +84,7 @@ test('nine virtual offline days commit both pages, cursor and corrections atomic
   const original = structuredClone(fixture.before);
   const result = runSyntheticSync(original, page, { fetchedAt: now });
   assert.equal(result.status, 'COMMITTED');
+  assert.equal(original.itemId, 'fake-item-1');
   assert.equal(result.pageCount, 2);
   assert.deepEqual(Object.keys(result.snapshot.transactions).sort(), fixture.golden.activeIds);
   assert.equal(result.snapshot.cursor, fixture.golden.cursor);
@@ -92,6 +93,9 @@ test('nine virtual offline days commit both pages, cursor and corrections atomic
   assert.equal(result.snapshot.userCorrections['fake-posted-1'].category, 'user-education');
   assert.ok(result.snapshot.reviewQueue.includes(fixture.golden.unmatchedRemoved));
   assert.equal(result.snapshot.historyComplete, fixture.golden.historyComplete);
+  assert.equal(result.snapshot.lastFetchedAt, now);
+  assert.equal(result.snapshot.transactionsSourceAt, null);
+  assert.equal(result.snapshot.sourceFreshness, 'UNKNOWN');
   assert.deepEqual(original, fixture.before);
   const replay = runSyntheticSync(result.snapshot,
     cursor => cursor === 'cursor-2' ? page('cursor-0') : page(cursor), { fetchedAt: now });

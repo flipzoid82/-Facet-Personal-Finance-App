@@ -2,6 +2,7 @@
   "offlineStart": "2026-11-01T12:00:00.000Z",
   "returnAt": "2026-11-10T12:00:00.000Z",
   "before": {
+    "itemId": "fake-item-1",
     "cursor": "cursor-0",
     "historyStatus": "INITIAL_UPDATE_COMPLETE",
     "historyComplete": false,
