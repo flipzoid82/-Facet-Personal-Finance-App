@@ -1,14 +1,14 @@
 # Facet — Current Approved Product
 
 **Product:** [Facet] Personal Finance App  
-**Status:** Approved Discovery scope; project roadmap and implementation **not approved**  
+**Status:** Approved Discovery v1.0 product scope; conditional roadmap v0.1.1 approved; Iteration 001 documentary-only release completion approved with G0 **INDETERMINATE**. No application implementation or Production feasibility approval.  
 **Approved checkpoint:** `docs/project-planning/PROJECT_DISCOVERY_CHECKPOINT.md`, version `1.0`  
 **Checkpoint blob:** `1cac418428e75a0db7a2551fd6e250dec878e473`  
 **Checkpoint containing commit:** `d3c73a734cd4d0d108fb0449324ac089fda1066e`  
 **Approval ledger:** `docs/project-planning/APPROVALS.md`, `APR20261107T232700Z`  
 **Approval ledger blob:** `6f241148236a0d7d9aade264d324ee183b60b2d2`  
 **Approval ledger containing commit:** `beb41ad6db0004df0695badece2fe7461322f7ca`  
-**Last updated:** 2026-11-07
+**Last updated:** 2026-11-08 (release status reconciliation only)
 
 > This document restates already-approved Discovery meaning for current product reference. It does not add requirements, authorize implementation, choose architecture, or supersede the exact approved checkpoint. If anything here is ambiguous, use the exact approved checkpoint and user approval record as the controlling product source.
 
@@ -44,4 +44,4 @@ Detailed budgeting, investment tracking, long-term modeling beyond the basic mon
 
 The approved checkpoint intentionally leaves Plaid institution and field availability, service enrollment/cost, deployment and test environment, privacy/security expectations, calculation/reconciliation details, discovery heuristics, data timeliness, and precise interaction design to later planning and user consultation. Missing evidence must not be silently filled by assumptions or paid/privileged commitments. Infeasible material product outcomes require user-facing tradeoffs through the authorized role path.
 
-**Workflow status:** Discovery approved; no project roadmap approval, Iteration 001 direction, Work Package, or implementation authorization exists.
+**Workflow status (2026-11-08):** Discovery v1.0 and conditional roadmap v0.1.1 approved. Iteration 001 WP01's G0 documentary feasibility dossier was audited (documentary PASS), merged through PR #1, assessed with I001-C01–C08 documentary criteria satisfied, and the user elected SKIP UAT and approved documentary release completion. **G0 remains INDETERMINATE; M0 PASS-TO-EXPLORE is NOT CLEARED.** This is not a working app, demonstrated real-bank connection, or approval for new code, Plaid Items, host actions, costs, or successor stages. See `docs/iterations/iteration-001/reconciliation/ARCHITECT_RELEASE_RECONCILIATION.md` and `docs/iterations/iteration-001/approvals/APPROVALS.md`. Final `RELEASE_COMPLETE` remains subject to Architect closeout.
