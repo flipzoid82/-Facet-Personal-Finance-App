@@ -1,0 +1,52 @@
+{
+  "offlineStart": "2026-11-01T12:00:00.000Z",
+  "returnAt": "2026-11-10T12:00:00.000Z",
+  "before": {
+    "cursor": "cursor-0",
+    "historyStatus": "INITIAL_UPDATE_COMPLETE",
+    "historyComplete": false,
+    "accountIds": ["fake-checking", "fake-savings"],
+    "transactions": {
+      "fake-pending-1": {"id": "fake-pending-1", "accountId": "fake-checking", "pending": true, "amount": 19},
+      "fake-posted-1": {"id": "fake-posted-1", "accountId": "fake-checking", "pending": false, "amount": 41},
+      "fake-posted-2": {"id": "fake-posted-2", "accountId": "fake-savings", "pending": false, "amount": 8}
+    },
+    "userCorrections": {
+      "fake-pending-1": {"category": "user-rent-related"},
+      "fake-posted-1": {"category": "user-education"}
+    },
+    "removedHistory": {},
+    "reviewQueue": []
+  },
+  "pages": {
+    "cursor-0": {
+      "added": [
+        {"id": "fake-posted-3", "accountId": "fake-checking", "pending": false, "pendingTransactionId": "fake-pending-1", "amount": 19}
+      ],
+      "modified": [
+        {"id": "fake-posted-1", "accountId": "fake-checking", "pending": false, "amount": 42}
+      ],
+      "removed": ["fake-pending-1"],
+      "nextCursor": "cursor-1",
+      "hasMore": true,
+      "historyStatus": "INITIAL_UPDATE_COMPLETE"
+    },
+    "cursor-1": {
+      "added": [
+        {"id": "fake-posted-4", "accountId": "fake-savings", "pending": false, "amount": 11}
+      ],
+      "modified": [],
+      "removed": ["fake-posted-2"],
+      "nextCursor": "cursor-2",
+      "hasMore": false,
+      "historyStatus": "HISTORICAL_UPDATE_COMPLETE"
+    }
+  },
+  "golden": {
+    "cursor": "cursor-2",
+    "activeIds": ["fake-posted-1", "fake-posted-3", "fake-posted-4"],
+    "linkedReplacement": "fake-posted-3",
+    "unmatchedRemoved": "fake-posted-2",
+    "historyComplete": true
+  }
+}
