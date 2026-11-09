@@ -1,16 +1,16 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: RELEASE
-State: RELEASE_COMPLETE
-Iteration: 001
+Phase: MERGE
+State: READY_TO_MERGE
+Iteration: 002
 ActiveRole: none
-WorkPackage: none
-Baseline: 1d97c314ffc5cd7650d9ab118e792c082619343c
-Branch: main
-NextRole: none
-NextAction: Facet Iteration 001 G0-only DOCUMENTARY milestone formally RELEASE_COMPLETE after verified ARCHITECT_RELEASE_CLOSEOUT.md blob 97ab28f646dc2760bcb29ed4e2404ceee47f8d03, first containing commit 8b7dede46b33a8647b018959f15313604b22c727; Creative release reconciliation blob 6407503ac0475f851912afdc0e2b0a70f07f812f, first containing commit 7bd3655a7065d6bc66335ad96997c84d25b2acc2; Architect release reconciliation blob 037bdae3449e71a7d99fea9c595c7b900bc6226d, first containing commit d18c554536a04faed6d853b273bbcc38e6054970. Separate USER release approval I001-RELEASE-COMPLETION-APPROVAL-20261108 is in iteration approval ledger blob f7dde14868d5dd4b6ee79f4a775916d71ceb33bb; exact UAT SKIP decision blob 486b915cb6aa50fcad2791addaf6945a2325e3fd; UAT assessment blob 2d4366c612734f57960c1b2b7e23a95495bf39d6, I001-C01-C08 SATISFIED documentary only. Original PR #1 substantive merge commit 40250b407f74952252ee3d5e5c0bbadd33047a2e; original Builder G0 dossier eac79fbd4b3142e53c2892f7c382e2937d273f70 and audit PASS solely for documentary deliverable 6cdf842f3490d721426ce0a4c7c051bb579487ed unchanged. Final G0 INDETERMINATE and roadmap G0 PASS-TO-EXPLORE-M0 dependency NOT CLEARED; PAUSE M0. Completed iteration is not completion of entire project; ProjectLifecycle ACTIVE. No successor stage or role is active, no implementation, bank/Plaid/Production access, devices or costs approved. Await fresh specific owner direction subject to the ordinary separate approval and successor intake conditions.
-Handoff: none
-ApprovalRequiredFrom: none
+WorkPackage: WP01
+Baseline: 3f1f5b6ef709e56f4df8be3f88af9d02f091f014
+Branch: facet/i002-wp01-g0-synthetic
+NextRole: ARCHITECT
+NextAction: Wait for explicit USER authorization to merge only the exact independently audited, unchanged head of existing I002 WP01 PR #6 from facet/i002-wp01-g0-synthetic into main, after re-verifying the authoritative remote PR head, base/main and all post-substantive changes. Independent correction audit PASS is docs/iterations/iteration-002/work-packages/WP01/ARCHITECT_CORRECTION_AUDIT_001.md blob 93a4e7807215cc3639c5a603774b77b11f6f7541 first containing commit 7d83524f4aec956e85e31a15c32f5147f6fba0bc; original CHANGES_REQUIRED Architect audit blob 6b287f29380ff453a579a6c1b084d429e7af7ef3 remains intact, F01-F03 resolved only for approved isolated synthetic model. Correction AuditEntryPRHead d34fc7e8f2887c156228621795c8950ce38b9e96, separate Architect active audit commit 8e3c43759dd4c848e415e9649b9a115c0fd2a2ea; SubstantiveImplementationHead 9b9dd80753b9d2cf690534c0344260a1a75fafc7, BuilderTechnicalHead 6d9d772481cb54baa9898dcda71f8f1bed1ed5d1, corrected Builder return blob 35cdfd4499cc03ae00afeea041898dba731a31b8, correction evidence blob 6f63d0ac2e1a1a08ee66e585783412418b60370f. Original Architect Plan I002-WP01 v0.1.0 blob 45dab36b244098d57316005a1e8098a9957d33be, acceptance map blob 112f8f4a9821f0667cbd19d3ae1541bdf5052ad0, owner implementation approval ledger blob d390cf5c1d76f5fda35e9d020d12cd8d50e0a375 unchanged. At merge-approval intake independently resolve actual final PR head; it must descend from the above audit artifact and contain only the already-reviewed proof/return plus Clerk and Architect evidence/control changes after corrected substantive head, with no new source/tests. Main prior verified at 1e14ff466669ad3d385e6eb3ce65cc3bf7f32e07 and PR #6 OPEN/UNMERGED; any change to final head after user authorization makes it stale and requires new permission. Approval has not been granted. No merge, physical provider/bank/host, paid/domain resource, M0 activation, UAT or release is authorized. I001 G0 historically INDETERMINATE; G0 Production dependency and M0 remain NOT CLEARED.
+Handoff: docs/iterations/iteration-002/work-packages/WP01/ARCHITECT_CORRECTION_AUDIT_001.md
+ApprovalRequiredFrom: USER
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
