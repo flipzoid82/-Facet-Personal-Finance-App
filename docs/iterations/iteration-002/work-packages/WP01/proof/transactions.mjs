@@ -8,19 +8,33 @@ function applyCompleteBatch(original, pages, fetchedAt) {
   next.removedHistory ??= {};
   next.userCorrections ??= {};
   next.reviewQueue ??= [];
-  const removedIds = pages.flatMap(page => page.removed ?? []);
-  const upserts = pages.flatMap(page => [...(page.added ?? []), ...(page.modified ?? [])]);
-
-  for (const id of removedIds) {
-    const prior = next.transactions[id];
-    if (prior) {
-      next.removedHistory[id] = { ...prior, removed: true };
-      delete next.transactions[id];
+  const removedIds = [];
+  // The public Sync contract orders pages, but does not define ordering between
+  // conflicting operations for the same ID within one page. Block that case.
+  for (const page of pages) {
+    const removed = page.removed ?? [];
+    const upserts = [...(page.added ?? []), ...(page.modified ?? [])];
+    const ids = [...removed, ...upserts.map(tx => tx?.id)];
+    if (ids.some(id => !id || ids.filter(other => other === id).length !== 1)) {
+      throw new Error('AMBIGUOUS_SAME_PAGE_ID');
+    }
+    for (const id of removed) {
+      removedIds.push(id);
+      const prior = next.transactions[id];
+      if (prior) {
+        next.removedHistory[id] = { ...prior, removed: true };
+        delete next.transactions[id];
+      }
+    }
+    for (const tx of upserts) {
+      if (!tx.accountId) throw new Error('INVALID_SYNTHETIC_TRANSACTION');
+      next.transactions[tx.id] = clone(tx);
+      delete next.removedHistory[tx.id];
     }
   }
-  for (const tx of upserts) {
-    if (!tx.id || !tx.accountId) throw new Error('INVALID_SYNTHETIC_TRANSACTION');
-    next.transactions[tx.id] = clone(tx);
+  // Resolve pending replacements from the final ordered state, including a
+  // posted add on an earlier page and its pending removal on a later page.
+  for (const tx of Object.values(next.transactions)) {
     const pendingId = tx.pendingTransactionId;
     const pending = pendingId && next.removedHistory[pendingId];
     if (pending) {
@@ -36,8 +50,10 @@ function applyCompleteBatch(original, pages, fetchedAt) {
     }
   }
   for (const id of removedIds) {
-    if (!next.removedHistory[id]?.replacementId && !next.reviewQueue.includes(id)) next.reviewQueue.push(id);
+    if (!next.transactions[id] && !next.removedHistory[id]?.replacementId &&
+      !next.reviewQueue.includes(id)) next.reviewQueue.push(id);
   }
+  next.reviewQueue = next.reviewQueue.filter(id => !next.transactions[id]);
   next.cursor = pages.at(-1).nextCursor;
   next.lastFetchedAt = fetchedAt;
   next.transactionsSourceAt = pages.at(-1).sourceAt ?? null;

@@ -54,6 +54,16 @@ test('update mode distinguishes consent renewal and account reselection', () => 
   }
 });
 
+test('original callback reference is consumed once for initial and update modes', () => {
+  for (const mode of ['initial', 'update']) {
+    const flow = startBrowserFlow(flowOptions('desktop-browser', mode));
+    const event = callback(flow);
+    assert.equal(finishBrowserFlow(flow, event, now + 1).outcome, 'MOCK_CALLBACK_ACCEPTED');
+    assert.equal(finishBrowserFlow(flow, event, now + 2).outcome, 'REJECTED_NOT_ACTIVE');
+    assert.equal(finishBrowserFlow({ ...flow }, event, now + 2).outcome, 'REJECTED_NOT_ACTIVE');
+  }
+});
+
 test('callback security, expiry, cancellation, blocked popup and retry', () => {
   const flow = startBrowserFlow(flowOptions('desktop-browser', 'initial'));
   for (const [change, expected] of [
@@ -66,16 +76,23 @@ test('callback security, expiry, cancellation, blocked popup and retry', () => {
     assert.equal(result.outcome, expected);
     assert.equal(result.flow.phase, 'AWAITING_CALLBACK');
   }
-  assert.equal(finishBrowserFlow(flow, callback(flow), flow.expiresAt + 1).outcome, 'REJECTED_EXPIRED');
+  const expiring = startBrowserFlow(flowOptions('desktop-browser', 'initial'));
+  const expired = finishBrowserFlow(expiring, callback(expiring), expiring.expiresAt + 1);
+  assert.equal(expired.outcome, 'REJECTED_EXPIRED');
+  assert.equal(finishBrowserFlow(expiring, callback(expiring), now + 1).outcome, 'REJECTED_NOT_ACTIVE');
+  assert.equal(retryBrowserFlow(expired.flow, { now: now + 2 }).generation, 2);
   const canceled = finishBrowserFlow(flow, { type: 'cancel' }, now + 1);
   assert.equal(canceled.outcome, 'USER_EXITED');
+  assert.equal(finishBrowserFlow(flow, callback(flow), now + 2).outcome, 'REJECTED_NOT_ACTIVE');
   const retried = retryBrowserFlow(canceled.flow, { now: now + 2, nonce: 'fresh-synthetic-nonce' });
   assert.equal(retried.generation, 2);
+  assert.throws(() => retryBrowserFlow(canceled.flow, { now: now + 3 }), /RETRY_NOT_ALLOWED/);
   assert.equal(finishBrowserFlow(retried, callback(flow), now + 3).outcome, 'REJECTED_NONCE');
   const blocked = startBrowserFlow({ ...flowOptions('desktop-browser', 'initial'), popupAllowed: false });
   assert.equal(blocked.phase, 'POPUP_BLOCKED');
   assert.equal(finishBrowserFlow(blocked, callback(blocked), now + 1).outcome, 'REJECTED_NOT_ACTIVE');
-  assert.equal(finishBrowserFlow(flow, { type: 'aborted-redirect' }, now + 1).outcome, 'USER_EXITED');
+  const aborted = startBrowserFlow(flowOptions('desktop-browser', 'initial'));
+  assert.equal(finishBrowserFlow(aborted, { type: 'aborted-redirect' }, now + 1).outcome, 'USER_EXITED');
   assert.throws(() => startBrowserFlow({ ...flowOptions('android-browser', 'update'), itemId: null }), /REPAIR_CONTEXT_REQUIRED/);
 });
 
@@ -128,6 +145,53 @@ test('cross-account pending association remains unmatched for user review', () =
   assert.equal(result.snapshot.removedHistory['fake-pending-1'].replacementId, undefined);
   assert.ok(result.snapshot.reviewQueue.includes('fake-pending-1'));
   assert.equal(result.snapshot.userCorrections['fake-posted-3'], undefined);
+});
+
+test('cross-page add then remove commits final removal and preserves user correction', () => {
+  const original = structuredClone(fixture.before);
+  original.userCorrections['fake-transient'] = { category: 'user-set' };
+  const pages = {
+    'cursor-0': { added: [{ id: 'fake-transient', accountId: 'fake-checking', pending: false }],
+      modified: [], removed: [], nextCursor: 'cursor-1', hasMore: true },
+    'cursor-1': { added: [], modified: [], removed: ['fake-transient'],
+      nextCursor: 'cursor-2', hasMore: false },
+  };
+  const result = runSyntheticSync(original, cursor => pages[cursor], { fetchedAt: now });
+  assert.equal(result.status, 'COMMITTED');
+  assert.equal(result.snapshot.transactions['fake-transient'], undefined);
+  assert.equal(result.snapshot.removedHistory['fake-transient'].removed, true);
+  assert.ok(result.snapshot.reviewQueue.includes('fake-transient'));
+  assert.deepEqual(result.snapshot.userCorrections['fake-transient'], { category: 'user-set' });
+  assert.equal(result.snapshot.cursor, 'cursor-2');
+  assert.deepEqual(original.userCorrections['fake-transient'], { category: 'user-set' });
+  const replay = runSyntheticSync(result.snapshot,
+    cursor => cursor === 'cursor-2' ? pages['cursor-0'] : pages[cursor], { fetchedAt: now });
+  assert.deepEqual(replay.snapshot, result.snapshot);
+});
+
+test('cross-page posted add links a pending removal on a later page', () => {
+  const pages = {
+    'cursor-0': { added: [{ id: 'fake-late-posted', accountId: 'fake-checking',
+      pending: false, pendingTransactionId: 'fake-pending-1' }], modified: [], removed: [],
+    nextCursor: 'cursor-1', hasMore: true },
+    'cursor-1': { added: [], modified: [], removed: ['fake-pending-1'],
+      nextCursor: 'cursor-2', hasMore: false },
+  };
+  const result = runSyntheticSync(fixture.before, cursor => pages[cursor], { fetchedAt: now });
+  assert.equal(result.status, 'COMMITTED');
+  assert.equal(result.snapshot.removedHistory['fake-pending-1'].replacementId, 'fake-late-posted');
+  assert.equal(result.snapshot.userCorrections['fake-late-posted'].category, 'user-rent-related');
+  assert.equal(result.snapshot.reviewQueue.includes('fake-pending-1'), false);
+});
+
+test('same-page conflicting ID blocks atomic commit when order is unspecified', () => {
+  const result = runSyntheticSync(fixture.before, () => ({
+    added: [{ id: 'fake-conflict', accountId: 'fake-checking' }],
+    modified: [], removed: ['fake-conflict'], nextCursor: 'cursor-1', hasMore: false,
+  }), { fetchedAt: now });
+  assert.equal(result.status, 'BLOCKED');
+  assert.equal(result.reason, 'AMBIGUOUS_SAME_PAGE_ID');
+  assert.deepEqual(result.snapshot, fixture.before);
 });
 
 test('mutation restarts whole pagination from original cursor and is bounded', () => {
@@ -223,6 +287,40 @@ test('partial coverage, stale balance, unavailable available amount and liabilit
   assert.equal(result.liabilityFields.creditMinimum.state, 'UNKNOWN');
   assert.equal(result.liabilityFields.creditDueDate.state, 'LAST_KNOWN_STALE');
   assert.equal(result.liabilityFields.loanBalance.state, 'UNKNOWN');
+});
+
+test('available balance requires a returned value independent of parent freshness', () => {
+  const inspect = available => {
+    const balance = { coverage: 'COMPLETE', sourceAt: now - 60_000, fetchedAt: now,
+      current: { coverage: 'COMPLETE', sourceAt: now - 60_000, value: 20 } };
+    if (available !== 'OMITTED') balance.available = available;
+    return reconcileOtherState({ now, observations: {
+      accounts: { coverage: 'COMPLETE', accountIds: ['fake-checking'] },
+      balances: { 'fake-checking': balance },
+    } }).balanceFields['fake-checking'].available;
+  };
+  for (const absent of ['OMITTED', undefined, null]) {
+    assert.equal(inspect(absent).state, 'UNKNOWN');
+    assert.equal(inspect(absent).reason, 'AVAILABLE_BALANCE_NOT_RETURNED');
+  }
+  const distinct = reconcileOtherState({ now, observations: {
+    accounts: { coverage: 'COMPLETE', accountIds: ['fake-checking'] },
+    balances: { 'fake-checking': { coverage: 'COMPLETE', sourceAt: now - 60_000,
+      current: { coverage: 'COMPLETE', sourceAt: now - 60_000, value: 20 } } },
+  } }).balanceFields['fake-checking'];
+  assert.equal(distinct.current.state, 'FRESH');
+  assert.equal(distinct.available.state, 'UNKNOWN');
+  assert.equal(inspect({ unsupported: true }).state, 'UNKNOWN');
+  assert.equal(inspect(0).state, 'FRESH');
+  assert.equal(inspect({ value: 5, coverage: 'COMPLETE', sourceAt: start }).state, 'LAST_KNOWN_STALE');
+  assert.equal(inspect({ value: 5, coverage: 'COMPLETE' }).state, 'UNKNOWN');
+  assert.equal(inspect({ value: 5, coverage: 'COMPLETE', sourceAt: now - 60_000 }).state, 'FRESH');
+  const repairing = reconcileOtherState({ now, observations: {
+    item: { revoked: true },
+    accounts: { coverage: 'COMPLETE', accountIds: ['fake-checking'] },
+    balances: { 'fake-checking': { available: 5, coverage: 'COMPLETE', sourceAt: now } },
+  } });
+  assert.equal(repairing.balanceFields['fake-checking'].available.state, 'UNKNOWN');
 });
 
 test('cross-family recovery keeps non-Transactions gaps despite completed cursor', () => {

@@ -28,6 +28,21 @@ function classifyField(observation, now, maxAgeMs) {
   return entry(FRESH, 'SYNTHETIC_SOURCE_TIME_WITHIN_ORACLE', observation);
 }
 
+function classifyAvailable(observed, now, maxAgeMs) {
+  if (!observed || !Object.hasOwn(observed, 'available') ||
+    observed.available === undefined || observed.available === null) {
+    return entry(UNKNOWN, 'AVAILABLE_BALANCE_NOT_RETURNED', observed);
+  }
+  const available = observed.available;
+  if (typeof available === 'object') {
+    if (available.unsupported) return classifyField(available, now, maxAgeMs);
+    if (!Number.isFinite(available.value)) return entry(UNKNOWN, 'AVAILABLE_BALANCE_NOT_RETURNED', available);
+    return classifyField(available, now, maxAgeMs);
+  }
+  if (!Number.isFinite(available)) return entry(UNKNOWN, 'AVAILABLE_BALANCE_NOT_RETURNED', observed);
+  return classifyField({ ...observed, value: available }, now, maxAgeMs);
+}
+
 // Observations represent fake on-launch responses. A successful fetch never implies source freshness.
 export function reconcileOtherState({ previous = {}, observations = {}, now, maxAgeMs = 86_400_000 }) {
   if (!Number.isFinite(now)) throw new Error('VIRTUAL_TIME_REQUIRED');
@@ -64,9 +79,7 @@ export function reconcileOtherState({ previous = {}, observations = {}, now, max
     balances[accountId] = classifyField(observed, now, maxAgeMs);
     balanceFields[accountId] = {
       current: classifyField(observed?.current ?? observed, now, maxAgeMs),
-      available: observed?.available === null
-        ? entry(UNKNOWN, 'AVAILABLE_BALANCE_NOT_RETURNED', observed)
-        : classifyField(observed?.available ?? observed, now, maxAgeMs),
+      available: classifyAvailable(observed, now, maxAgeMs),
     };
   }
   const liabilities = classifyField(observations.liabilities, now, maxAgeMs);
