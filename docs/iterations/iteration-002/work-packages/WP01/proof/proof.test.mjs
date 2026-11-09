@@ -299,9 +299,13 @@ test('available balance requires a returned value independent of parent freshnes
       balances: { 'fake-checking': balance },
     } }).balanceFields['fake-checking'].available;
   };
-  for (const absent of ['OMITTED', undefined, null]) {
+  for (const [absent, reason] of [
+    ['OMITTED', 'AVAILABLE_BALANCE_OMITTED'],
+    [undefined, 'AVAILABLE_BALANCE_UNDEFINED'],
+    [null, 'AVAILABLE_BALANCE_NOT_RETURNED'],
+  ]) {
     assert.equal(inspect(absent).state, 'UNKNOWN');
-    assert.equal(inspect(absent).reason, 'AVAILABLE_BALANCE_NOT_RETURNED');
+    assert.equal(inspect(absent).reason, reason);
   }
   const distinct = reconcileOtherState({ now, observations: {
     accounts: { coverage: 'COMPLETE', accountIds: ['fake-checking'] },

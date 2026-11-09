@@ -29,10 +29,12 @@ function classifyField(observation, now, maxAgeMs) {
 }
 
 function classifyAvailable(observed, now, maxAgeMs) {
-  if (!observed || !Object.hasOwn(observed, 'available') ||
-    observed.available === undefined || observed.available === null) {
+  if (!observed || !Object.hasOwn(observed, 'available'))
+    return entry(UNKNOWN, 'AVAILABLE_BALANCE_OMITTED', observed);
+  if (observed.available === undefined)
+    return entry(UNKNOWN, 'AVAILABLE_BALANCE_UNDEFINED', observed);
+  if (observed.available === null)
     return entry(UNKNOWN, 'AVAILABLE_BALANCE_NOT_RETURNED', observed);
-  }
   const available = observed.available;
   if (typeof available === 'object') {
     if (available.unsupported) return classifyField(available, now, maxAgeMs);
