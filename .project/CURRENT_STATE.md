@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: BUILDER_PLAN_REVIEW
+State: CLERK_PLAN_REVIEW_PREFLIGHT
 Iteration: 003
-ActiveRole: BUILDER
+ActiveRole: CLERK
 WorkPackage: none
-Baseline: 56931dbe9a20c7e66d5ddfa59d24cea5e148b0e9
+Baseline: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: Independently review the frozen HF-001 proposal snapshot at docs/governance/hotfixes/HF-001/PROPOSAL.md blob fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a under the installed review-only authority and write docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md. Push the exact review artifact and return its remote head/path to Clerk for deterministic completion intake. No implementation or surrounding administration.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER.md
+NextAction: Complete deterministic HF-001 Builder review intake from the exact pushed Builder review artifact, verify branch/head/artifact and unchanged candidate/source identities, then return that original review to active Architect governance review reconciliation on this isolated branch. Do not classify the review or change its findings.
+Handoff: docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -24,3 +24,7 @@ ProposalFirstContainingCommit: 1c9997e73a75b2d6d7f9c097abadaa136e15fba2
 VerifiedInboundProducerHead: ae35e26748b7ba562618694864e6ec221c2214a6
 ClerkClearanceArtifactCommit: 56931dbe9a20c7e66d5ddfa59d24cea5e148b0e9
 ClerkClearanceArtifactBlob: 88f112372f6b209b7719346cef82b7cbc64a1dab
+BuilderWorkStartHead: 7af0c730939dae45a11fab645cfcba37c651a297
+BuilderTechnicalHead: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
+BuilderReviewBlob: b463bf79243cf453438a57079bf6e139a5bb1b7e
+BuilderReviewFirstContainingCommit: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
