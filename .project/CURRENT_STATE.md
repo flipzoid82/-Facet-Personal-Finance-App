@@ -2,30 +2,31 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION
+State: CLERK_PLAN_REVIEW_PREFLIGHT
 Iteration: 003
-ActiveRole: ARCHITECT
+ActiveRole: CLERK
 WorkPackage: none
-Baseline: ca710fb17159f3628f9d4d5f5e4ebf1fa76dcaf1
+Baseline: 43f3baa10a7bf4598cd9e664475af470aa282803
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: Independently reconcile the original HF-001 Builder governance review at docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md blob b463bf79243cf453438a57079bf6e139a5bb1b7e against the frozen proposal snapshot and installed review-only authority. Follow the exact mandatory Creative review route before any final Architect reconciliation or owner implementation request.
-Handoff: docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md
+NextAction: Deterministic HF-001 governance hotfix REVIEW-ONLY second-cycle Clerk preflight. Independently verify the exact fresh v0.2 proposal docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_001.md blob 5a12d444d036c85dba1a61b6f9f999aa6cfdd60a first containing commit 43f3baa10a7bf4598cd9e664475af470aa282803, original proposal blob fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a, original Builder CHANGES REQUIRED blob b463bf79243cf453438a57079bf6e139a5bb1b7e and Architect findings disposition blob 6a686c5e3a0d32fd0c14b2c03a7fe4e44d4025d4. Exact Architect review-refresh handoff is docs/governance/hotfixes/HF-001/ARCHITECT_TO_BUILDER_REVIEW_REFRESH_001.md blob ba7d5f036a54960a8dfb253437874fe9053c6274 first containing commit dfcb3455596d53675bd44ce887bcc8c4a4ff7355. Confirm unchanged authoritative main 758f0a97adaa15cda37ba08a1958d5896e9699cd, installed charter blob 4ccb635a5ddda5baa0351d8b1d8bfb95bd8e329a, and workflow blob ce7b2f2e19a29d02bc4e25dc2a022b0dd0580e21. If and only if deterministic authority checks pass, write a NEW cycle-002 clearance artifact without overwriting original CLERK_TO_BUILDER.md, then separately and safely release Builder as active BUILDER_PLAN_REVIEW with Purpose GOVERNANCE_HOTFIX_REVIEW, WorkPackage none, ImplementationAuthorized false and exact revised-candidate binding. Builder to independently review v0.2/F01-F07; Clerk must not technically judge. Mandatory independent CREATIVE_GOVERNANCE_REVIEW must still follow current Builder review via Architect reconciliation before any final Architect decision. No implementation, merger, roadmap amendment, I004, host/Plaid/financial activity or cost.
+Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_TO_BUILDER_REVIEW_REFRESH_001.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: GOVERNANCE_HOTFIX_REVIEW
 HotfixID: HF-001
+ReviewCycle: 002
 SourceMainHead: 758f0a97adaa15cda37ba08a1958d5896e9699cd
 OwnerReviewCharter: docs/governance/hotfixes/HF-001/OWNER_REVIEW_CHARTER.md
 OwnerReviewCharterBlob: 4ccb635a5ddda5baa0351d8b1d8bfb95bd8e329a
-ProposalBlob: fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a
-ProposalFirstContainingCommit: 1c9997e73a75b2d6d7f9c097abadaa136e15fba2
-VerifiedInboundProducerHead: ae35e26748b7ba562618694864e6ec221c2214a6
-ClerkClearanceArtifactCommit: 56931dbe9a20c7e66d5ddfa59d24cea5e148b0e9
-ClerkClearanceArtifactBlob: 88f112372f6b209b7719346cef82b7cbc64a1dab
-BuilderWorkStartHead: 7af0c730939dae45a11fab645cfcba37c651a297
-BuilderTechnicalHead: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
-BuilderReviewBlob: b463bf79243cf453438a57079bf6e139a5bb1b7e
-BuilderReviewFirstContainingCommit: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
-ClerkCompletionIntakeCommit: ca710fb17159f3628f9d4d5f5e4ebf1fa76dcaf1
+OriginalProposalBlob: fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a
+ProposalPath: docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_001.md
+ProposalBlob: 5a12d444d036c85dba1a61b6f9f999aa6cfdd60a
+ProposalFirstContainingCommit: 43f3baa10a7bf4598cd9e664475af470aa282803
+ArchitectDispositionPath: docs/governance/hotfixes/HF-001/ARCHITECT_FINDINGS_DISPOSITION_001.md
+ArchitectDispositionBlob: 6a686c5e3a0d32fd0c14b2c03a7fe4e44d4025d4
+ArchitectHandoffBlob: ba7d5f036a54960a8dfb253437874fe9053c6274
+ArchitectHandoffFirstContainingCommit: dfcb3455596d53675bd44ce887bcc8c4a4ff7355
+OriginalBuilderTechnicalHead: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
+OriginalBuilderReviewBlob: b463bf79243cf453438a57079bf6e139a5bb1b7e
