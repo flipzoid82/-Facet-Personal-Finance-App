@@ -2,14 +2,14 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_PLAN_REVIEW_PREFLIGHT
+State: ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: ARCHITECT
 WorkPackage: none
-Baseline: 57c51e7bdb6c343425fa8e936273bee69fa47378
+Baseline: 91aad5c38d9b50c81716b5403603fbfb37ad6e96
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: Deterministic Clerk completion intake ONLY of the independently pushed HF-001 implementation-plan Builder review at docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_001.md, blob 1a281b825732f44c9dedb48c9eed34e47e7d2544, first containing BuilderTechnicalHead 57c51e7bdb6c343425fa8e936273bee69fa47378. BuilderTechnicalHead is direct child of verified BuilderWorkStartHead 32735151d1f06572ccf125b4a1eefcd58a824f7f and adds only that independent review. Review of exact plan ARCHITECT_IMPLEMENTATION_PLAN.md blob f50001099bd50c8b05eceb1860f2bcc62f57512f first containing 50fa0d8fd896a84070eecedd3374faf04abdc945, with owner approval cc4520f1367316f2b9224b5f72960f1161c8af71 and Clerk clearance CLERK_TO_BUILDER_IMPLEMENTATION_PLAN_REVIEW_001.md blob 78695c1462bd65a874c6416be934c4508a87bfc6 first containing 2a999959ccb29693647abcaa6fed57214b646f8a. Builder's independently recorded verdict is CHANGES REQUIRED P01-P02, not a Clerk technical conclusion. Verify unchanged effective main 99284c6c5820dc5cc82dd585aaa2ef4889b8d2b8, workflow blob 8e8aea04765386b1535b30dff33e30eaf68f7f11, Clerk contract blob 06678e2e79a656ecacf8af97aa15a110cf767f5e, installed bridge capsule 53f5f7865129bb410d78bb24f04b4d88a17dfccd. After PASS, separately state-only route the ORIGINAL Builder review to ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION / ActiveRole ARCHITECT for independent disposition; any material plan revision needs a new independent Builder plan review. No implementation, technical-ref claim, PR/merge, I004, roadmap change, legacy migration, Plaid/financial data, host modification or purchases.
+NextAction: ARCHITECT ONLY — independently reconcile the exact original HF-001 independent Builder implementation-plan review docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_001.md blob 1a281b825732f44c9dedb48c9eed34e47e7d2544 first containing BuilderTechnicalHead 57c51e7bdb6c343425fa8e936273bee69fa47378 (direct child of authorized BuilderWorkStartHead 32735151d1f06572ccf125b4a1eefcd58a824f7f) against exact Architect plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN.md blob f50001099bd50c8b05eceb1860f2bcc62f57512f and owner decision blob cc4520f1367316f2b9224b5f72960f1161c8af71. Builder's separate plan-review verdict is CHANGES REQUIRED findings P01–P02; Clerk makes no technical assessment of the findings. Completion intake commit 91aad5c38d9b50c81716b5403603fbfb37ad6e96 is state-only direct child of the BuilderTechnicalHead; this subsequent Architect routing must remain state-only. Verify new effective main 99284c6c5820dc5cc82dd585aaa2ef4889b8d2b8 and effective HF001_OWNER_APPROVED_CONTINUATION_v0_1 installed workflow blob 8e8aea04765386b1535b30dff33e30eaf68f7f11, Clerk contract blob 06678e2e79a656ecacf8af97aa15a110cf767f5e, capsule blob 53f5f7865129bb410d78bb24f04b4d88a17dfccd, frozen v0.3 blob 99be3ba8d9108c791e52f7b82d364ca9cfa41531 and plan-review Clerk clearance blob 78695c1462bd65a874c6416be934c4508a87bfc6. Architect owns any finding disposition, material plan corrections and lawful refreshed independent Builder review via Clerk. No Builder implementation or separate technical-ref creation is authorized. Maintain ImplementationAuthorized false, WorkPackage none. No HF-001 merge, I004, roadmap change, legacy migration, Plaid/financial data, host modification or purchases.
 Handoff: docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_001.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
@@ -47,3 +47,4 @@ BuilderTechnicalHead: 57c51e7bdb6c343425fa8e936273bee69fa47378
 BuilderReviewPath: docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_001.md
 BuilderReviewBlob: 1a281b825732f44c9dedb48c9eed34e47e7d2544
 BuilderReviewFirstContainingCommit: 57c51e7bdb6c343425fa8e936273bee69fa47378
+ClerkCompletionIntakeCommit: 91aad5c38d9b50c81716b5403603fbfb37ad6e96
