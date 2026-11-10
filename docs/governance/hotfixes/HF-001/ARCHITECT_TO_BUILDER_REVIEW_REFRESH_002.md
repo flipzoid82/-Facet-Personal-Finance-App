@@ -1,0 +1,31 @@
+# HF-001 — Architect to Clerk: cycle-003 independent Builder governance review refresh
+
+**Purpose:** GOVERNANCE_HOTFIX_REVIEW. **ReviewCycle:** 003. **WorkPackage:** none. **ImplementationAuthorized:** false. **Requested boundary:** CLERK_PLAN_REVIEW_PREFLIGHT → separately released active BUILDER_PLAN_REVIEW, review only, if independent Clerk authority/identity checks PASS. No PLAN READY inferred, no Creative review completed, no owner implementation or merger.
+
+## Verified source controls
+
+- Repository: `flipzoid82/-Facet-Personal-Finance-App`; authoritative isolated ref: `refs/heads/governance/hf-001-review`.
+- Original Architect reconciliation entry `f18eb8a67fed37f5b7df4d3434b2e1d59b259112`; `GOVERNANCE / ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION / ActiveRole ARCHITECT / Handoff BUILDER_GOVERNANCE_REVIEW_002.md / ImplementationAuthorized false`, current-state blob `cec63a2a7dd360d84180b2176e38422b0192229d`.
+- **Material revision commit `6d5793959c21877d5ac105c52f323e1eb896971a`**, direct child of entry, changes only `docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_002.md` and `docs/governance/hotfixes/HF-001/ARCHITECT_CYCLE_002_FINDINGS_DISPOSITION.md` with unchanged state, old proposals and reviews.
+- **New v0.3 candidate:** `docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_002.md`, blob **`99be3ba8d9108c791e52f7b82d364ca9cfa41531`**, first containing commit **`6d5793959c21877d5ac105c52f323e1eb896971a`**. This entire document is the exact new candidate. **UNREVIEWED**.
+- **Architect cycle-002 findings disposition:** `docs/governance/hotfixes/HF-001/ARCHITECT_CYCLE_002_FINDINGS_DISPOSITION.md`, blob **`696c77c45f9a7653a8b0b4677c2e175ee1e5c5a8`**, first containing commit **`6d5793959c21877d5ac105c52f323e1eb896971a`**; accepts all C02-01–C02-03 as material. An Architect proposed correction is not technical clearance.
+- Previous v0.2 candidate: `PROPOSAL_REVISION_001.md` blob **`5a12d444d036c85dba1a61b6f9f999aa6cfdd60a`**, first containing commit `43f3baa10a7bf4598cd9e664475af470aa282803`.
+- **Cycle-002 independent Builder:** WorkStartHead **`e0119d2deb83c10bb646482882cbddd7d8c4f36f`**, BuilderTechnicalHead and first-containing commit **`d3b3c37eac84f97a044b17d8088569031c3fe51d`**, review `BUILDER_GOVERNANCE_REVIEW_002.md` blob **`433a8ecc7aa6240290bae211e4045ad7cd03d043`**, verdict **CHANGES REQUIRED C02-01/C02-02/C02-03**; original cycle-002 Clerk clearance `CLERK_TO_BUILDER_REVIEW_REFRESH_001.md` blob `71b4d80c9e03f2ed230e8e6b9fe63ae9e2c2db96`. Clerk completion-intake commit **`8a525d05e7463882d1ac1c693c9b653f5aa3874b`**, direct child of BuilderTechnicalHead; Architect route `f18eb8...` direct child of Clerk intake.
+- Original v0.1 frozen proposal `PROPOSAL.md` blob `fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a`, original independent Builder review `BUILDER_GOVERNANCE_REVIEW.md` blob `b463bf79243cf453438a57079bf6e139a5bb1b7e`, original Architect F01–F07 disposition `ARCHITECT_FINDINGS_DISPOSITION_001.md` blob `6a686c5e3a0d32fd0c14b2c03a7fe4e44d4025d4` remain unchanged.
+- Installed owner charter: `OWNER_REVIEW_CHARTER.md` blob **`4ccb635a5ddda5baa0351d8b1d8bfb95bd8e329a`**, effective workflow blob **`ce7b2f2e19a29d02bc4e25dc2a022b0dd0580e21`**, still *review-only*. Exact original authoritative source `main` **`758f0a97adaa15cda37ba08a1958d5896e9699cd`**, passive I003 state blob `2e3178505a3dbe9bb31ed864a17a13b0453c3e42`, accepted roadmap blob `19014633c69b976db874c50be880bfbd11c02819`. G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED.
+
+## Bounded independent technical review target
+
+Perform normal existing `CLERK_PLAN_REVIEW_PREFLIGHT` deterministic review **cycle 003** for Purpose GOVERNANCE_HOTFIX_REVIEW and WorkPackage none, using this Architect handoff, updated exact candidate binding and installed charter. Clerk validates role/state/source/branch/head, exact proposal/disposition/blob/containing commits and the unchanged source `main`, but **must not** decide whether the findings are fixed. If PASS, create a **new cycle-specific clearance** file (e.g., `CLERK_TO_BUILDER_REVIEW_REFRESH_002.md`; do NOT overwrite original or cycle-002 clearance), and separately perform a guarded state-only active BUILDER_PLAN_REVIEW release on the same isolated ref, implementation false, with exact BuilderWorkStartHead externally observed. On failed check, remain in/route through lawful administrative failure path; do not fabricate clearance.
+
+The independent Builder must assess entire v0.3 candidate and independently challenge original F01–F07 and cycle-002 C02-01–C02-03. Focus:
+1. C02-01: only passive AWAITING_OWNER_PATH_DECISION → owner E receipt → state-only D0 → create-only ref → isolated A0, with genuine blocked readiness and crash/competing-ref denial.
+2. C02-02: no merge of review-control state to main, verified source-main-rooted whitelist-only adoption Z, typed approval, separate exact-head owner merge and negative synthetic merge-tree test.
+3. C02-03: pause ref claimed at original H with missing snapshot recognized as CLAIMED_NO_SNAPSHOT, guarded replay H→X only with fresh owner/scope/head/WIP evidence; no false OWNER_PAUSED.
+4. No hidden implementation, provider/host/financial consent, roadmap mutation, I004, future ProjectLifecycle completion without real G0/M0/M1 proof, or Creative-review bypass.
+
+Builder writes a distinct cycle-003 review artifact, reports independently sourced **PLAN READY / CHANGES REQUIRED / BLOCKED** against exact v0.3 blob, pushes and routes to Clerk completion intake; Clerk returns original review to Architect without paraphrasing a technical verdict.
+
+After current independent technical review returns, Architect must separately verify and activate **mandatory CREATIVE_GOVERNANCE_REVIEW** with an exact Architect-to-Creative Handoff. Only after the independent Creative verdict and Architect final reconciliation may a version-bound owner HF-001 implementation approval be sought. No Creative decision or owner approval is inferred now.
+
+**Absolute exclusions:** No workflow/role/source/test implementation, merge, accepted roadmap replacement, next iteration activation, live Plaid/Navy Federal account access, user host/settings/service changes, financial data, fees, purchases, or scope expansion.
