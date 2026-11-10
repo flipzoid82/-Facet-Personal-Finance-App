@@ -1,0 +1,46 @@
+# HF-001 independent Builder governance review
+
+**Verdict: CHANGES REQUIRED.** This is a review of the frozen proposal, not approval to implement it. The proposed lifecycle distinction and review-only roadmap lane address a real routing gap, but the transition and pause contracts are not yet precise enough to preserve existing authority and crash safety.
+
+## Review binding and scope
+
+- Role/action: active `GOVERNANCE / BUILDER_PLAN_REVIEW`, Purpose `GOVERNANCE_HOTFIX_REVIEW`, WorkPackage `none`, `ImplementationAuthorized false` on `refs/heads/governance/hf-001-review`.
+- BuilderWorkStartHead and exact local review start: `7af0c730939dae45a11fab645cfcba37c651a297`. The authoritative remote review ref equaled this head before review.
+- Source `main`: `758f0a97adaa15cda37ba08a1958d5896e9699cd`; installed charter blob `4ccb635a5ddda5baa0351d8b1d8bfb95bd8e329a`; effective workflow blob `ce7b2f2e19a29d02bc4e25dc2a022b0dd0580e21`.
+- Reviewed `PROPOSAL.md` blob: `fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a`, first containing commit `1c9997e73a75b2d6d7f9c097abadaa136e15fba2`. Clerk clearance blob: `88f112372f6b209b7719346cef82b7cbc64a1dab`.
+- Existing `main` remains passive I003. No source, tests, workflow, roadmap, product, state or handoff were changed by this review. The final BuilderTechnicalHead is observable only after this artifact is committed and pushed; it is returned separately to Clerk, not predicted inside the artifact.
+
+## Findings
+
+**F01 — Define one unambiguous successor authority and commit sequence.** A2 proposes a standing `NextRole ARCHITECT` after `ITERATION_COMPLETE`, then an active next-prep and an exclusive successor claim. The current workflow instead requires distinct explicit owner direction and keeps completed `RELEASE_COMPLETE` passive. State the exact prospective effective boundary, control tuple, activating owner or durable workflow authority, branch/ref on which each state lives, and separate commit order. Define the behavior when next-prep finds G0 blocked, a competing canonical successor ref, a stale source head, or an owner refusal. The current accepted roadmap records G0 **NOT CLEARED** and M0 **PAUSED**; a `READY` classification cannot infer otherwise. Reuse or explicitly retire each of the four existing post-release exceptions for newly completed iterations, while preserving them for legacy I001–I003. A standing planning continuation must not become a standing implementation or consent grant.
+
+**F02 — Specify an executable roadmap revision review route.** A3 names `CLERK_PLAN_REVIEW_PREFLIGHT` and independent Builder/Creative review, but does not define the exact Architect entry state, isolated ref creation and expected-tip protection, candidate/accepted-roadmap blobs and first-containing commits, separate clearance and active Builder release, Builder completion intake, Architect reconciliation, Creative activation, material revision loop, or version-bound owner approval record. The phrase “from ... owner-approved governance review” must not make the temporary HF-001 bootstrap a general roadmap-revision authority. The route must work when G0 blocks a successor and must leave the accepted roadmap and I004 untouched until their distinct gates. Define what happens if a review branch is already present or a reviewer returns changes required.
+
+**F03 — Resolve pause authority at every claimed entry point.** B1 says pause may be requested during an active role, an approval wait, PR/review, next-prep or grievance. B2 assigns the snapshot to the “current responsible role,” which does not identify an actor when `ActiveRole none`, during a pending user approval, or after an immediate STOP. Define the exact owner-consent wording/binding, authorized snapshot writer and deterministic state publisher for each supported state, including Builder's no-administration boundary. A complaint, an immediate safety STOP, and a durable approved pause need distinct status and recovery rules. A pause must not silently cancel or extend existing owner approvals.
+
+**F04 — Make pause publication and dirty WIP recoverable.** The proposed snapshot, append-only approval and state-only pause do not specify exact branch/head parentage, expected-tip checks, who may write after each partial commit, or how a crash between the three phases is classified without duplicate approvals or false `OWNER_PAUSED`. A tracked dirty tree cannot be committed or claimed preserved merely by documenting it; define an owner-approved method to preserve or explicitly leave it local, with exact paths/status and no secret or financial data. Define how untracked files, concurrent branch movement, running services, open PRs and pending merge authorization are handled. A failed snapshot or unsafe worktree must leave the status as STOP/pending, not a fabricated durable pause.
+
+**F05 — Constrain resume freshness and legacy migration.** `UNCHANGED_AND_FRESH` needs a comparison set that includes paused ref and `main` heads, code/test/plan/approval blobs, PR and BuilderTechnicalHead, governing workflow version, pending owner actions, and external side effects. A changed policy or pending exact-head merge approval cannot be restored as fresh just because the paused branch tip is unchanged. Give precise separate receipt/control commits for resume or abandon and handling of competing resume attempts. For I001–I003, preserve old `RELEASE_COMPLETE / ProjectLifecycle ACTIVE` as historical iteration closeout; any current I003 migration must be separately owner-approved, forward-only, exact-head, and must not claim the first-use release or open I004.
+
+**F06 — Keep final release proof separate from project lifecycle and cancellation.** A1 correctly demands real end-to-end, security, consent and owner proof for the new project `RELEASE_COMPLETE`. Specify the authoritative accepted roadmap version, complete milestone evidence, outstanding UNKNOWN/T4 checks, separate final owner approval ledger, and exact state transition. Reconcile this with the existing `PROJECT_LIFECYCLE_DECISION_INTAKE`, which currently can set `ProjectLifecycle COMPLETE` after an iteration release. `PROJECT_CLOSED_INCOMPLETE` needs its own explicit owner decision and control tuple, not a release alias. No documentary I003 completion can satisfy these new final-release conditions.
+
+**F07 — Update fixtures as model evidence, not operational proof.** `scripts/post_release_contract_fixture.py` accepts only passive `RELEASE_COMPLETE` and an explicit owner-directed `NEXT_ITERATION_DIRECTION_INTAKE`; `tests/test_post_release_continuation.py` also asserts the checked-out state contains `State: RELEASE_COMPLETE`. A future implementation must preserve legacy cases and add prospective iteration/prep, blocked readiness, roadmap review, pause/resume, crash, race and denial cases. The checked-out-state assertion will fail on the isolated review branch and is unsuitable as a universal historical contract. A pure model test cannot establish an actual Git absent-ref claim, conditional remote update, owner consent, host effect or final release proof.
+
+## Regression disposition for the proposal
+
+| Case | Review result and required falsifier |
+| --- | --- |
+| HF01–HF02 | Direction is sound; require exact prospective state/ref/commit contracts and no implementation from planning-only readiness. |
+| HF03–HF04 | Open under F01–F02; blocked G0 must route to owner options without successor activation, and a roadmap revision needs separate exact review/approval. |
+| HF05, HF13 | Open under F06; missing final integration/T4/owner approval must deny final release, and cancellation must use a distinct state. |
+| HF06–HF07 | Open under F03–F04; dirty WIP and pending approvals cannot be presented as durably saved or still fresh. |
+| HF08–HF09 | Open under F05; unchanged resume should be idempotent, divergence should block or refresh only the affected gates. |
+| HF10–HF11 | Open under F04–F05; partial writes and concurrent refs need exact-head classification and no duplicate or forced publication. |
+| HF12 | Required forward-only historical interpretation under F05; do not rewrite or relabel old approvals. |
+| HF14–HF15 | The review-only bootstrap currently denies bank, host, fee, roadmap and implementation effects. Preserve explicit negative cases and mandatory independent Builder and Creative reviews in the eventual contract. |
+
+## Evidence and recommendation
+
+This review compared the exact proposal to the installed charter/workflow, the current accepted roadmap status, and the existing post-release pure fixture and tests. No tests, service execution, live Git transition simulation, host validation, bank activity or policy implementation was performed. The fixture and tests are source evidence of current assumptions only. The findings are contract design issues, not a claim that an unimplemented transition failed at runtime.
+
+Architect should revise the exact proposal to resolve F01–F07, then route a material revision for fresh independent Builder review through Clerk. Mandatory Creative review and separate owner implementation approval remain future gates. This verdict grants no implementation, merge, roadmap revision, I004, project release, pause/resume activation, or financial/host action.
