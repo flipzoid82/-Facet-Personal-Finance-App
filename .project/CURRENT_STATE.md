@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_PLAN_REVIEW_PREFLIGHT
+State: BUILDER_PLAN_REVIEW
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: BUILDER
 WorkPackage: none
-Baseline: 1c9997e73a75b2d6d7f9c097abadaa136e15fba2
+Baseline: 56931dbe9a20c7e66d5ddfa59d24cea5e148b0e9
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: Perform exact review-only Clerk compatibility preflight for Purpose GOVERNANCE_HOTFIX_REVIEW on the isolated HF-001 proposal snapshot. Verify the original source and installed charter, authoritative remote branch/head, proposal blob and first containing commit, handoff binding, and unchanged main. On PASS, use separate Clerk clearance-artifact and state-only Builder review release commits. No implementation, merge, roadmap or I004 action.
-Handoff: docs/governance/hotfixes/HF-001/PROPOSAL.md
+NextAction: Independently review the frozen HF-001 proposal snapshot at docs/governance/hotfixes/HF-001/PROPOSAL.md blob fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a under the installed review-only authority and write docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md. Push the exact review artifact and return its remote head/path to Clerk for deterministic completion intake. No implementation or surrounding administration.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -21,3 +21,6 @@ OwnerReviewCharter: docs/governance/hotfixes/HF-001/OWNER_REVIEW_CHARTER.md
 OwnerReviewCharterBlob: 4ccb635a5ddda5baa0351d8b1d8bfb95bd8e329a
 ProposalBlob: fd14c6b9ff8f85d19225cb2227a0c97d1ba9a61a
 ProposalFirstContainingCommit: 1c9997e73a75b2d6d7f9c097abadaa136e15fba2
+VerifiedInboundProducerHead: ae35e26748b7ba562618694864e6ec221c2214a6
+ClerkClearanceArtifactCommit: 56931dbe9a20c7e66d5ddfa59d24cea5e148b0e9
+ClerkClearanceArtifactBlob: 88f112372f6b209b7719346cef82b7cbc64a1dab
