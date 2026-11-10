@@ -2,14 +2,14 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_PLAN_REVIEW_PREFLIGHT
+State: ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: ARCHITECT
 WorkPackage: none
-Baseline: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
+Baseline: ca710fb17159f3628f9d4d5f5e4ebf1fa76dcaf1
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: Complete deterministic HF-001 Builder review intake from the exact pushed Builder review artifact, verify branch/head/artifact and unchanged candidate/source identities, then return that original review to active Architect governance review reconciliation on this isolated branch. Do not classify the review or change its findings.
+NextAction: Independently reconcile the original HF-001 Builder governance review at docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md blob b463bf79243cf453438a57079bf6e139a5bb1b7e against the frozen proposal snapshot and installed review-only authority. Follow the exact mandatory Creative review route before any final Architect reconciliation or owner implementation request.
 Handoff: docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
@@ -28,3 +28,4 @@ BuilderWorkStartHead: 7af0c730939dae45a11fab645cfcba37c651a297
 BuilderTechnicalHead: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
 BuilderReviewBlob: b463bf79243cf453438a57079bf6e139a5bb1b7e
 BuilderReviewFirstContainingCommit: da5937a94f162dcc1cdb6e720b4b2b9e5d4e8ac5
+ClerkCompletionIntakeCommit: ca710fb17159f3628f9d4d5f5e4ebf1fa76dcaf1
