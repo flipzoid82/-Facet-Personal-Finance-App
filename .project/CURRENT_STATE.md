@@ -2,36 +2,32 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: AWAITING_HF001_IMPLEMENTATION_APPROVAL
+State: ARCHITECT_HF001_IMPLEMENTATION_PLANNING
 Iteration: 003
-ActiveRole: none
+ActiveRole: ARCHITECT
 WorkPackage: none
-Baseline: d3af9109994296e2738d4574c1f1b588aa7cb6fe
+Baseline: db0a3a0e5340f92b22da0daf54b981a67007db89
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: Await a separate explicit informed owner decision about implementing the EXACT HF-001 v0.3 proposal docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_002.md blob 99be3ba8d9108c791e52f7b82d364ca9cfa41531 first containing commit 6d5793959c21877d5ac105c52f323e1eb896971a. Final Architect governance reconciliation docs/governance/hotfixes/HF-001/ARCHITECT_FINAL_GOVERNANCE_RECONCILIATION.md blob d01dadd4c11ac19b812c86f8b8cff22eec9bdb2f first containing commit d3af9109994296e2738d4574c1f1b588aa7cb6fe concludes committee review complete and READY FOR SEPARATE OWNER IMPLEMENTATION DECISION, not implementation authorization. Independent Builder cycle-003 review blob d2e2c3d898bc7c4e4499b6a3648b9a2839c794ac verdict PLAN READY and mandatory independent Creative review blob 7aa596fcf7434f4b2889245a08bfea87c2926d0a verdict PRODUCT READY are preserved with original author/provenance. Creative's C-01 owner-facing pause communication note and C-02 editorial version-reference note are nonblocking, not a material modification to the frozen reviewed contract. Owner may approve, decline, pause or request changed candidate; never infer assent. Any explicit approval must be bound to v0.3 exact blob, scope and all exclusions and recorded durably before separately reviewed implementation planning, Clerk/Builder delivery and independent Architect audit. An approval to implement is NOT an exact-head merge authorization. No implementation, code/tests, main merge, roadmap revision, Iteration 004, legacy I003 state migration, Plaid/bank/financial-data, host/service, purchase, G0/M0/M1 gate clearing or other approval bypass is authorized by this passive state. Original authoritative main still 758f0a97adaa15cda37ba08a1958d5896e9699cd with passive historic I003 RELEASE_COMPLETE and accepted roadmap unchanged.
-Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_FINAL_GOVERNANCE_RECONCILIATION.md
-ApprovalRequiredFrom: USER
+NextAction: Prepare a separately reviewable, tightly bounded HF-001 v0.3 implementation plan based ONLY on reviewed frozen proposal blob 99be3ba8d9108c791e52f7b82d364ca9cfa41531 and exact owner implementation-scope approval in docs/governance/hotfixes/HF-001/approvals/APPROVALS.md blob cc4520f1367316f2b9224b5f72960f1161c8af71 first containing commit 58491b7543741942c0b07907b8755b5527f984ac. Owner approval is affirmative for BOUNDED IMPLEMENTATION, but specifically conditioned on a separate reviewed implementation plan, Clerk/Builder delivery and independent Architect audit, and forbids merge, I004, accepted roadmap changes, legacy migration, Plaid/financial data, host changes and purchases. This activation authorizes only Architect plan drafting and a subsequent independent review handoff; ImplementationAuthorized remains false. Bind the complete planned file whitelist, stage/ref, no-review-branch-to-main contamination rule, prerequisite regression tests and negative conditions; do not activate Builder implementation before independently reviewed plan and Clerk execution clearance. Preserve owner charter and final Builder/Creative committee evidence; source main remains passive I003 RELEASE_COMPLETE. Use the existing review-only Clerk/Builder plan-review lane for the candidate plan where applicable, without claiming a standing new implementation exception, silently changing main, or acquiring permissions.
+Handoff: docs/governance/hotfixes/HF-001/approvals/APPROVALS.md
+ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: GOVERNANCE_HOTFIX_REVIEW
 HotfixID: HF-001
-ReviewCycle: 003
+PlanReviewCycle: 001
 SourceMainHead: 758f0a97adaa15cda37ba08a1958d5896e9699cd
 OwnerReviewCharter: docs/governance/hotfixes/HF-001/OWNER_REVIEW_CHARTER.md
 OwnerReviewCharterBlob: 4ccb635a5ddda5baa0351d8b1d8bfb95bd8e329a
-ReviewedProposalPath: docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_002.md
-ReviewedProposalBlob: 99be3ba8d9108c791e52f7b82d364ca9cfa41531
-ReviewedProposalFirstContainingCommit: 6d5793959c21877d5ac105c52f323e1eb896971a
-BuilderWorkStartHead: 72d10103fb706786cc39570b101a1650681fe83a
-BuilderTechnicalHead: f927c27684b8a4006050105adbcf4428e0e15242
-BuilderReviewPath: docs/governance/hotfixes/HF-001/BUILDER_GOVERNANCE_REVIEW_003.md
-BuilderReviewBlob: d2e2c3d898bc7c4e4499b6a3648b9a2839c794ac
-CreativeReviewPath: docs/governance/hotfixes/HF-001/CREATIVE_GOVERNANCE_REVIEW.md
-CreativeReviewBlob: 7aa596fcf7434f4b2889245a08bfea87c2926d0a
-CreativeReviewFirstContainingCommit: 2f49c072b94ed8cac1463c942df9bf4a2b86e1b7
-CreativeToArchitectHandoffBlob: 33a4abc04662156fed059de4f342a41d33349420
-CreativeToArchitectHandoffFirstContainingCommit: 0f155807cb846d6e951752894dfc8650c6cbd658
-FinalArchitectReconciliationPath: docs/governance/hotfixes/HF-001/ARCHITECT_FINAL_GOVERNANCE_RECONCILIATION.md
+OwnerImplementationApprovalDecisionID: HF001-V03-BOUNDED-IMPLEMENTATION-APPROVAL-20261110
+OwnerImplementationApprovalPath: docs/governance/hotfixes/HF-001/approvals/APPROVALS.md
+OwnerImplementationApprovalBlob: cc4520f1367316f2b9224b5f72960f1161c8af71
+OwnerImplementationApprovalFirstContainingCommit: 58491b7543741942c0b07907b8755b5527f984ac
+ApprovedProposalPath: docs/governance/hotfixes/HF-001/PROPOSAL_REVISION_002.md
+ApprovedProposalBlob: 99be3ba8d9108c791e52f7b82d364ca9cfa41531
+ApprovedProposalFirstContainingCommit: 6d5793959c21877d5ac105c52f323e1eb896971a
 FinalArchitectReconciliationBlob: d01dadd4c11ac19b812c86f8b8cff22eec9bdb2f
 FinalArchitectReconciliationFirstContainingCommit: d3af9109994296e2738d4574c1f1b588aa7cb6fe
+BuilderGovernanceReviewBlob: d2e2c3d898bc7c4e4499b6a3648b9a2839c794ac
+CreativeGovernanceReviewBlob: 7aa596fcf7434f4b2889245a08bfea87c2926d0a
