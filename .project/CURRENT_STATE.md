@@ -2,14 +2,14 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_PLAN_REVIEW_PREFLIGHT
+State: ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: ARCHITECT
 WorkPackage: none
-Baseline: ac7c752233fe6e6d7def59f70be9a5f3f3754592
+Baseline: ab6fd28676af8dbb9424fc5de0ccfe7ede512620
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: CLERK bounded deterministic implementation-plan review cycle-003 completion intake only. Independently verify original Builder review docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_003.md blob 0990dc4bca64a0232f0668682b7f514525d77037 first containing BuilderTechnicalHead ac7c752233fe6e6d7def59f70be9a5f3f3754592, exactly one direct child of repaired BuilderWorkStartHead 7b5c635bf9b29f50c2ecaf1b830ecc958fbe621f, adding only the new review artifact with no Builder state/implementation change. Repaired state blob 70c40d763292d4f3dbffe0e093f4997c707e5926 has the required NextAction field. Builder recorded original CHANGES REQUIRED verdict for v0.3 exact plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_002.md blob f219a7ee5c1d3195c5059e9bd54638763ef9a42d, with P01 resolved and P02-01/P02-02 not cleared; Clerk does not judge those findings. Exact Clerk clearance docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_003.md blob 6c42755d1356ae689e8acd9bcef4228ec2a9d002 first containing 1b168753b3e8d5fde5467432549b1a0eb955f965; original Architect handoff blob 889812e9c9275cc8b4ff8f2c1b852677ac47d0d5. Require effective main 99284c6c5820dc5cc82dd585aaa2ef4889b8d2b8, workflow 8e8aea04765386b1535b30dff33e30eaf68f7f11, Clerk contract 06678e2e79a656ecacf8af97aa15a110cf767f5e, installed owner authority bridge 53f5f7865129bb410d78bb24f04b4d88a17dfccd. On deterministic PASS only, separately route state-only to active ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION preserving original Builder findings and ImplementationAuthorized false; Architect determines next lawful disposition. No technical implementation, implementation ref, PR, main publication/merge, I004, accepted roadmap revision, legacy migration, Plaid/financial data, host changes, purchases or owner bypass.
+NextAction: ARCHITECT ONLY — independently reconcile the original Builder cycle-003 implementation-plan review docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_003.md blob 0990dc4bca64a0232f0668682b7f514525d77037, BuilderTechnicalHead ac7c752233fe6e6d7def59f70be9a5f3f3754592 directly following repaired BuilderWorkStartHead 7b5c635bf9b29f50c2ecaf1b830ecc958fbe621f. Clerk completion-intake commit ab6fd28676af8dbb9424fc5de0ccfe7ede512620 was independently checked state-only, with no change to Builder review. Builder's original independent verdict CHANGES REQUIRED for full v0.3 plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_002.md blob f219a7ee5c1d3195c5059e9bd54638763ef9a42d: P01 remains resolved; P02-01 proposed owner wait NextRole tuple is inconsistent with effective workflow, and P02-02 new main-rooted publication method lacks installed actor/action-class authority despite available connector capability. Clerk makes no technical judgment. Independently reconcile original findings against effective main 99284c6c5820dc5cc82dd585aaa2ef4889b8d2b8, installed workflow blob 8e8aea04765386b1535b30dff33e30eaf68f7f11, role contracts and continuation bridge blob 53f5f7865129bb410d78bb24f04b4d88a17dfccd, owner bounded approval ledger blob cc4520f1367316f2b9224b5f72960f1161c8af71 and frozen v0.3 governance proposal blob 99be3ba8d9108c791e52f7b82d364ca9cfa41531. Architect owns findings, materiality, any further plan revision or narrowly owner-installed authority amendment and affected independent review. Do not infer Builder PLAN READY, execute implementation, claim technical branch, create PR, modify main, publish/merge, initiate I004, revise accepted roadmap, migrate legacy, access Plaid/financial data, change host or purchase. Maintain Purpose GOVERNANCE_HOTFIX_REVIEW, ReviewSubject HF001_IMPLEMENTATION_PLAN, PlanReviewCycle 003, WorkPackage none, ImplementationAuthorized false.
 Handoff: docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_003.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
@@ -54,3 +54,4 @@ BuilderTechnicalHead: ac7c752233fe6e6d7def59f70be9a5f3f3754592
 BuilderReviewPath: docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_003.md
 BuilderReviewBlob: 0990dc4bca64a0232f0668682b7f514525d77037
 BuilderReviewFirstContainingCommit: ac7c752233fe6e6d7def59f70be9a5f3f3754592
+ClerkCompletionIntakeCommit: ab6fd28676af8dbb9424fc5de0ccfe7ede512620
