@@ -2,17 +2,17 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_IMPLEMENTATION_PREFLIGHT
+State: BUILDER_CORRECTION
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: BUILDER
 WorkPackage: HF001-WP01
-Baseline: 844f0534f279b9fc0a3f99dfc36b06ac99ef6718
+Baseline: c3a3b174e7bb5d242dcf2ce264021739c58e26cc
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: CLERK ONLY — bounded deterministic correction preflight on the SAME governance/hf-001-implementation technical ref and existing open draft evidence PR #14. Original Architect audit ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 remains immutable; fresh independent correction audit docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md blob 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61 first-containing commit 844f0534f279b9fc0a3f99dfc36b06ac99ef6718 verdict CHANGES REQUIRED residual CF01/F02 only. New requirement: synthetic validate_synthetic_adoption must never allow a protected or unrelated path as receipt_path; tests must reject .project/CURRENT_STATE.md, docs/WORKFLOW.md and arbitrary/unapproved receipt paths even when caller labels them as expected, and preserve correct H2-rooted approval receipt positive/contaminated raw merge negatives. Prior F01/F03/F04 resolved at pure T1 tier. Check effective main H1 6fde9a620f222aded127d155de8be2042205f087, original and correction Builder chain, owner scope/plan approval, and PR freshness. If deterministic PASS, create a fresh Clerk correction clearance artifact and a SEPARATE state-only BUILDER_CORRECTION release with observed work start head, ImplementationAuthorized true. No Clerk technical verdict, new branch, second PR, native merge, Z/T, owner-final consent inference, main mutation, I004, financial/host work.
-Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md
+NextAction: BUILDER ONLY — bounded HF001-WP01 correction under the exact original fresh independent Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md blob 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61 first-containing commit 844f0534f279b9fc0a3f99dfc36b06ac99ef6718, verdict CHANGES REQUIRED for named remaining finding CF01_RESIDUAL_F02_C02_02. Original immutable Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 and original Builder/correction evidence remain governing provenance. Read exact Clerk clearance docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_002.md blob 4fe435d20b8e903a57e62bc88b35f58072d220ef, first-containing commit c3a3b174e7bb5d242dcf2ce264021739c58e26cc. Independently resolve remote main H1 6fde9a620f222aded127d155de8be2042205f087 and synchronize local workspace to the actual BuilderWorkStartHead before any technical work. Work locally first on the same technical ref and existing open draft PR #14 only, obey the exact Architect audit and reviewed plan; push substantive correction and separate Builder return with observed SubstantiveImplementationHead and BuilderTechnicalHead, then issue Clerk bounded completion-intake prompt without Builder state/routing mutation. No new branch/PR, main write, merge, Z/T, final owner consent inference, I004, financial/host activity or purchases.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_002.md
 ApprovalRequiredFrom: none
-ImplementationAuthorized: false
+ImplementationAuthorized: true
 ProjectLifecycle: ACTIVE
 Purpose: HF001_IMPLEMENTATION_CORRECTION
 HotfixID: HF-001
@@ -65,3 +65,10 @@ CorrectionAuditActiveHead: 2f1599d54e8e7e23ab23cdbe1c9910b14a226210
 CorrectionReviewedBuilderTechnicalHead: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
 CorrectionReviewedSubstantiveHead: 1cdc853cea0dd2bfbddfd289af880449cdcf8337
 CorrectionTargetPR: 14
+Correction002VerifiedInboundProducerHead: 827bcec96b813ca56b64349413bd40f2602b2037
+Correction002ClearancePath: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_002.md
+Correction002ClearanceBlob: 4fe435d20b8e903a57e62bc88b35f58072d220ef
+Correction002ClearanceArtifactCommit: c3a3b174e7bb5d242dcf2ce264021739c58e26cc
+Correction002ScopeSourceArchitectAuditPath: docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md
+Correction002ScopeSourceArchitectAuditBlob: 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61
+Correction002ScopeSourceArchitectAuditFirstContainingCommit: 844f0534f279b9fc0a3f99dfc36b06ac99ef6718
