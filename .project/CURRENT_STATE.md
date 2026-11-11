@@ -1,16 +1,40 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: RELEASE
-State: RELEASE_COMPLETE
+Phase: GOVERNANCE
+State: BUILDER_IMPLEMENTATION
 Iteration: 003
-ActiveRole: none
-WorkPackage: none
-Baseline: c0413a31eafca9ba6518fbe05440506d024f4ee7
-Branch: main
+ActiveRole: BUILDER
+WorkPackage: HF001-WP01
+Baseline: 3fc87f93c9d8b13ca95f310f4722966fe3cd2824
+Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: Iteration 003 owner-approved documentary-only release is administratively COMPLETE after independent original I003-C01–C08 documentary audit PASS, exact-head authorized PR #8 substantive merge commit 004d63d09f94d3a835e970902d0d7951685a0c9a, separate owner SKIP UAT decision docs/iterations/iteration-003/uat/UAT_DECISION_001.md blob 8f2ba848c81efa4dc2995b26dd4f075d756b7136, and separate owner RELEASE_COMPLETION_APPROVAL I003-RELEASE-COMPLETION-APPROVAL-20261109 in docs/iterations/iteration-003/approvals/APPROVALS.md blob b777c513050ca18d824f550aeb82ee3b695578b8 first containing commit 649921b5d4428b6de3b3c56679aab9cc9df88b33. Approved I003 acceptance v0.1.2 blob 73fa909893d3c4e5b9ed35d23823a4f104602211, original Plan v0.1.2 blob db10c8aec3eb107742db8d4e0d8f1295252cc643, independent documentary ARCHITECT_AUDIT PASS blob 6ab46255b8b03fb548c5f706d6532c601fbb197f, UAT_ASSESSMENT_001.md blob 9cd699db391a7480319307f248531327e6bf2fb2. Both distinct reconciliations verified COMPLETE: Architect docs/iterations/iteration-003/reconciliation/ARCHITECT_RELEASE_RECONCILIATION.md blob 785c92b09b7cc06d3ff278bb93040dc57469cf24 first containing commit 15b12a8b42ff3eb3e27d08717ecf1ad65edfccb9 and Creative docs/iterations/iteration-003/reconciliation/CREATIVE_RELEASE_RECONCILIATION.md blob b99ead6fe972186c494f2339c960e8ad09e9565a first containing commit 74b6baafaa1018e62953409fc7b6a990aa5b6375. Final Architect closeout docs/iterations/iteration-003/reconciliation/ARCHITECT_RELEASE_CLOSEOUT.md blob 46010b9a2cbaf73fa9271c0b3a593af248bd2729 first containing commit 2a7e63bf730636718c523f813c2634226a67f208 independently verified full linear no-new-truth reconciliation range with unchanged source, original evidence, accepted product/roadmap meaning and all owner gates. Current accepted Roadmap v0.1.1 docs/PROJECT_ROADMAP.md blob 19014633c69b976db874c50be880bfbd11c02819, Creative-owned docs/PRODUCT.md blob 45f75fd173664bfd22861ad4d6d7878d5aca8f32, BACKLOG unchanged blob c63d54c6d8d7e770282ce6b87dfcf5069c487788. Historical I001 G0 INDETERMINATE; I003 documentary real-provider readiness INDETERMINATE; real Plaid Production G0 NOT CLEARED, M0 NOT CLEARED / PAUSED, M1 NOT AUTHORIZED. Next accepted roadmap stage M0 — Reproducible secure, synthetic feasibility slice is blocked under existing G0 prerequisite; no ready M0 authorization. Owner next agenda preserved as FUTURE proposal only: locally runnable tested synthetic-data Facet foundation; decisive attributable Plaid/Navy Federal Hosted update/domainless initial/provider/entitlement answer; separately consented T4 host encryption/credentials/full-state restore; then minimum-data at-most-one-Item live Navy Federal test only after independent gates and explicit financial consent. Final closeout recommends GO only for separately directed planning/readiness, PAUSE on G0-gated M0 and M1, and RECONSIDER synthetic-app build sequencing through proper Architect technical review and Creative/owner roadmap decision; no accepted roadmap change or successor direction has occurred. Project remains ACTIVE, but this numbered release does not grant an active role or automatically start Iteration 004. Any future scoped research, readiness or specific successor planning direction requires an explicit fresh owner instruction and the role's current post-release exception proof; otherwise await direction. No implementation, financial records, Plaid API/Item, host changes, purchases, expenses, M0/M1 activation or automatic successor.
-Handoff: none
+NextAction: Perform only the bounded HF-001 v0.3 implementation under the exact reviewed Architect plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md blob 2ffd7136ab13379aec48e98484147c63b99364fd and original Architect implementation handoff docs/governance/hotfixes/HF-001/ARCHITECT_TO_CLERK_HF001_IMPLEMENTATION_PREFLIGHT_001.md blob afb17f0ae2917939e66a389436ede78498d7a837. Work local-first on this technical ref after exact remote/local start-head equality. Push the technical material, identify exact BuilderTechnicalHead and artifact paths to Clerk, emit the Clerk completion prompt, and stop without surrounding administration.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_IMPLEMENTATION_001.md
 ApprovalRequiredFrom: none
-ImplementationAuthorized: false
+ImplementationAuthorized: true
 ProjectLifecycle: ACTIVE
+Purpose: HF001_IMPLEMENTATION
+HotfixID: HF-001
+ImplementationSourceMainH1: 6fde9a620f222aded127d155de8be2042205f087
+EffectiveWorkflowBlob: fd1d98e9218267e8d7a3212b92b1d256081a8eb3
+EffectiveClerkContractBlob: 06678e2e79a656ecacf8af97aa15a110cf767f5e
+AuthoritativeReviewRef: refs/heads/governance/hf-001-review
+AuthoritativeReviewHead: 3cf3b2a60488cea4fa0a416ea4da32533fee271e
+ArchitectImplementationHandoffBlob: afb17f0ae2917939e66a389436ede78498d7a837
+ArchitectImplementationHandoffFirstContainingCommit: 4890bbf256943bea9b1dde6df01c541c8e9e1d9a
+OwnerImplementationApprovalID: HF001-V03-BOUNDED-IMPLEMENTATION-APPROVAL-20261110
+OwnerImplementationApprovalBlob: cc4520f1367316f2b9224b5f72960f1161c8af71
+ReviewedProposalBlob: 99be3ba8d9108c791e52f7b82d364ca9cfa41531
+CurrentPlanPath: docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md
+CurrentPlanBlob: 2ffd7136ab13379aec48e98484147c63b99364fd
+CurrentPlanFirstContainingCommit: 63fa1c45e5e3dc97145092511ce5b940da750e53
+Cycle004BuilderReviewBlob: da61bad68df6c6f5a96d28b4e3db0cb6a35f89ce
+Cycle004BuilderTechnicalHead: 30f0257b9705e2df87df9aff504c974884946ef9
+ArchitectCycle004ReconciliationBlob: afca4e3fe09fbb691f307be1718a62d73f025685
+ArchitectCycle004ReconciliationFirstContainingCommit: 6d97eafe072d26bdc780cada69aac3851065df8e
+VerifiedInboundProducerHead: 6fde9a620f222aded127d155de8be2042205f087
+ClerkClearanceArtifactCommit: 3fc87f93c9d8b13ca95f310f4722966fe3cd2824
+ClerkClearanceArtifactBlob: 5d8dd1b9c286c447e63b96de6bc7f369fea01634
+ImplementationTargetRef: refs/heads/governance/hf-001-implementation
+ImplementationRefCreateOnlyProof: GITHUB_REST_POST_201_CREATED_AND_REMOTE_READBACK_H1
