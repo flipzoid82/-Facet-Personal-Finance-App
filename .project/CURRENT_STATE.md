@@ -2,17 +2,17 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: BUILDER_IMPLEMENTATION
+State: CLERK_IMPLEMENTATION_CLOSEOUT
 Iteration: 003
-ActiveRole: BUILDER
+ActiveRole: CLERK
 WorkPackage: HF001-WP01
-Baseline: 3fc87f93c9d8b13ca95f310f4722966fe3cd2824
+Baseline: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: Perform only the bounded HF-001 v0.3 implementation under the exact reviewed Architect plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md blob 2ffd7136ab13379aec48e98484147c63b99364fd and original Architect implementation handoff docs/governance/hotfixes/HF-001/ARCHITECT_TO_CLERK_HF001_IMPLEMENTATION_PREFLIGHT_001.md blob afb17f0ae2917939e66a389436ede78498d7a837. Work local-first on this technical ref after exact remote/local start-head equality. Push the technical material, identify exact BuilderTechnicalHead and artifact paths to Clerk, emit the Clerk completion prompt, and stop without surrounding administration.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_IMPLEMENTATION_001.md
+NextAction: Perform deterministic completion closeout for the exact pushed HF001-WP01 Builder return at docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md blob 13bb4caf1af6224fe341751f0947d10869ca1ea3. Verify the BuilderTechnicalHead, pre-existing SubstantiveImplementationHead, unchanged source and approved plan identities, mechanically create or verify the single evidence PR, then publish the distinct Clerk audit handoff and state-only Architect audit routing. Do not assess technical sufficiency, audit, merge or publish main.
+Handoff: docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md
 ApprovalRequiredFrom: none
-ImplementationAuthorized: true
+ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: HF001_IMPLEMENTATION
 HotfixID: HF-001
@@ -21,20 +21,19 @@ EffectiveWorkflowBlob: fd1d98e9218267e8d7a3212b92b1d256081a8eb3
 EffectiveClerkContractBlob: 06678e2e79a656ecacf8af97aa15a110cf767f5e
 AuthoritativeReviewRef: refs/heads/governance/hf-001-review
 AuthoritativeReviewHead: 3cf3b2a60488cea4fa0a416ea4da32533fee271e
-ArchitectImplementationHandoffBlob: afb17f0ae2917939e66a389436ede78498d7a837
-ArchitectImplementationHandoffFirstContainingCommit: 4890bbf256943bea9b1dde6df01c541c8e9e1d9a
 OwnerImplementationApprovalID: HF001-V03-BOUNDED-IMPLEMENTATION-APPROVAL-20261110
 OwnerImplementationApprovalBlob: cc4520f1367316f2b9224b5f72960f1161c8af71
 ReviewedProposalBlob: 99be3ba8d9108c791e52f7b82d364ca9cfa41531
 CurrentPlanPath: docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md
 CurrentPlanBlob: 2ffd7136ab13379aec48e98484147c63b99364fd
-CurrentPlanFirstContainingCommit: 63fa1c45e5e3dc97145092511ce5b940da750e53
 Cycle004BuilderReviewBlob: da61bad68df6c6f5a96d28b4e3db0cb6a35f89ce
-Cycle004BuilderTechnicalHead: 30f0257b9705e2df87df9aff504c974884946ef9
 ArchitectCycle004ReconciliationBlob: afca4e3fe09fbb691f307be1718a62d73f025685
-ArchitectCycle004ReconciliationFirstContainingCommit: 6d97eafe072d26bdc780cada69aac3851065df8e
-VerifiedInboundProducerHead: 6fde9a620f222aded127d155de8be2042205f087
+BuilderWorkStartHead: 30fbeab9862748f24017c5a9c5475a40b86bb605
+SubstantiveImplementationHead: e76929cba5f72f41432778726401f1eb54b56f5b
+BuilderTechnicalHead: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
+BuilderEvidencePath: docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md
+BuilderEvidenceBlob: 13bb4caf1af6224fe341751f0947d10869ca1ea3
+BuilderEvidenceFirstContainingCommit: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
 ClerkClearanceArtifactCommit: 3fc87f93c9d8b13ca95f310f4722966fe3cd2824
 ClerkClearanceArtifactBlob: 5d8dd1b9c286c447e63b96de6bc7f369fea01634
 ImplementationTargetRef: refs/heads/governance/hf-001-implementation
-ImplementationRefCreateOnlyProof: GITHUB_REST_POST_201_CREATED_AND_REMOTE_READBACK_H1
