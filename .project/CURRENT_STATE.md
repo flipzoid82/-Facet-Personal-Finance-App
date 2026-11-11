@@ -2,17 +2,17 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: BUILDER_CORRECTION
+State: CLERK_IMPLEMENTATION_CLOSEOUT
 Iteration: 003
-ActiveRole: BUILDER
+ActiveRole: CLERK
 WorkPackage: HF001-WP01
-Baseline: c3a3b174e7bb5d242dcf2ce264021739c58e26cc
+Baseline: 0fa74acff2ba082b56753501f93cf052037a4710
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: BUILDER ONLY — bounded HF001-WP01 correction under the exact original fresh independent Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md blob 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61 first-containing commit 844f0534f279b9fc0a3f99dfc36b06ac99ef6718, verdict CHANGES REQUIRED for named remaining finding CF01_RESIDUAL_F02_C02_02. Original immutable Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 and original Builder/correction evidence remain governing provenance. Read exact Clerk clearance docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_002.md blob 4fe435d20b8e903a57e62bc88b35f58072d220ef, first-containing commit c3a3b174e7bb5d242dcf2ce264021739c58e26cc. Independently resolve remote main H1 6fde9a620f222aded127d155de8be2042205f087 and synchronize local workspace to the actual BuilderWorkStartHead before any technical work. Work locally first on the same technical ref and existing open draft PR #14 only, obey the exact Architect audit and reviewed plan; push substantive correction and separate Builder return with observed SubstantiveImplementationHead and BuilderTechnicalHead, then issue Clerk bounded completion-intake prompt without Builder state/routing mutation. No new branch/PR, main write, merge, Z/T, final owner consent inference, I004, financial/host activity or purchases.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_002.md
+NextAction: CLERK ONLY — bounded HF001-WP01 CF01 correction completion intake. Preserve exact original Architect correction audit docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md blob 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61 and immutable original Architect audit blob 29256ea98a71926dd7699828055af12878fdab55. Verify correction BuilderWorkStartHead 71f518260ba3e7a1561a8c9a20fe5c04f9e2fd47, pre-existing SubstantiveImplementationHead acfd9341f31cfd5acb87d453ba126bb06efc50ac, BuilderTechnicalHead 0fa74acff2ba082b56753501f93cf052037a4710, original Builder return docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_002.md blob 30731b429bc67fd7e243953cf4af281846c5180c, effective main H1 6fde9a620f222aded127d155de8be2042205f087 and existing open draft PR #14. Mechanically update only the representation of PR #14, publish a distinct Clerk-to-Architect correction audit handoff with original source pointers and observed compilation identities, then separately route state-only READY_FOR_ARCHITECT_AUDIT. Clerk makes no technical or audit verdict and authorizes no merge/publication, Z/T, I004, financial or host actions; ImplementationAuthorized false.
+Handoff: docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_002.md
 ApprovalRequiredFrom: none
-ImplementationAuthorized: true
+ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: HF001_IMPLEMENTATION_CORRECTION
 HotfixID: HF-001
@@ -72,3 +72,9 @@ Correction002ClearanceArtifactCommit: c3a3b174e7bb5d242dcf2ce264021739c58e26cc
 Correction002ScopeSourceArchitectAuditPath: docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md
 Correction002ScopeSourceArchitectAuditBlob: 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61
 Correction002ScopeSourceArchitectAuditFirstContainingCommit: 844f0534f279b9fc0a3f99dfc36b06ac99ef6718
+Correction002BuilderWorkStartHead: 71f518260ba3e7a1561a8c9a20fe5c04f9e2fd47
+Correction002SubstantiveImplementationHead: acfd9341f31cfd5acb87d453ba126bb06efc50ac
+Correction002BuilderTechnicalHead: 0fa74acff2ba082b56753501f93cf052037a4710
+Correction002BuilderReturnPath: docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_002.md
+Correction002BuilderReturnBlob: 30731b429bc67fd7e243953cf4af281846c5180c
+Correction002BuilderReturnFirstContainingCommit: 0fa74acff2ba082b56753501f93cf052037a4710
