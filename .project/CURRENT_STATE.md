@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_IMPLEMENTATION_CLOSEOUT
+State: READY_FOR_ARCHITECT_AUDIT
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: none
 WorkPackage: HF001-WP01
-Baseline: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
+Baseline: fc5e6609590183ab66ffe7e04f6d1459811e62c5
 Branch: governance/hf-001-implementation
-NextRole: none
-NextAction: Perform deterministic completion closeout for the exact pushed HF001-WP01 Builder return at docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md blob 13bb4caf1af6224fe341751f0947d10869ca1ea3. Verify the BuilderTechnicalHead, pre-existing SubstantiveImplementationHead, unchanged source and approved plan identities, mechanically create or verify the single evidence PR, then publish the distinct Clerk audit handoff and state-only Architect audit routing. Do not assess technical sufficiency, audit, merge or publish main.
-Handoff: docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md
+NextRole: ARCHITECT
+NextAction: Architect must independently validate the exact Clerk audit handoff, single evidence PR #14, Builder return, reviewed plan and approval identities, current source H1, and technical PR head before entering the active HF001-WP01 audit action under docs/WORKFLOW.md. No audit outcome or publication consent is inferred from Clerk routing.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_AUDIT.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -34,6 +34,10 @@ BuilderTechnicalHead: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
 BuilderEvidencePath: docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md
 BuilderEvidenceBlob: 13bb4caf1af6224fe341751f0947d10869ca1ea3
 BuilderEvidenceFirstContainingCommit: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
-ClerkClearanceArtifactCommit: 3fc87f93c9d8b13ca95f310f4722966fe3cd2824
-ClerkClearanceArtifactBlob: 5d8dd1b9c286c447e63b96de6bc7f369fea01634
+EvidencePRNumber: 14
+EvidencePRBase: main
+EvidencePRBaseHead: 6fde9a620f222aded127d155de8be2042205f087
+PreCompilationPRHead: 96dc7bf530630166657c2c7d9a21de2df4bbf58f
+ClerkAuditCompilationCommit: fc5e6609590183ab66ffe7e04f6d1459811e62c5
+ClerkAuditArtifactBlob: 6b0a7600883a9cf4efe4640f84fb6bcaaa8bc5db
 ImplementationTargetRef: refs/heads/governance/hf-001-implementation
