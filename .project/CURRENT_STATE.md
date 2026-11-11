@@ -2,17 +2,17 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: BUILDER_CORRECTION
+State: CLERK_IMPLEMENTATION_CLOSEOUT
 Iteration: 003
-ActiveRole: BUILDER
+ActiveRole: CLERK
 WorkPackage: HF001-WP01
-Baseline: 8070fa39c3506117daf79a8beabfd3a5e10c9dcf
+Baseline: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: Perform only the bounded HF001-WP01 correction selected by the original Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55, findings F01–F04, under the existing reviewed plan and owner approval. Require exact remote/local BuilderWorkStartHead before local-first work. Preserve the original audit and Builder evidence; push correction material and exact return, identify the new BuilderTechnicalHead and artifact paths to Clerk, emit the Clerk completion prompt, and stop without surrounding administration. Use the same technical ref and existing draft PR #14.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_001.md
+NextAction: CLERK ONLY — bounded HF001-WP01 correction completion intake. Verify exact pushed BuilderTechnicalHead 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8, direct-child substantive correction head 1cdc853cea0dd2bfbddfd289af880449cdcf8337 from correction BuilderWorkStartHead e520944d07709fb8c6deccca93e418d3a19af062, and original Builder correction return docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_001.md blob 7b163efe2a5cd0713dc9306c1f933bdec5731181. Original audit ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 and findings F01–F04 are immutable; original Builder implementation evidence and plan/approval remain bound. Mechanically update only existing open draft evidence PR #14 with technical-head truth, publish a distinct Clerk audit handoff and separate state-only READY_FOR_ARCHITECT_AUDIT routing. Do not audit, claim correction sufficiency, merge, prepare Z/T, move main, or infer owner final publication approval; ImplementationAuthorized false.
+Handoff: docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_001.md
 ApprovalRequiredFrom: none
-ImplementationAuthorized: true
+ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: HF001_IMPLEMENTATION_CORRECTION
 HotfixID: HF-001
@@ -45,3 +45,9 @@ VerifiedInboundProducerHead: 5c77c44937daee2227be341c55fb316d481bb1cf
 ClerkClearanceArtifactCommit: 8070fa39c3506117daf79a8beabfd3a5e10c9dcf
 ClerkClearanceArtifactBlob: 2555002cec55f2a80bd0ac595287fb0c84d2e8c2
 ImplementationTargetRef: refs/heads/governance/hf-001-implementation
+CorrectionBuilderWorkStartHead: e520944d07709fb8c6deccca93e418d3a19af062
+CorrectionSubstantiveImplementationHead: 1cdc853cea0dd2bfbddfd289af880449cdcf8337
+CorrectionBuilderTechnicalHead: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
+CorrectionBuilderReturnPath: docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_001.md
+CorrectionBuilderReturnBlob: 7b163efe2a5cd0713dc9306c1f933bdec5731181
+CorrectionBuilderReturnFirstContainingCommit: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
