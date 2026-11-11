@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: ARCHITECT_GOVERNANCE_REVIEW_RECONCILIATION
+State: CLERK_IMPLEMENTATION_PREFLIGHT
 Iteration: 003
-ActiveRole: ARCHITECT
-WorkPackage: none
-Baseline: 34525da530e0d4431b440cf68a591ef70a322cb8
+ActiveRole: CLERK
+WorkPackage: HF001-WP01
+Baseline: 4890bbf256943bea9b1dde6df01c541c8e9e1d9a
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: ARCHITECT ONLY — independently reconcile the original Builder cycle-004 full implementation-plan review docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_004.md blob da61bad68df6c6f5a96d28b4e3db0cb6a35f89ce, first-containing BuilderTechnicalHead 30f0257b9705e2df87df9aff504c974884946ef9, direct child of BuilderWorkStartHead 3e9697a349c00fed9bec3f6ba3d2ff505702f88b. Clerk bounded completion intake commit 34525da530e0d4431b440cf68a591ef70a322cb8 was separately verified state-only. Builder's original verdict is PLAN READY for complete Architect v0.4 implementation plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md blob 2ffd7136ab13379aec48e98484147c63b99364fd. Independent Architect must reconcile merits and conditions against exact original Architect handoff blob 1fd64a530f3814cae33c07b89de0287999e00f7b, H1 effective main 6fde9a620f222aded127d155de8be2042205f087, frozen substantive v0.3 proposal blob 99be3ba8d9108c791e52f7b82d364ca9cfa41531, owner bounded implementation approval ledger blob cc4520f1367316f2b9224b5f72960f1161c8af71, installed publication authority and original cycle-003 Builder review. Clerk forwards original review unchanged without independent technical approval. No implementation, technical ref/PR, main mutation, merge, I004, accepted roadmap/legacy-state change, Plaid/financial-data/host changes or purchases; ImplementationAuthorized false.
-Handoff: docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_004.md
+NextAction: CLERK ONLY — deterministic HF001_IMPLEMENTATION_PREFLIGHT for frozen owner-approved HF-001 v0.3 scope and independently PLAN READY full implementation plan v0.4 docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md blob 2ffd7136ab13379aec48e98484147c63b99364fd; Builder independent cycle-004 review blob da61bad68df6c6f5a96d28b4e3db0cb6a35f89ce; Architect reconciliation docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_RECONCILIATION_004.md blob afca4e3fe09fbb691f307be1718a62d73f025685 first-containing commit 6d97eafe072d26bdc780cada69aac3851065df8e; exact handoff docs/governance/hotfixes/HF-001/ARCHITECT_TO_CLERK_HF001_IMPLEMENTATION_PREFLIGHT_001.md blob afb17f0ae2917939e66a389436ede78498d7a837 first-containing commit 4890bbf256943bea9b1dde6df01c541c8e9e1d9a. Independently verify remote review ref, exact effective main H1 6fde9a620f222aded127d155de8be2042205f087 and installed authority and owner approval. Only after proving a genuinely atomic create-if-absent provider operation for the single absent refs/heads/governance/hf-001-implementation rooted at H1 may Clerk exclusively claim it; else BLOCK with no attempted ref creation. On proven success, Clerk alone creates deterministic technical clearance and a DISTINCT state-only active Builder implementation release on technical ref, observed BuilderWorkStartHead, WorkPackage HF001-WP01, ImplementationAuthorized true. No Clerk technical judgment or direct code, tests, PR, main/roadmap/I003 changes, merge, I004, bank, host or purchase.
+Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_TO_CLERK_HF001_IMPLEMENTATION_PREFLIGHT_001.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -80,3 +80,13 @@ Cycle004BuilderReviewPath: docs/governance/hotfixes/HF-001/BUILDER_HF001_IMPLEME
 Cycle004BuilderReviewBlob: da61bad68df6c6f5a96d28b4e3db0cb6a35f89ce
 Cycle004BuilderReviewFirstContainingCommit: 30f0257b9705e2df87df9aff504c974884946ef9
 Cycle004ClerkCompletionIntakeCommit: 34525da530e0d4431b440cf68a591ef70a322cb8
+ArchitectCycle004ReconciliationPath: docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_RECONCILIATION_004.md
+ArchitectCycle004ReconciliationBlob: afca4e3fe09fbb691f307be1718a62d73f025685
+ArchitectCycle004ReconciliationFirstContainingCommit: 6d97eafe072d26bdc780cada69aac3851065df8e
+ArchitectImplementationHandoffPath: docs/governance/hotfixes/HF-001/ARCHITECT_TO_CLERK_HF001_IMPLEMENTATION_PREFLIGHT_001.md
+ArchitectImplementationHandoffBlob: afb17f0ae2917939e66a389436ede78498d7a837
+ArchitectImplementationHandoffFirstContainingCommit: 4890bbf256943bea9b1dde6df01c541c8e9e1d9a
+ImplementationTargetRef: refs/heads/governance/hf-001-implementation
+ImplementationSourceMainH1: 6fde9a620f222aded127d155de8be2042205f087
+ImplementationRefCreateOnlyProof: UNVERIFIED — CLERK PREFLIGHT STOP GATE
+ImplementationExecutionRelease: NOT PERFORMED
