@@ -103,9 +103,13 @@ class PostReleaseContinuityTests(unittest.TestCase):
             self.assertIn("POST_RELEASE_RESEARCH_INTAKE", role)
             self.assertIn("POST_RELEASE_READINESS_ASSESSMENT", role)
             self.assertIn("PREREQUISITE_RESOLUTION", role)
-        state_file = (ROOT / ".project/CURRENT_STATE.md").read_text(encoding="utf-8")
-        self.assertIn("State: RELEASE_COMPLETE", state_file)
-        self.assertIn("ImplementationAuthorized: false", state_file)
+        # Historical release behavior is tested from an explicit typed legacy
+        # fixture. The active checkout may be a governance or implementation ref.
+        legacy_i003 = State(iteration=3)
+        self.assertEqual((legacy_i003.phase, legacy_i003.status),
+                         ("RELEASE", "RELEASE_COMPLETE"))
+        self.assertTrue(evaluate(legacy_i003, Request(Action.RESEARCH)).permitted)
+        self.assertFalse(evaluate(legacy_i003, Request(Action.ROADMAP)).permitted)
 
 if __name__ == "__main__":
     unittest.main()
