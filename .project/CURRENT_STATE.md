@@ -2,14 +2,14 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: READY_FOR_ARCHITECT_AUDIT
+State: ARCHITECT_AUDIT
 Iteration: 003
-ActiveRole: none
+ActiveRole: ARCHITECT
 WorkPackage: HF001-WP01
-Baseline: c6c2fcd85d0ac9eeffe843eb0c81109d9577056b
+Baseline: 35726a7129839e6b36bc2a98e047034687eb492a
 Branch: governance/hf-001-implementation
-NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — fresh independent HF001-WP01 correction audit. Resolve authoritative remote refs first, synchronize to exact AuditEntryPRHead for existing open draft evidence PR #14, verify separate Clerk compilation handoff docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md blob 09d5a5e906eb59bb29c961225e0a164763730bf1, PreCompilationPRHead b2813a9414ce71c8ef1926717fc52faa8537fae7, ClerkAuditCompilationCommit c6c2fcd85d0ac9eeffe843eb0c81109d9577056b, original Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 (F01–F04), original and correction Builder evidence, reviewed plan, original owner bounded approval and main H1 6fde9a620f222aded127d155de8be2042205f087. Architect alone independently audits and decides disposition against the exact current PR head; Clerk makes no audit finding. No native PR merge, Z/T, final owner approval, main publication, I004, Plaid/financial/host activity or purchase is authorized by this passive route; ImplementationAuthorized false.
+NextRole: none
+NextAction: ARCHITECT ONLY — independently audit HF001-WP01 correction at original AuditEntryPRHead 35726a7129839e6b36bc2a98e047034687eb492a, exact Clerk handoff docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md blob 09d5a5e906eb59bb29c961225e0a164763730bf1, compilation c6c2fcd85d0ac9eeffe843eb0c81109d9577056b, original immutable Architect audit blob 29256ea98a71926dd7699828055af12878fdab55 F01-F04, corrected substantive Builder head 1cdc853cea0dd2bfbddfd289af880449cdcf8337, BuilderTechnicalHead 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8, return blob 7b163efe2a5cd0713dc9306c1f933bdec5731181, reviewed v0.4 plan 2ffd7136ab13379aec48e98484147c63b99364fd and approved scope cc4520f1367316f2b9224b5f72960f1161c8af71. Preserve effective main H1 6fde9a620f222aded127d155de8be2042205f087 and the single draft PR #14. Independently decide original F01-F04; if material gaps remain, record findings and route bounded Clerk/Builder correction. Only after actual audit PASS may Architect construct detached H1-parented filtered T/Z before passive owner wait W. No native PR merge, main ref change, final owner consent inference, I004, Plaid or host action.
 Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
