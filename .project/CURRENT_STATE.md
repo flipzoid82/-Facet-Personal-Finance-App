@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: ARCHITECT_AUDIT
+State: CLERK_IMPLEMENTATION_PREFLIGHT
 Iteration: 003
-ActiveRole: ARCHITECT
+ActiveRole: CLERK
 WorkPackage: HF001-WP01
-Baseline: 72979fbd07bf45c966e66e8cbe27969cc8006da0
+Baseline: 80d13efc5c1bab2c1d3bc418e1751be9816dc6c2
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: ARCHITECT ONLY — independently audit exact HF001-WP01 Builder technical implementation e76929cba5f72f41432778726401f1eb54b56f5b, original Builder evidence 13bb4caf1af6224fe341751f0947d10869ca1ea3 and technical return 0f0c67742bbe21943b1b854b7c537f41fcef9f0e, reviewed plan v0.4 2ffd7136ab13379aec48e98484147c63b99364fd and owner approval ledger cc4520f1367316f2b9224b5f72960f1161c8af71, via Clerk audit Handoff 6b0a7600883a9cf4efe4640f84fb6bcaaa8bc5db and original AuditEntryPRHead 72979fbd07bf45c966e66e8cbe27969cc8006da0. Retain single draft evidence PR #14, exact main H1 6fde9a620f222aded127d155de8be2042205f087, original I003 main state/roadmap and independent proof tiers. Before any PASS owner wait verify audited allowed tree and create detached H1-parented Z/T, not a native PR merge; if material shortcomings record numbered in-scope findings and return through Clerk. No Builder or Clerk impersonation, main update, financial data, host action, I004, final consent, PR merge.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_AUDIT.md
+NextAction: CLERK ONLY — deterministic HF001-WP01 bounded correction preflight on the SAME governance/hf-001-implementation technical ref and existing open draft evidence PR #14, NOT a new branch or PR. Read original Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 first-containing commit 80d13efc5c1bab2c1d3bc418e1751be9816dc6c2, verdict CHANGES REQUIRED F01–F04, original Builder SubstantiveImplementationHead e76929cba5f72f41432778726401f1eb54b56f5b and BuilderTechnicalHead 0f0c67742bbe21943b1b854b7c537f41fcef9f0e, evidence 13bb4caf1af6224fe341751f0947d10869ca1ea3, current authoritative main H1 6fde9a620f222aded127d155de8be2042205f087, existing PR #14 head. Verify current refs/state/Handoff/approved plan/scope and guard conditions; if PASS create exact separate Clerk correction clearance artifact then guarded separate state-only BUILDER_CORRECTION release with fresh BuilderWorkStartHead and ImplementationAuthorized true. Only Builder implements reviewed bounded pure fixture/test corrections. Clerk does not judge audit substance, modify source/tests, create second PR, merge, publish Z/T, move main, or infer owner final publication consent.
+Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -41,3 +41,12 @@ PreCompilationPRHead: 96dc7bf530630166657c2c7d9a21de2df4bbf58f
 ClerkAuditCompilationCommit: fc5e6609590183ab66ffe7e04f6d1459811e62c5
 ClerkAuditArtifactBlob: 6b0a7600883a9cf4efe4640f84fb6bcaaa8bc5db
 ImplementationTargetRef: refs/heads/governance/hf-001-implementation
+ArchitectOriginalAuditPath: docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md
+ArchitectOriginalAuditBlob: 29256ea98a71926dd7699828055af12878fdab55
+ArchitectOriginalAuditFirstContainingCommit: 80d13efc5c1bab2c1d3bc418e1751be9816dc6c2
+ArchitectOriginalAuditVerdict: CHANGES_REQUIRED
+ArchitectAuditEntryPRHead: 72979fbd07bf45c966e66e8cbe27969cc8006da0
+ArchitectActiveAuditHead: c4f58085e79b45624231d13ead838786a5503d48
+AuditFindings: F01;F02;F03;F04
+CorrectionTargetPR: 14
+CorrectionSourceBuilderTechnicalHead: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
