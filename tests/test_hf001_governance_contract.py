@@ -9,9 +9,16 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from hf001_governance_contract_fixture import (  # noqa: E402
     Control, Continuation, FilteredAdoption, FinalRelease, Hf001Publication,
     PausePhase, PauseRequestStatus, PauseTrace, Resume, RoadmapReview,
-    TechnicalStart, classify_pause, evaluate_pause_request, evaluate_technical_start,
+    TechnicalStart, WipTruth, PauseRecovery, Abandon,
+    IncompleteClosure, classify_pause, evaluate_pause_request, evaluate_technical_start,
     evaluate_adoption, evaluate_final_release, evaluate_hf001_publication,
     evaluate_resume, evaluate_roadmap_review, evaluate_successor,
+    synthetic_successor_trace, validate_successor_trace, classify_successor_replay,
+    synthetic_roadmap_trace, classify_roadmap_replay,
+    changed_blobs, synthetic_review_merge, synthetic_filtered_adoption,
+    validate_synthetic_adoption, evaluate_wip_truth, classify_pause_recovery,
+    can_recover_h_to_x, stale_merge_authorization, evaluate_abandon,
+    evaluate_incomplete_closure,
 )
 
 
@@ -180,6 +187,156 @@ class Hf001ContractTests(unittest.TestCase):
         for role in ("ARCHITECT", "BUILDER", "CLERK", "CREATIVE"):
             self.assertIn("HF-001 v0.3 prospective", (ROOT / f"chatgpt/roles/{role}.md")
                           .read_text(encoding="utf-8"))
+
+    def test_f01_exact_successor_trace_and_ledger_only_recovery(self):
+        commits = synthetic_successor_trace()
+        self.assertTrue(validate_successor_trace(commits, "D", "S").allowed)
+        self.assertEqual(classify_successor_replay(commits[:4], "D", None), "ABSENT")
+        self.assertEqual(classify_successor_replay(commits[:5], "D", "L"),
+                         "LEDGER_ONLY_MATCHING")
+        self.assertEqual(classify_successor_replay(commits, "D", "S"), "ACTIVE_MATCHING")
+        for index, change in (
+            (1, {"parent": "H"}), (2, {"kind": "state"}),
+            (3, {"parent": "A"}), (4, {"ref": "refs/heads/main"}),
+            (4, {"kind": "state"}), (4, {"decision_id": "OWNER_APPROVED"}),
+            (5, {"parent": "D"}), (5, {"actor": "BUILDER"}),
+            (0, {"active_role": "ARCHITECT"}),
+            (3, {"next_role": "ARCHITECT"}),
+            (5, {"active_role": "none"}),
+        ):
+            with self.subTest(index=index, change=change):
+                bad = list(commits)
+                bad[index] = replace(bad[index], **change)
+                self.assertFalse(validate_successor_trace(tuple(bad), "D", "S").allowed)
+        self.assertFalse(validate_successor_trace(commits, "A", "S").allowed)
+        self.assertEqual(classify_successor_replay(commits[:5], "D", "conflict"),
+                         "CONFLICT_OR_UNVERIFIABLE")
+        self.assertEqual(classify_successor_replay(commits[:5], "new-main", "L"),
+                         "CONFLICT_OR_UNVERIFIABLE")
+
+    def test_f01_f04_roadmap_e_d0_claim_a0_crash_and_duplicate_consent(self):
+        trace = synthetic_roadmap_trace()
+        self.assertEqual(classify_roadmap_replay(trace[:4], "E", None,
+                                                 ("OWNER_REVIEW_R001",)),
+                         "RECEIPT_E_MATCHING")
+        self.assertEqual(classify_roadmap_replay(trace[:5], "D0", None,
+                                                 ("OWNER_REVIEW_R001",)),
+                         "PASSIVE_D0_MATCHING")
+        self.assertEqual(classify_roadmap_replay(trace[:5], "D0", "D0",
+                                                 ("OWNER_REVIEW_R001",)),
+                         "CLAIMED_AT_D0")
+        self.assertEqual(classify_roadmap_replay(trace, "D0", "A0",
+                                                 ("OWNER_REVIEW_R001",)),
+                         "ACTIVE_A0_MATCHING")
+        for bad in (
+            (trace[:4], "E", None, ("OWNER_REVIEW_R001", "OWNER_REVIEW_R001"), True),
+            (trace[:5], "D0", None, ("WRONG_SOURCE",), True),
+            (trace[:5], "A", "D0", ("OWNER_REVIEW_R001",), True),
+            (trace[:5], "D0", "D0", ("OWNER_REVIEW_R001",), False),
+            (trace, "A0", "A0", ("OWNER_REVIEW_R001",), True),
+        ):
+            with self.subTest(bad=bad):
+                self.assertEqual(classify_roadmap_replay(*bad),
+                                 "CONFLICT_OR_UNVERIFIABLE")
+        out_of_order = list(trace)
+        out_of_order[3] = replace(out_of_order[3], parent="A")
+        self.assertEqual(classify_roadmap_replay(tuple(out_of_order), "D0", "A0",
+                                                 ("OWNER_REVIEW_R001",)),
+                         "CONFLICT_OR_UNVERIFIABLE")
+
+    def test_f02_derived_synthetic_merge_tree_rejects_review_control(self):
+        receipt = self.adoption().receipt_path
+        h2 = {".project/CURRENT_STATE.md": "main-passive",
+              "docs/PROJECT_ROADMAP.md": "approved-old",
+              "docs/WORKFLOW.md": "current-policy"}
+        review_tree = {".project/CURRENT_STATE.md": "review-active",
+                       "docs/PROJECT_ROADMAP.md": "owner-approved-new",
+                       "docs/project-planning/roadmap-revisions/R001/ARCHITECT_TO_BUILDER_ROADMAP_REVIEW.md": "handoff"}
+        full_merge_tree = synthetic_review_merge(h2, review_tree)
+        derived = changed_blobs(h2, full_merge_tree)
+        self.assertIn(".project/CURRENT_STATE.md", derived)
+        self.assertFalse(validate_synthetic_adoption(
+            h2, full_merge_tree, "owner-approved-new", receipt, "receipt-blob",
+            "H2", "H2").allowed)
+        filtered = synthetic_filtered_adoption(h2, "owner-approved-new",
+                                               receipt, "receipt-blob")
+        self.assertEqual(changed_blobs(h2, filtered),
+                         {"docs/PROJECT_ROADMAP.md": "owner-approved-new",
+                          receipt: "receipt-blob"})
+        self.assertEqual(filtered[".project/CURRENT_STATE.md"], "main-passive")
+        self.assertTrue(validate_synthetic_adoption(
+            h2, filtered, "owner-approved-new", receipt, "receipt-blob",
+            "H2", "H2").allowed)
+        self.assertFalse(validate_synthetic_adoption(
+            h2, filtered, "unapproved-blob", receipt, "receipt-blob",
+            "H2", "H2").allowed)
+        self.assertFalse(validate_synthetic_adoption(
+            h2, filtered, "owner-approved-new", receipt, "receipt-blob",
+            "H2", "review-head").allowed)
+
+    def test_f03_wip_truth_and_h_to_x_recovery_with_collision_denial(self):
+        dirty = WipTruth(True, True, True, True, True, False, False)
+        self.assertTrue(evaluate_wip_truth(dirty).allowed)  # disclosed, not saved
+        self.assertFalse(evaluate_wip_truth(replace(dirty, claims_preserved=True)).allowed)
+        self.assertFalse(evaluate_wip_truth(replace(dirty, all_disclosed=False)).allowed)
+        claim = PauseRecovery("H", "H", "H", None, None, None,
+                              "P001", (), True, True, True, "H")
+        self.assertEqual(classify_pause_recovery(claim), "CLAIMED_NO_SNAPSHOT")
+        self.assertTrue(can_recover_h_to_x(claim, "H", True).allowed)
+        self.assertFalse(can_recover_h_to_x(claim, "other", True).allowed)
+        self.assertFalse(can_recover_h_to_x(claim, "H", False).allowed)
+        self.assertEqual(classify_pause_recovery(replace(claim, current_target="moved")),
+                         "PAUSE_PENDING_STALE")
+        self.assertEqual(classify_pause_recovery(replace(claim, pause_ref_tip="collision")),
+                         "CONFLICT_OR_UNVERIFIABLE")
+        self.assertEqual(classify_pause_recovery(replace(claim, exclusive_create=False)),
+                         "CONFLICT_OR_UNVERIFIABLE")
+        self.assertEqual(classify_pause_recovery(replace(claim, receipt_ids=("P001",))),
+                         "CONFLICT_OR_UNVERIFIABLE")
+
+    def test_f03_x_y_p_replay_duplicate_approval_and_stale_pr_head(self):
+        claim = PauseRecovery("H", "H", "H", None, None, None,
+                              "P001", (), True, True, True, "H")
+        x = replace(claim, pause_ref_tip="X", snapshot_parent="H")
+        y = replace(x, pause_ref_tip="Y", approval_parent="X", receipt_ids=("P001",))
+        p = replace(y, current_target="P", pause_state_parent="H")
+        self.assertEqual(classify_pause_recovery(x), "SNAPSHOT_X_MATCHING")
+        self.assertEqual(classify_pause_recovery(y), "APPROVAL_Y_MATCHING")
+        self.assertEqual(classify_pause_recovery(p), "PAUSED_P_MATCHING")
+        self.assertEqual(classify_pause_recovery(p), "PAUSED_P_MATCHING")  # read-back, no replay
+        self.assertTrue(stale_merge_authorization(p))
+        self.assertFalse(stale_merge_authorization(y))
+        self.assertEqual(classify_pause_recovery(replace(y, receipt_ids=("P001", "P001"))),
+                         "CONFLICT_OR_UNVERIFIABLE")
+        self.assertEqual(classify_pause_recovery(replace(p, receipt_ids=("P001", "P001"))),
+                         "CONFLICT_OR_UNVERIFIABLE")
+        self.assertEqual(classify_pause_recovery(replace(y, approval_parent="H")),
+                         "CONFLICT_OR_UNVERIFIABLE")
+        self.assertEqual(classify_pause_recovery(replace(p, pause_state_parent="X")),
+                         "CONFLICT_OR_UNVERIFIABLE")
+
+    def test_f03_abandon_is_distinct_from_resume_and_passed_release(self):
+        good = Abandon("ABANDON", "PAUSED_P_MATCHING", ("unmet milestone",), True, True)
+        self.assertTrue(evaluate_abandon(good).allowed)
+        for change in ({"owner_decision": "RESUME"},
+                       {"pause_phase": "CLAIMED_NO_SNAPSHOT"},
+                       {"unfulfilled_obligations": ()},
+                       {"lost_or_unpreserved_work_disclosed": False},
+                       {"expected_target_head_matches": False}):
+            with self.subTest(change=change):
+                self.assertFalse(evaluate_abandon(replace(good, **change)).allowed)
+
+    def test_f04_incomplete_closure_never_claims_final_release(self):
+        good = IncompleteClosure("CLOSE_PROJECT_INCOMPLETE", ("M1",),
+                                 "PROJECT_CLOSED_INCOMPLETE", "COMPLETE", False, False)
+        self.assertTrue(evaluate_incomplete_closure(good).allowed)
+        for change in ({"owner_decision": "FINAL_PROJECT_RELEASE_APPROVAL"},
+                       {"unfulfilled_milestones": ()},
+                       {"outcome_state": "RELEASE_COMPLETE"},
+                       {"final_release_claimed": True},
+                       {"automatic_reopen_or_successor": True}):
+            with self.subTest(change=change):
+                self.assertFalse(evaluate_incomplete_closure(replace(good, **change)).allowed)
 
 
 if __name__ == "__main__":

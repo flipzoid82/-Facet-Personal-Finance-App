@@ -289,3 +289,261 @@ def evaluate_hf001_publication(x: Hf001Publication) -> Result:
             x.atomic_expected_h1_and_permission):
         return stop("owner, actor, frozen head or live CAS gate missing")
     return allow("one guarded non-PR main update may be attempted")
+
+
+# The following fixtures model persisted objects and ref tips rather than a
+# caller-supplied all-green permission tuple. IDs are synthetic, not Git SHAs.
+@dataclass(frozen=True)
+class SyntheticCommit:
+    oid: str
+    parent: str
+    ref: str
+    phase: str
+    state: str
+    actor: str
+    kind: str  # state, evidence, ledger, receipt
+    decision_id: str = ""
+    active_role: str = "none"
+    next_role: str = "none"
+
+
+def _ordered(commits: tuple[SyntheticCommit, ...], names: tuple[str, ...],
+             parents: tuple[str, ...], refs: tuple[str, ...],
+             kinds: tuple[str, ...]) -> bool:
+    return len(commits) == len(names) and all(
+        (c.oid, c.parent, c.ref, c.kind) == (n, p, r, k)
+        for c, n, p, r, k in zip(commits, names, parents, refs, kinds)
+    )
+
+
+def validate_successor_trace(commits: tuple[SyntheticCommit, ...],
+                             main_tip: str, successor_tip: str) -> Result:
+    main = "refs/heads/main"
+    successor = "refs/heads/continuation/iteration-004-intake"
+    if not _ordered(commits, ("I", "A", "R", "D", "L", "S"),
+                    ("H", "I", "A", "R", "D", "L"),
+                    (main, main, main, main, successor, successor),
+                    ("state", "state", "evidence", "state", "ledger", "state")):
+        return stop("I/A/R/D/L/S ordering, parent, ref or artifact type invalid")
+    i, a, r, d, l, s = commits
+    if ((i.phase, i.state, i.actor) != ("RELEASE", "ITERATION_COMPLETE", "ARCHITECT") or
+        (i.active_role, i.next_role) != ("none", "ARCHITECT") or
+        (a.phase, a.state, a.actor) != ("CONTINUATION", "ARCHITECT_NEXT_ITERATION_PREP", "ARCHITECT") or
+        (a.active_role, a.next_role) != ("ARCHITECT", "none") or
+        (r.phase, r.state, r.actor) != (a.phase, a.state, "ARCHITECT") or
+        (r.active_role, r.next_role) != ("ARCHITECT", "none") or
+        (d.phase, d.state, d.actor) != ("CONTINUATION", "AWAITING_NEXT_ITERATION_ACTIVATION", "ARCHITECT") or
+        (d.active_role, d.next_role) != ("none", "none") or
+        (l.phase, l.state, l.actor) != (d.phase, d.state, "ARCHITECT") or
+        (l.active_role, l.next_role) != ("none", "none") or
+        (s.phase, s.state, s.actor) != ("PLANNING", "ARCHITECT_PLANNING", "ARCHITECT") or
+        (s.active_role, s.next_role) != ("ARCHITECT", "none") or
+        l.decision_id != "AUTO_READY_ROADMAP_PLANNING"):
+        return stop("role/state or typed ledger evidence invalid")
+    if main_tip != "D" or successor_tip != "S":
+        return stop("main must remain passive D and successor end at S")
+    return allow("prospective state and ledger sequence")
+
+
+def classify_successor_replay(commits: tuple[SyntheticCommit, ...],
+                              main_tip: str, successor_tip: str | None) -> str:
+    if len(commits) < 4 or main_tip != "D":
+        return "CONFLICT_OR_UNVERIFIABLE"
+    if commits[:4] != synthetic_successor_trace()[:4]:
+        return "CONFLICT_OR_UNVERIFIABLE"
+    if successor_tip is None and len(commits) == 4:
+        return "ABSENT"
+    if successor_tip == "L" and len(commits) == 5 and \
+            commits[4] == synthetic_successor_trace()[4]:
+        return "LEDGER_ONLY_MATCHING"
+    if successor_tip == "S" and commits == synthetic_successor_trace():
+        return "ACTIVE_MATCHING"
+    return "CONFLICT_OR_UNVERIFIABLE"
+
+
+def synthetic_successor_trace() -> tuple[SyntheticCommit, ...]:
+    main = "refs/heads/main"
+    successor = "refs/heads/continuation/iteration-004-intake"
+    return (
+        SyntheticCommit("I", "H", main, "RELEASE", "ITERATION_COMPLETE", "ARCHITECT", "state", active_role="none", next_role="ARCHITECT"),
+        SyntheticCommit("A", "I", main, "CONTINUATION", "ARCHITECT_NEXT_ITERATION_PREP", "ARCHITECT", "state", active_role="ARCHITECT"),
+        SyntheticCommit("R", "A", main, "CONTINUATION", "ARCHITECT_NEXT_ITERATION_PREP", "ARCHITECT", "evidence", active_role="ARCHITECT"),
+        SyntheticCommit("D", "R", main, "CONTINUATION", "AWAITING_NEXT_ITERATION_ACTIVATION", "ARCHITECT", "state"),
+        SyntheticCommit("L", "D", successor, "CONTINUATION", "AWAITING_NEXT_ITERATION_ACTIVATION", "ARCHITECT", "ledger", "AUTO_READY_ROADMAP_PLANNING"),
+        SyntheticCommit("S", "L", successor, "PLANNING", "ARCHITECT_PLANNING", "ARCHITECT", "state", active_role="ARCHITECT"),
+    )
+
+
+def synthetic_roadmap_trace() -> tuple[SyntheticCommit, ...]:
+    main = "refs/heads/main"
+    review = "refs/heads/review/roadmap/R001"
+    return (
+        SyntheticCommit("A", "I", main, "CONTINUATION", "ARCHITECT_NEXT_ITERATION_PREP", "ARCHITECT", "state", active_role="ARCHITECT"),
+        SyntheticCommit("R", "A", main, "CONTINUATION", "ARCHITECT_NEXT_ITERATION_PREP", "ARCHITECT", "evidence", active_role="ARCHITECT"),
+        SyntheticCommit("D", "R", main, "CONTINUATION", "AWAITING_OWNER_PATH_DECISION", "ARCHITECT", "state", next_role="ARCHITECT"),
+        SyntheticCommit("E", "D", main, "CONTINUATION", "AWAITING_OWNER_PATH_DECISION", "ARCHITECT", "receipt", "OWNER_REVIEW_R001", next_role="ARCHITECT"),
+        SyntheticCommit("D0", "E", main, "CONTINUATION", "AWAITING_ROADMAP_REVISION_REF_CLAIM", "ARCHITECT", "state", next_role="ARCHITECT"),
+        SyntheticCommit("A0", "D0", review, "GOVERNANCE", "ARCHITECT_ROADMAP_REVISION_PROPOSAL", "ARCHITECT", "state", active_role="ARCHITECT"),
+    )
+
+
+def classify_roadmap_replay(commits: tuple[SyntheticCommit, ...],
+                            main_tip: str, review_tip: str | None,
+                            owner_receipt_ids: tuple[str, ...],
+                            create_only: bool = True) -> str:
+    canonical = synthetic_roadmap_trace()
+    if not create_only or commits != canonical[:len(commits)] or \
+            owner_receipt_ids != ("OWNER_REVIEW_R001",):
+        return "CONFLICT_OR_UNVERIFIABLE"
+    if len(commits) == 4 and main_tip == "E" and review_tip is None:
+        return "RECEIPT_E_MATCHING"
+    if len(commits) == 5 and main_tip == "D0":
+        if review_tip is None:
+            return "PASSIVE_D0_MATCHING"
+        if review_tip == "D0":
+            return "CLAIMED_AT_D0"
+    if len(commits) == 6 and main_tip == "D0" and review_tip == "A0":
+        return "ACTIVE_A0_MATCHING"
+    return "CONFLICT_OR_UNVERIFIABLE"
+
+
+def changed_blobs(source: dict[str, str], candidate: dict[str, str]) -> dict[str, str | None]:
+    """Derive a tree diff from synthetic path/blob maps, including deletions."""
+    return {p: candidate.get(p) for p in source.keys() | candidate.keys()
+            if source.get(p) != candidate.get(p)}
+
+
+def synthetic_review_merge(source: dict[str, str], review: dict[str, str]) -> dict[str, str]:
+    """A full review-ref merge's resulting tree (not a real Git merge operation)."""
+    return source | review
+
+
+def synthetic_filtered_adoption(source: dict[str, str], approved_roadmap_blob: str,
+                                receipt_path: str, receipt_blob: str) -> dict[str, str]:
+    return source | {ROADMAP_ADOPTION_PATH: approved_roadmap_blob,
+                     receipt_path: receipt_blob}
+
+
+def validate_synthetic_adoption(source: dict[str, str], candidate: dict[str, str],
+                                approved_roadmap_blob: str, receipt_path: str,
+                                receipt_blob: str, source_head: str,
+                                candidate_parent: str) -> Result:
+    if source_head != candidate_parent:
+        return stop("adoption candidate must have sole current-main H2 parent")
+    diff = changed_blobs(source, candidate)
+    if diff != {ROADMAP_ADOPTION_PATH: approved_roadmap_blob,
+                receipt_path: receipt_blob}:
+        return stop("derived H2 tree diff imports review control or wrong blob")
+    return allow("H2-rooted adoption-only tree; separate owner head consent still required")
+
+
+@dataclass(frozen=True)
+class WipTruth:
+    tracked_dirty: bool
+    untracked: bool
+    unsaved: bool
+    services_running: bool
+    all_disclosed: bool
+    claims_preserved: bool
+    sanitized_preservation_proven: bool
+
+
+def evaluate_wip_truth(x: WipTruth) -> Result:
+    if not x.all_disclosed:
+        return stop("tracked/untracked/unsaved/service facts not disclosed")
+    if x.claims_preserved and (x.tracked_dirty or x.untracked or x.unsaved or
+                               x.services_running) and not x.sanitized_preservation_proven:
+        return stop("cannot claim dirty or external work preserved")
+    return allow("truthful WIP caveat; no physical preservation inferred")
+
+
+@dataclass(frozen=True)
+class PauseRecovery:
+    target_h: str
+    current_target: str
+    pause_ref_tip: str | None
+    snapshot_parent: str | None
+    approval_parent: str | None
+    pause_state_parent: str | None
+    owner_pause_id: str
+    receipt_ids: tuple[str, ...]
+    main_policy_wip_fresh: bool
+    exclusive_create: bool
+    guarded_update: bool
+    merge_authorization_head: str | None = None
+
+
+def classify_pause_recovery(x: PauseRecovery) -> str:
+    if not x.owner_pause_id or not x.exclusive_create or not x.guarded_update or \
+            len(set(x.receipt_ids)) != len(x.receipt_ids):
+        return "CONFLICT_OR_UNVERIFIABLE"
+    if x.pause_ref_tip is None:
+        return "ABSENT" if x.current_target == x.target_h and x.main_policy_wip_fresh and \
+            not x.receipt_ids and x.snapshot_parent is None \
+            else "PAUSE_PENDING_STALE"
+    if x.current_target not in (x.target_h, "P") or not x.main_policy_wip_fresh:
+        return "PAUSE_PENDING_STALE"
+    if x.pause_ref_tip == x.target_h and x.snapshot_parent is None and \
+            x.approval_parent is None and x.pause_state_parent is None and \
+            not x.receipt_ids:
+        return "CLAIMED_NO_SNAPSHOT"
+    if x.pause_ref_tip == "X" and x.snapshot_parent == x.target_h and \
+            x.approval_parent is None and x.pause_state_parent is None and \
+            not x.receipt_ids:
+        return "SNAPSHOT_X_MATCHING"
+    if x.pause_ref_tip == "Y" and x.snapshot_parent == x.target_h and \
+            x.approval_parent == "X" and x.receipt_ids == (x.owner_pause_id,):
+        if x.current_target == "P" and x.pause_state_parent == x.target_h:
+            return "PAUSED_P_MATCHING"
+        if x.current_target == x.target_h and x.pause_state_parent is None:
+            return "APPROVAL_Y_MATCHING"
+    return "CONFLICT_OR_UNVERIFIABLE"
+
+
+def can_recover_h_to_x(x: PauseRecovery, expected_pause_tip: str,
+                       owner_and_wip_rechecked: bool) -> Result:
+    if classify_pause_recovery(x) != "CLAIMED_NO_SNAPSHOT" or \
+            expected_pause_tip != x.target_h or not owner_and_wip_rechecked:
+        return stop("H→X expected-tip, owner or WIP recheck failed")
+    return allow("guarded H→X snapshot recovery only")
+
+
+def stale_merge_authorization(x: PauseRecovery) -> bool:
+    return x.merge_authorization_head is not None and \
+        x.merge_authorization_head != x.current_target
+
+
+@dataclass(frozen=True)
+class Abandon:
+    owner_decision: str
+    pause_phase: str
+    unfulfilled_obligations: tuple[str, ...]
+    lost_or_unpreserved_work_disclosed: bool
+    expected_target_head_matches: bool
+
+
+def evaluate_abandon(x: Abandon) -> Result:
+    if x.owner_decision != "ABANDON" or x.pause_phase != "PAUSED_P_MATCHING" or \
+            not x.unfulfilled_obligations or not x.lost_or_unpreserved_work_disclosed or \
+            not x.expected_target_head_matches:
+        return stop("separate owner ABANDON and truthful paused-target inventory required")
+    return allow("passive incomplete disposition only; never completed release")
+
+
+@dataclass(frozen=True)
+class IncompleteClosure:
+    owner_decision: str
+    unfulfilled_milestones: tuple[str, ...]
+    outcome_state: str
+    project_lifecycle: str
+    final_release_claimed: bool
+    automatic_reopen_or_successor: bool
+
+
+def evaluate_incomplete_closure(x: IncompleteClosure) -> Result:
+    if x.owner_decision != "CLOSE_PROJECT_INCOMPLETE" or not x.unfulfilled_milestones:
+        return stop("distinct owner choice and remaining objectives required")
+    if (x.outcome_state, x.project_lifecycle) != ("PROJECT_CLOSED_INCOMPLETE", "COMPLETE") or \
+            x.final_release_claimed or x.automatic_reopen_or_successor:
+        return stop("incomplete closure cannot assert RELEASE_COMPLETE or reopen")
+    return allow("separate incomplete outcome; no first-use release claim")
