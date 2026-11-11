@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: ARCHITECT_AUDIT
+State: CLERK_IMPLEMENTATION_PREFLIGHT
 Iteration: 003
-ActiveRole: ARCHITECT
+ActiveRole: CLERK
 WorkPackage: HF001-WP01
-Baseline: 35726a7129839e6b36bc2a98e047034687eb492a
+Baseline: 844f0534f279b9fc0a3f99dfc36b06ac99ef6718
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: ARCHITECT ONLY — independently audit HF001-WP01 correction at original AuditEntryPRHead 35726a7129839e6b36bc2a98e047034687eb492a, exact Clerk handoff docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md blob 09d5a5e906eb59bb29c961225e0a164763730bf1, compilation c6c2fcd85d0ac9eeffe843eb0c81109d9577056b, original immutable Architect audit blob 29256ea98a71926dd7699828055af12878fdab55 F01-F04, corrected substantive Builder head 1cdc853cea0dd2bfbddfd289af880449cdcf8337, BuilderTechnicalHead 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8, return blob 7b163efe2a5cd0713dc9306c1f933bdec5731181, reviewed v0.4 plan 2ffd7136ab13379aec48e98484147c63b99364fd and approved scope cc4520f1367316f2b9224b5f72960f1161c8af71. Preserve effective main H1 6fde9a620f222aded127d155de8be2042205f087 and the single draft PR #14. Independently decide original F01-F04; if material gaps remain, record findings and route bounded Clerk/Builder correction. Only after actual audit PASS may Architect construct detached H1-parented filtered T/Z before passive owner wait W. No native PR merge, main ref change, final owner consent inference, I004, Plaid or host action.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md
+NextAction: CLERK ONLY — bounded deterministic correction preflight on the SAME governance/hf-001-implementation technical ref and existing open draft evidence PR #14. Original Architect audit ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 remains immutable; fresh independent correction audit docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md blob 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61 first-containing commit 844f0534f279b9fc0a3f99dfc36b06ac99ef6718 verdict CHANGES REQUIRED residual CF01/F02 only. New requirement: synthetic validate_synthetic_adoption must never allow a protected or unrelated path as receipt_path; tests must reject .project/CURRENT_STATE.md, docs/WORKFLOW.md and arbitrary/unapproved receipt paths even when caller labels them as expected, and preserve correct H2-rooted approval receipt positive/contaminated raw merge negatives. Prior F01/F03/F04 resolved at pure T1 tier. Check effective main H1 6fde9a620f222aded127d155de8be2042205f087, original and correction Builder chain, owner scope/plan approval, and PR freshness. If deterministic PASS, create a fresh Clerk correction clearance artifact and a SEPARATE state-only BUILDER_CORRECTION release with observed work start head, ImplementationAuthorized true. No Clerk technical verdict, new branch, second PR, native merge, Z/T, owner-final consent inference, main mutation, I004, financial/host work.
+Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -55,3 +55,13 @@ CorrectionPreCompilationPRHead: b2813a9414ce71c8ef1926717fc52faa8537fae7
 CorrectionClerkAuditCompilationCommit: c6c2fcd85d0ac9eeffe843eb0c81109d9577056b
 CorrectionClerkAuditCompilationPath: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md
 CorrectionClerkAuditCompilationBlob: 09d5a5e906eb59bb29c961225e0a164763730bf1
+CorrectionAuditPath: docs/governance/hotfixes/HF-001/ARCHITECT_CORRECTION_AUDIT_001.md
+CorrectionAuditBlob: 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61
+CorrectionAuditFirstContainingCommit: 844f0534f279b9fc0a3f99dfc36b06ac99ef6718
+CorrectionAuditVerdict: CHANGES_REQUIRED
+CorrectionAuditFinding: CF01_RESIDUAL_F02_C02_02
+CorrectionAuditEntryPRHead: 35726a7129839e6b36bc2a98e047034687eb492a
+CorrectionAuditActiveHead: 2f1599d54e8e7e23ab23cdbe1c9910b14a226210
+CorrectionReviewedBuilderTechnicalHead: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
+CorrectionReviewedSubstantiveHead: 1cdc853cea0dd2bfbddfd289af880449cdcf8337
+CorrectionTargetPR: 14
