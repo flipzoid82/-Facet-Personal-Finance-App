@@ -16,7 +16,8 @@ from hf001_governance_contract_fixture import (  # noqa: E402
     synthetic_successor_trace, validate_successor_trace, classify_successor_replay,
     synthetic_roadmap_trace, classify_roadmap_replay,
     changed_blobs, synthetic_review_merge, synthetic_filtered_adoption,
-    validate_synthetic_adoption, evaluate_wip_truth, classify_pause_recovery,
+    validate_synthetic_adoption, authorized_adoption_receipt_path,
+    evaluate_wip_truth, classify_pause_recovery,
     can_recover_h_to_x, stale_merge_authorization, evaluate_abandon,
     evaluate_incomplete_closure,
 )
@@ -257,7 +258,7 @@ class Hf001ContractTests(unittest.TestCase):
         self.assertIn(".project/CURRENT_STATE.md", derived)
         self.assertFalse(validate_synthetic_adoption(
             h2, full_merge_tree, "owner-approved-new", receipt, "receipt-blob",
-            "H2", "H2").allowed)
+            "H2", "H2", "R001").allowed)
         filtered = synthetic_filtered_adoption(h2, "owner-approved-new",
                                                receipt, "receipt-blob")
         self.assertEqual(changed_blobs(h2, filtered),
@@ -266,13 +267,50 @@ class Hf001ContractTests(unittest.TestCase):
         self.assertEqual(filtered[".project/CURRENT_STATE.md"], "main-passive")
         self.assertTrue(validate_synthetic_adoption(
             h2, filtered, "owner-approved-new", receipt, "receipt-blob",
-            "H2", "H2").allowed)
+            "H2", "H2", "R001").allowed)
         self.assertFalse(validate_synthetic_adoption(
             h2, filtered, "unapproved-blob", receipt, "receipt-blob",
-            "H2", "H2").allowed)
+            "H2", "H2", "R001").allowed)
         self.assertFalse(validate_synthetic_adoption(
             h2, filtered, "owner-approved-new", receipt, "receipt-blob",
-            "H2", "review-head").allowed)
+            "H2", "review-head", "R001").allowed)
+
+    def test_cf01_receipt_cannot_alias_protected_or_unapproved_paths(self):
+        approved_key = "R001"
+        receipt = authorized_adoption_receipt_path(approved_key)
+        self.assertEqual(receipt, self.adoption().receipt_path)
+        self.assertIsNone(authorized_adoption_receipt_path("../R001"))
+        self.assertIsNone(authorized_adoption_receipt_path("R001/extra"))
+        h2 = {".project/CURRENT_STATE.md": "main-passive",
+              "docs/PROJECT_ROADMAP.md": "approved-old",
+              "docs/WORKFLOW.md": "current-policy",
+              "chatgpt/roles/ARCHITECT.md": "current-role"}
+        for forbidden_path in (
+            ".project/CURRENT_STATE.md",
+            "docs/WORKFLOW.md",
+            "chatgpt/roles/ARCHITECT.md",
+            "docs/PROJECT_ROADMAP.md",  # duplicate key aliases the roadmap
+            "docs/project-planning/roadmap-revisions/R002/ADOPTION_APPROVAL_RECEIPT.md",
+            "docs/project-planning/roadmap-revisions/R001/extra/ADOPTION_APPROVAL_RECEIPT.md",
+            "docs/project-planning/roadmap-revisions/../R001/ADOPTION_APPROVAL_RECEIPT.md",
+            "docs/other/ADOPTION_APPROVAL_RECEIPT.md",
+            "",
+        ):
+            with self.subTest(forbidden_path=forbidden_path):
+                candidate = synthetic_filtered_adoption(
+                    h2, "owner-approved-new", forbidden_path, "receipt-blob")
+                self.assertFalse(validate_synthetic_adoption(
+                    h2, candidate, "owner-approved-new", forbidden_path,
+                    "receipt-blob", "H2", "H2", approved_key).allowed)
+        no_receipt = h2 | {"docs/PROJECT_ROADMAP.md": "owner-approved-new"}
+        self.assertFalse(validate_synthetic_adoption(
+            h2, no_receipt, "owner-approved-new", receipt,
+            "receipt-blob", "H2", "H2", approved_key).allowed)
+        self.assertFalse(validate_synthetic_adoption(
+            h2, synthetic_filtered_adoption(h2, "owner-approved-new",
+                                            receipt, "receipt-blob"),
+            "owner-approved-new", receipt, "receipt-blob",
+            "H2", "H2", "R002").allowed)
 
     def test_f03_wip_truth_and_h_to_x_recovery_with_collision_denial(self):
         dirty = WipTruth(True, True, True, True, True, False, False)

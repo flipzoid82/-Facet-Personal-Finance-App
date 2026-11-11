@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
+import re
 from typing import FrozenSet
 
 
@@ -420,19 +421,34 @@ def synthetic_review_merge(source: dict[str, str], review: dict[str, str]) -> di
 
 def synthetic_filtered_adoption(source: dict[str, str], approved_roadmap_blob: str,
                                 receipt_path: str, receipt_blob: str) -> dict[str, str]:
+    """Build an adversarial candidate; the path is NOT authorized here."""
     return source | {ROADMAP_ADOPTION_PATH: approved_roadmap_blob,
                      receipt_path: receipt_blob}
+
+
+def authorized_adoption_receipt_path(approved_review_key: str) -> str | None:
+    """Bind the only receipt path to a separately approved single path segment."""
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", approved_review_key):
+        return None
+    return ("docs/project-planning/roadmap-revisions/"
+            f"{approved_review_key}/ADOPTION_APPROVAL_RECEIPT.md")
 
 
 def validate_synthetic_adoption(source: dict[str, str], candidate: dict[str, str],
                                 approved_roadmap_blob: str, receipt_path: str,
                                 receipt_blob: str, source_head: str,
-                                candidate_parent: str) -> Result:
+                                candidate_parent: str,
+                                approved_review_key: str) -> Result:
     if source_head != candidate_parent:
         return stop("adoption candidate must have sole current-main H2 parent")
+    authorized_receipt = authorized_adoption_receipt_path(approved_review_key)
+    if authorized_receipt is None or receipt_path != authorized_receipt or \
+            receipt_path == ROADMAP_ADOPTION_PATH or not approved_roadmap_blob or \
+            not receipt_blob:
+        return stop("receipt path/blob must match the owner-approved ReviewKey")
     diff = changed_blobs(source, candidate)
     if diff != {ROADMAP_ADOPTION_PATH: approved_roadmap_blob,
-                receipt_path: receipt_blob}:
+                authorized_receipt: receipt_blob}:
         return stop("derived H2 tree diff imports review control or wrong blob")
     return allow("H2-rooted adoption-only tree; separate owner head consent still required")
 
