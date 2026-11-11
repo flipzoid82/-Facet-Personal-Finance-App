@@ -2,19 +2,19 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_IMPLEMENTATION_PREFLIGHT
+State: BUILDER_CORRECTION
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: BUILDER
 WorkPackage: HF001-WP01
-Baseline: 80d13efc5c1bab2c1d3bc418e1751be9816dc6c2
+Baseline: 8070fa39c3506117daf79a8beabfd3a5e10c9dcf
 Branch: governance/hf-001-implementation
 NextRole: none
-NextAction: CLERK ONLY — deterministic HF001-WP01 bounded correction preflight on the SAME governance/hf-001-implementation technical ref and existing open draft evidence PR #14, NOT a new branch or PR. Read original Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 first-containing commit 80d13efc5c1bab2c1d3bc418e1751be9816dc6c2, verdict CHANGES REQUIRED F01–F04, original Builder SubstantiveImplementationHead e76929cba5f72f41432778726401f1eb54b56f5b and BuilderTechnicalHead 0f0c67742bbe21943b1b854b7c537f41fcef9f0e, evidence 13bb4caf1af6224fe341751f0947d10869ca1ea3, current authoritative main H1 6fde9a620f222aded127d155de8be2042205f087, existing PR #14 head. Verify current refs/state/Handoff/approved plan/scope and guard conditions; if PASS create exact separate Clerk correction clearance artifact then guarded separate state-only BUILDER_CORRECTION release with fresh BuilderWorkStartHead and ImplementationAuthorized true. Only Builder implements reviewed bounded pure fixture/test corrections. Clerk does not judge audit substance, modify source/tests, create second PR, merge, publish Z/T, move main, or infer owner final publication consent.
-Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md
+NextAction: Perform only the bounded HF001-WP01 correction selected by the original Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55, findings F01–F04, under the existing reviewed plan and owner approval. Require exact remote/local BuilderWorkStartHead before local-first work. Preserve the original audit and Builder evidence; push correction material and exact return, identify the new BuilderTechnicalHead and artifact paths to Clerk, emit the Clerk completion prompt, and stop without surrounding administration. Use the same technical ref and existing draft PR #14.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_CORRECTION_001.md
 ApprovalRequiredFrom: none
-ImplementationAuthorized: false
+ImplementationAuthorized: true
 ProjectLifecycle: ACTIVE
-Purpose: HF001_IMPLEMENTATION
+Purpose: HF001_IMPLEMENTATION_CORRECTION
 HotfixID: HF-001
 ImplementationSourceMainH1: 6fde9a620f222aded127d155de8be2042205f087
 EffectiveWorkflowBlob: fd1d98e9218267e8d7a3212b92b1d256081a8eb3
@@ -28,25 +28,20 @@ CurrentPlanPath: docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_R
 CurrentPlanBlob: 2ffd7136ab13379aec48e98484147c63b99364fd
 Cycle004BuilderReviewBlob: da61bad68df6c6f5a96d28b4e3db0cb6a35f89ce
 ArchitectCycle004ReconciliationBlob: afca4e3fe09fbb691f307be1718a62d73f025685
-BuilderWorkStartHead: 30fbeab9862748f24017c5a9c5475a40b86bb605
-SubstantiveImplementationHead: e76929cba5f72f41432778726401f1eb54b56f5b
-BuilderTechnicalHead: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
-BuilderEvidencePath: docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md
-BuilderEvidenceBlob: 13bb4caf1af6224fe341751f0947d10869ca1ea3
-BuilderEvidenceFirstContainingCommit: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
-EvidencePRNumber: 14
-EvidencePRBase: main
-EvidencePRBaseHead: 6fde9a620f222aded127d155de8be2042205f087
-PreCompilationPRHead: 96dc7bf530630166657c2c7d9a21de2df4bbf58f
-ClerkAuditCompilationCommit: fc5e6609590183ab66ffe7e04f6d1459811e62c5
-ClerkAuditArtifactBlob: 6b0a7600883a9cf4efe4640f84fb6bcaaa8bc5db
-ImplementationTargetRef: refs/heads/governance/hf-001-implementation
+OriginalBuilderWorkStartHead: 30fbeab9862748f24017c5a9c5475a40b86bb605
+OriginalSubstantiveImplementationHead: e76929cba5f72f41432778726401f1eb54b56f5b
+OriginalBuilderTechnicalHead: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
+OriginalBuilderEvidencePath: docs/governance/hotfixes/HF-001/IMPLEMENTATION_EVIDENCE.md
+OriginalBuilderEvidenceBlob: 13bb4caf1af6224fe341751f0947d10869ca1ea3
 ArchitectOriginalAuditPath: docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md
 ArchitectOriginalAuditBlob: 29256ea98a71926dd7699828055af12878fdab55
 ArchitectOriginalAuditFirstContainingCommit: 80d13efc5c1bab2c1d3bc418e1751be9816dc6c2
 ArchitectOriginalAuditVerdict: CHANGES_REQUIRED
-ArchitectAuditEntryPRHead: 72979fbd07bf45c966e66e8cbe27969cc8006da0
-ArchitectActiveAuditHead: c4f58085e79b45624231d13ead838786a5503d48
 AuditFindings: F01;F02;F03;F04
-CorrectionTargetPR: 14
-CorrectionSourceBuilderTechnicalHead: 0f0c67742bbe21943b1b854b7c537f41fcef9f0e
+EvidencePRNumber: 14
+EvidencePRBase: main
+EvidencePRBaseHead: 6fde9a620f222aded127d155de8be2042205f087
+VerifiedInboundProducerHead: 5c77c44937daee2227be341c55fb316d481bb1cf
+ClerkClearanceArtifactCommit: 8070fa39c3506117daf79a8beabfd3a5e10c9dcf
+ClerkClearanceArtifactBlob: 2555002cec55f2a80bd0ac595287fb0c84d2e8c2
+ImplementationTargetRef: refs/heads/governance/hf-001-implementation
