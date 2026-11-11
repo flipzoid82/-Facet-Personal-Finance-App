@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_IMPLEMENTATION_CLOSEOUT
+State: READY_FOR_ARCHITECT_AUDIT
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: none
 WorkPackage: HF001-WP01
-Baseline: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
+Baseline: c6c2fcd85d0ac9eeffe843eb0c81109d9577056b
 Branch: governance/hf-001-implementation
-NextRole: none
-NextAction: CLERK ONLY — bounded HF001-WP01 correction completion intake. Verify exact pushed BuilderTechnicalHead 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8, direct-child substantive correction head 1cdc853cea0dd2bfbddfd289af880449cdcf8337 from correction BuilderWorkStartHead e520944d07709fb8c6deccca93e418d3a19af062, and original Builder correction return docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_001.md blob 7b163efe2a5cd0713dc9306c1f933bdec5731181. Original audit ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 and findings F01–F04 are immutable; original Builder implementation evidence and plan/approval remain bound. Mechanically update only existing open draft evidence PR #14 with technical-head truth, publish a distinct Clerk audit handoff and separate state-only READY_FOR_ARCHITECT_AUDIT routing. Do not audit, claim correction sufficiency, merge, prepare Z/T, move main, or infer owner final publication approval; ImplementationAuthorized false.
-Handoff: docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_001.md
+NextRole: ARCHITECT
+NextAction: ARCHITECT ONLY — fresh independent HF001-WP01 correction audit. Resolve authoritative remote refs first, synchronize to exact AuditEntryPRHead for existing open draft evidence PR #14, verify separate Clerk compilation handoff docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md blob 09d5a5e906eb59bb29c961225e0a164763730bf1, PreCompilationPRHead b2813a9414ce71c8ef1926717fc52faa8537fae7, ClerkAuditCompilationCommit c6c2fcd85d0ac9eeffe843eb0c81109d9577056b, original Architect audit docs/governance/hotfixes/HF-001/ARCHITECT_AUDIT.md blob 29256ea98a71926dd7699828055af12878fdab55 (F01–F04), original and correction Builder evidence, reviewed plan, original owner bounded approval and main H1 6fde9a620f222aded127d155de8be2042205f087. Architect alone independently audits and decides disposition against the exact current PR head; Clerk makes no audit finding. No native PR merge, Z/T, final owner approval, main publication, I004, Plaid/financial/host activity or purchase is authorized by this passive route; ImplementationAuthorized false.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -51,3 +51,7 @@ CorrectionBuilderTechnicalHead: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
 CorrectionBuilderReturnPath: docs/governance/hotfixes/HF-001/BUILDER_HF001_CORRECTION_RETURN_001.md
 CorrectionBuilderReturnBlob: 7b163efe2a5cd0713dc9306c1f933bdec5731181
 CorrectionBuilderReturnFirstContainingCommit: 1afd715820c32ad171c0e4c04fc8e8f34d6acfb8
+CorrectionPreCompilationPRHead: b2813a9414ce71c8ef1926717fc52faa8537fae7
+CorrectionClerkAuditCompilationCommit: c6c2fcd85d0ac9eeffe843eb0c81109d9577056b
+CorrectionClerkAuditCompilationPath: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CORRECTION_AUDIT_001.md
+CorrectionClerkAuditCompilationBlob: 09d5a5e906eb59bb29c961225e0a164763730bf1
