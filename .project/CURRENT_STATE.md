@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: CLERK_PLAN_REVIEW_PREFLIGHT
+State: BUILDER_PLAN_REVIEW
 Iteration: 003
-ActiveRole: CLERK
+ActiveRole: BUILDER
 WorkPackage: none
-Baseline: fa8ff25d403486fcd7b36a4be43227b24d7edfa8
+Baseline: a167f01f225249fb99554b543336e92f6a61ecf0
 Branch: governance/hf-001-review
 NextRole: none
-NextAction: CLERK ONLY — independent HF-001 implementation-plan cycle-004 deterministic preflight of complete v0.4 Architect plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md blob 2ffd7136ab13379aec48e98484147c63b99364fd first containing commit 63fa1c45e5e3dc97145092511ce5b940da750e53, compatibility audit 1c737e054a063b4925ffd24318b3615095dd27ea, exact handoff docs/governance/hotfixes/HF-001/ARCHITECT_TO_BUILDER_IMPLEMENTATION_PLAN_REVIEW_004.md blob 1fd64a530f3814cae33c07b89de0287999e00f7b first containing commit fa8ff25d403486fcd7b36a4be43227b24d7edfa8. Resolve authoritative remote review ref and effective main H1 6fde9a620f222aded127d155de8be2042205f087 independently; validate exact owner PR #13 squash installation, H1 parent/tree/four-file diff and role authority, prior Builder cycle-003 CHANGES REQUIRED 0990dc4bca64a0232f0668682b7f514525d77037, frozen substantive v0.3 and owner bounded implementation approval. If and only if PASS, create unique CLERK_TO_BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_004.md clearance, then separately release state-only BUILDER_PLAN_REVIEW with fresh observed BuilderWorkStartHead; no implementation ref, source/tests, PR or main change. Purpose GOVERNANCE_HOTFIX_REVIEW; ReviewSubject HF001_IMPLEMENTATION_PLAN; WorkPackage none; ImplementationAuthorized false.
-Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_TO_BUILDER_IMPLEMENTATION_PLAN_REVIEW_004.md
+NextAction: BUILDER ONLY — independently review complete HF-001 v0.4 implementation plan docs/governance/hotfixes/HF-001/ARCHITECT_IMPLEMENTATION_PLAN_REVISION_003.md blob 2ffd7136ab13379aec48e98484147c63b99364fd, first-containing commit 63fa1c45e5e3dc97145092511ce5b940da750e53, against original Architect handoff docs/governance/hotfixes/HF-001/ARCHITECT_TO_BUILDER_IMPLEMENTATION_PLAN_REVIEW_004.md blob 1fd64a530f3814cae33c07b89de0287999e00f7b and Clerk clearance docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_004.md blob b7a0e7bd52905472fbcd30c13cd5aace15eb0a39, artifact commit a167f01f225249fb99554b543336e92f6a61ecf0. Source effective main H1 6fde9a620f222aded127d155de8be2042205f087; prior independent Builder cycle-003 CHANGES REQUIRED blob 0990dc4bca64a0232f0668682b7f514525d77037; owner bounded implementation approval blob cc4520f1367316f2b9224b5f72960f1161c8af71 and frozen v0.3 proposal blob 99be3ba8d9108c791e52f7b82d364ca9cfa41531. Publish a unique cycle-004 Builder plan-review verdict and exact technical head for Clerk completion intake. Review only, no code/tests, implementation ref, technical PR, main mutation, merge, I004, host/bank/Plaid operations or purchases; ImplementationAuthorized false.
+Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_004.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
@@ -70,3 +70,7 @@ CurrentArchitectCompatibilityFirstContainingCommit: 63fa1c45e5e3dc97145092511ce5
 CurrentArchitectHandoffPath: docs/governance/hotfixes/HF-001/ARCHITECT_TO_BUILDER_IMPLEMENTATION_PLAN_REVIEW_004.md
 CurrentArchitectHandoffBlob: 1fd64a530f3814cae33c07b89de0287999e00f7b
 CurrentArchitectHandoffFirstContainingCommit: fa8ff25d403486fcd7b36a4be43227b24d7edfa8
+ClerkCycle004VerifiedInboundProducerHead: c4fb0d99654bea92daec7c57f2281d0e63977fca
+ClerkCycle004ClearancePath: docs/governance/hotfixes/HF-001/CLERK_TO_BUILDER_HF001_IMPLEMENTATION_PLAN_REVIEW_004.md
+ClerkCycle004ClearanceBlob: b7a0e7bd52905472fbcd30c13cd5aace15eb0a39
+ClerkCycle004ClearanceArtifactCommit: a167f01f225249fb99554b543336e92f6a61ecf0
