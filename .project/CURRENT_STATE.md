@@ -2,14 +2,14 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: READY_FOR_ARCHITECT_AUDIT
+State: ARCHITECT_AUDIT
 Iteration: 003
-ActiveRole: none
+ActiveRole: ARCHITECT
 WorkPackage: HF001-WP01
-Baseline: fc5e6609590183ab66ffe7e04f6d1459811e62c5
+Baseline: 72979fbd07bf45c966e66e8cbe27969cc8006da0
 Branch: governance/hf-001-implementation
-NextRole: ARCHITECT
-NextAction: Architect must independently validate the exact Clerk audit handoff, single evidence PR #14, Builder return, reviewed plan and approval identities, current source H1, and technical PR head before entering the active HF001-WP01 audit action under docs/WORKFLOW.md. No audit outcome or publication consent is inferred from Clerk routing.
+NextRole: none
+NextAction: ARCHITECT ONLY — independently audit exact HF001-WP01 Builder technical implementation e76929cba5f72f41432778726401f1eb54b56f5b, original Builder evidence 13bb4caf1af6224fe341751f0947d10869ca1ea3 and technical return 0f0c67742bbe21943b1b854b7c537f41fcef9f0e, reviewed plan v0.4 2ffd7136ab13379aec48e98484147c63b99364fd and owner approval ledger cc4520f1367316f2b9224b5f72960f1161c8af71, via Clerk audit Handoff 6b0a7600883a9cf4efe4640f84fb6bcaaa8bc5db and original AuditEntryPRHead 72979fbd07bf45c966e66e8cbe27969cc8006da0. Retain single draft evidence PR #14, exact main H1 6fde9a620f222aded127d155de8be2042205f087, original I003 main state/roadmap and independent proof tiers. Before any PASS owner wait verify audited allowed tree and create detached H1-parented Z/T, not a native PR merge; if material shortcomings record numbered in-scope findings and return through Clerk. No Builder or Clerk impersonation, main update, financial data, host action, I004, final consent, PR merge.
 Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_AUDIT.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
