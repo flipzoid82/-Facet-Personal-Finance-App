@@ -2,16 +2,16 @@
 
 Project: [Facet] Personal Finance App
 Phase: GOVERNANCE
-State: ARCHITECT_AUDIT
+State: AWAITING_HF001_MERGE_APPROVAL
 Iteration: 003
-ActiveRole: ARCHITECT
+ActiveRole: none
 WorkPackage: HF001-WP01
-Baseline: 632b97eb6293985945ea349331c9b32a741d8e0a
+Baseline: 811dbc5418895180d1603af768f4175265b68bd1
 Branch: governance/hf-001-implementation
-NextRole: none
-NextAction: ARCHITECT ONLY — independent HF001-WP01 final CF01 audit of exact correction SubstantiveImplementationHead acfd9341f31cfd5acb87d453ba126bb06efc50ac and BuilderTechnicalHead 0fa74acff2ba082b56753501f93cf052037a4710. Require original audit 29256ea98a71926dd7699828055af12878fdab55, governing correction audit 89ca0d0d20029cd65f95368da3fc4ddf57b3aa61, Clerk CF01 handoff 2f30d8f46f3ea0108709d35c6df800109c344113, approved plan 2ffd7136ab13379aec48e98484147c63b99364fd and owner implementation approval cc4520f1367316f2b9224b5f72960f1161c8af71. Review current same evidence PR #14 and effective main H1 6fde9a620f222aded127d155de8be2042205f087. Independently resolve CF01 without inheriting Builder PASS. Only if full independent audit PASS prepare H1-rooted filtered T and detached unreferenced single-parent Z before owner wait; no native PR merge, main move, final publication consent inference or financial, host, I004 actions.
-Handoff: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CF01_CORRECTION_AUDIT_002.md
-ApprovalRequiredFrom: none
+NextRole: ARCHITECT
+NextAction: PASSIVE OWNER WAIT — HF001 v0.3 independent audit PASS artifact docs/governance/hotfixes/HF-001/ARCHITECT_CF01_CORRECTION_AUDIT_002.md blob 81624baee6d87d843faa6985c959ea91b03fbe84 and immutable pre-W prospective filtered publication owner request docs/governance/hotfixes/HF-001/ARCHITECT_HF001_FILTERED_PUBLICATION_OWNER_REQUEST_001.md blob c6092965baefb8d675e12901af7d20c64d2d5a3b. Independently observe exact frozen technical W head after this state-only commit, require identical PR #14 head/base H1 6fde9a620f222aded127d155de8be2042205f087, detached sole-parent H1 Z 6503347f5deb4eadb027c0d8693a31ee1ce0b41d and T 1d7dc72e8a4a20a8b67112eec877d00cbbd40bef. Owner must separately affirm exact H1/Z/T/W/PR #14/head, audited nine-path scope, actor ARCHITECT, and one-use NON-PR nonforced guarded expected-old update_ref(main, sha=Z, expected_sha=H1, force=false). Before owner decision no execution role or publication permission exists; following exact owner decision only separately authorized review-ref receipt intake and then one-use provider-proven guarded main publication may proceed. No PR native merge, main mutation, financial/host/I004 work.
+Handoff: docs/governance/hotfixes/HF-001/ARCHITECT_HF001_FILTERED_PUBLICATION_OWNER_REQUEST_001.md
+ApprovalRequiredFrom: USER
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: HF001_IMPLEMENTATION_CORRECTION
@@ -82,3 +82,16 @@ Correction002PreCompilationPRHead: 8cde1839c28c5e5533d67512fa1b0d8574e4d786
 Correction002ClerkAuditCompilationCommit: 2b242195ed4a31e48bbcf92abeaf33e063bb47db
 Correction002ClerkAuditCompilationPath: docs/governance/hotfixes/HF-001/CLERK_TO_ARCHITECT_CF01_CORRECTION_AUDIT_002.md
 Correction002ClerkAuditCompilationBlob: 2f30d8f46f3ea0108709d35c6df800109c344113
+HF001ArchitectAuditPASSPath: docs/governance/hotfixes/HF-001/ARCHITECT_CF01_CORRECTION_AUDIT_002.md
+HF001ArchitectAuditPASSBlob: 81624baee6d87d843faa6985c959ea91b03fbe84
+HF001ArchitectAuditPASSFirstContainingCommit: a0f3d109db5cac34f30b982785cc6815e1c7ce82
+HF001OwnerRequestPath: docs/governance/hotfixes/HF-001/ARCHITECT_HF001_FILTERED_PUBLICATION_OWNER_REQUEST_001.md
+HF001OwnerRequestBlob: c6092965baefb8d675e12901af7d20c64d2d5a3b
+HF001OwnerRequestFirstContainingCommit: 811dbc5418895180d1603af768f4175265b68bd1
+HF001PublicationH1: 6fde9a620f222aded127d155de8be2042205f087
+HF001FilteredTreeT: 1d7dc72e8a4a20a8b67112eec877d00cbbd40bef
+HF001FilteredCommitZ: 6503347f5deb4eadb027c0d8693a31ee1ce0b41d
+HF001EvidencePR: 14
+HF001OwnerDecisionStatus: PENDING_NOT_AUTHORIZED
+HF001PublicationMethod: non-PR filtered Git expected-old-main CAS, force=false
+HF001PublicationActor: ARCHITECT
