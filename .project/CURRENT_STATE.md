@@ -2,15 +2,15 @@
 
 Project: [Facet] Personal Finance App
 Phase: CONTINUATION
-State: ARCHITECT_NEXT_ITERATION_PREP
+State: AWAITING_OWNER_PATH_DECISION
 Iteration: 003
-ActiveRole: ARCHITECT
+ActiveRole: none
 WorkPackage: none
 Baseline: c0413a31eafca9ba6518fbe05440506d024f4ee7
 Branch: main
-NextRole: none
-NextAction: Under installed HF-001 v0.3 and I003_LEGACY_READINESS_BRIDGE_v0_2, prepare one source-identified NEXT_ITERATION_READINESS.md (R1) against the unchanged accepted roadmap; honestly assess G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED, then separately publish passive D1. No I004, roadmap revision/adoption, implementation, host or financial activity.
-Handoff: docs/iterations/iteration-003/reconciliation/ARCHITECT_RELEASE_CLOSEOUT.md
+NextRole: ARCHITECT
+NextAction: ROADMAP_DECISION_REQUIRED (not READY). Await a distinct fresh owner roadmap-review direction naming a single safe ReviewKey and the synthetic-first scope/resource limits. ARCHITECT may then perform only the installed separately guarded ROADMAP_REVISION_DIRECTION_INTAKE E, D0, missing-only review ref claim and isolated A0, with independent Builder and mandatory Creative roadmap reviews before any owner adoption decision. Exact R1: docs/iterations/iteration-003/reconciliation/NEXT_ITERATION_READINESS.md blob a85007d2739f8a8c781f1ba2e4119d40d7c34db5 first containing commit f39b979ad7ae0a92ca7a0987d7eced23fee6334b. G0 NOT CLEARED; M0 PAUSED; M1 NOT AUTHORIZED. No I004, implementation, financial data, host activity or roadmap adoption.
+Handoff: docs/iterations/iteration-003/reconciliation/NEXT_ITERATION_READINESS.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
