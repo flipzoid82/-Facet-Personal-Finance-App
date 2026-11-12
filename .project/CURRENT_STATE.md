@@ -1,15 +1,15 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: RELEASE
-State: ITERATION_COMPLETE
+Phase: CONTINUATION
+State: ARCHITECT_NEXT_ITERATION_PREP
 Iteration: 003
-ActiveRole: none
+ActiveRole: ARCHITECT
 WorkPackage: none
 Baseline: c0413a31eafca9ba6518fbe05440506d024f4ee7
 Branch: main
-NextRole: ARCHITECT
-NextAction: I003 legacy continuation normalized under I003_LEGACY_READINESS_BRIDGE_v0_2; ARCHITECT may perform separately guarded next-iteration preparation and honest readiness assessment only; G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED; no I004 activation or implementation. Approval receipt at docs/governance/bridges/I003/LEGACY_MIGRATION_APPROVAL_RECEIPT.md; original I003 closeout blob 46010b9a2cbaf73fa9271c0b3a593af248bd2729 first containing commit 2a7e63bf730636718c523f813c2634226a67f208 remains authoritative.
+NextRole: none
+NextAction: Under installed HF-001 v0.3 and I003_LEGACY_READINESS_BRIDGE_v0_2, prepare one source-identified NEXT_ITERATION_READINESS.md (R1) against the unchanged accepted roadmap; honestly assess G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED, then separately publish passive D1. No I004, roadmap revision/adoption, implementation, host or financial activity.
 Handoff: docs/iterations/iteration-003/reconciliation/ARCHITECT_RELEASE_CLOSEOUT.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
