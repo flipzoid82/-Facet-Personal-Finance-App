@@ -53,13 +53,14 @@ test('four routes, source-visible rows, browser edit and separate-process restar
     await page.getByRole('button', { name: 'Cancel' }).click();
     await page.getByRole('listitem').filter({ hasText: 'Sample Pending Cafe' }).getByRole('button', { name: 'Edit interpretation' }).click();
     await page.getByRole('textbox', { name: 'Notes' }).fill('Saved despite failed refresh');
-    await page.route('**/api/snapshot', async route => {
+    await page.route('**/api/snapshot**', async route => {
       await route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ error: 'Injected refresh failure' }) });
     }, { times: 1 });
     await page.getByRole('button', { name: 'Save interpretation' }).click();
     await expect(page.getByRole('alert')).toContainText('Injected refresh failure');
     await expect(page.getByRole('status').last()).toContainText('Write confirmed in demo disk state, but the display could not reload');
     await expect(page.getByRole('status').last()).not.toContainText('Saved to demo disk state.');
+    await expect(page.getByRole('button', { name: 'Retry' })).toBeFocused();
     await page.getByRole('button', { name: 'Retry' }).click();
     await page.getByRole('listitem').filter({ hasText: 'Sample Pending Cafe' }).getByRole('button', { name: 'Edit interpretation' }).click();
     await expect(page.getByRole('textbox', { name: 'Notes' })).toHaveValue('Saved despite failed refresh');
@@ -68,7 +69,7 @@ test('four routes, source-visible rows, browser edit and separate-process restar
     await page.getByRole('listitem').filter({ hasText: 'Sample Pending Cafe' }).getByRole('button', { name: 'Edit interpretation' }).click();
     await page.getByRole('textbox', { name: 'Notes' }).fill('Should not persist');
     await page.getByRole('button', { name: 'Save interpretation' }).click();
-    await expect(page.getByRole('status').last()).toContainText('Save failed: Injected disk write failure');
+    await expect(page.getByRole('alert').last()).toContainText('Save failed: Injected disk write failure');
     await expect(page.getByRole('status').last()).not.toContainText('Saved to demo disk state.');
     await page.unroute('**/api/transactions/txn-pending/override');
     const unchanged = await (await page.request.get(`${origin}/api/snapshot`)).json();

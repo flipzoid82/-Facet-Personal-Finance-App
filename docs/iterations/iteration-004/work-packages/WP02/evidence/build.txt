@@ -1,0 +1,14 @@
+
+> facet-synthetic@0.1.0 build
+> vite build
+
+vite v8.3.8 building client environment for production...
+transforming...
+✓ 15 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.36 kB │ gzip:  0.27 kB
+dist/assets/index-CXJewADd.css    2.10 kB │ gzip:  0.84 kB
+dist/assets/index-CW7igcAw.js   151.81 kB │ gzip: 49.47 kB
+
+✓ built in 136ms

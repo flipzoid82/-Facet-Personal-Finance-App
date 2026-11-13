@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fixture, joinedTransactions } from '../shared/domain.js';
 import { OverrideStore } from '../storage/override-store.js';
+import { scenarios, scenarioSnapshot } from '../shared/scenarios.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const dist = path.join(root, 'dist');
@@ -21,7 +22,11 @@ export async function createServer({ overrideStore = store } = {}) {
     const url = new URL(req.url, origin);
     if (url.pathname.startsWith('/api/')) {
       if (req.method === 'GET' && url.pathname === '/api/snapshot') {
-        try { const state = await overrideStore.read(); return send(res, 200, { ...fixture, transactions: joinedTransactions(state.overrides) }); }
+        const scenario = url.searchParams.get('scenario') ?? 'normal';
+        if (!Object.hasOwn(scenarios, scenario)) return send(res, 400, { error: 'Unknown synthetic scenario' });
+        if (scenario === 'delayed') await new Promise(resolve => setTimeout(resolve, 700));
+        if (scenario === 'failure' && url.searchParams.get('recovered') !== '1') return send(res, 503, { error: 'Simulated snapshot failure; retry safely without changing saved interpretations' });
+        try { const state = await overrideStore.read(); return send(res, 200, scenarioSnapshot({ ...fixture, transactions: joinedTransactions(state.overrides) }, scenario)); }
         catch { return send(res, 503, { error: 'Demo state cannot be read safely; inspect the state file before retrying' }); }
       }
       const match = /^\/api\/transactions\/([^/]+)\/override$/.exec(url.pathname);

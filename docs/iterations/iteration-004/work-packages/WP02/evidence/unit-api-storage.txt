@@ -1,0 +1,23 @@
+
+> facet-synthetic@0.1.0 test
+> node --test tests/*.test.js
+
+✔ all fixture rows remain visible and original source is immutable after joining an interpretation (1.036ms)
+✔ only bounded interpretation fields are accepted (0.4632ms)
+✔ every scenario is deterministic and preserves canonical source; reset restores full exact IDs (4.6459ms)
+✔ real API allowlist, failure/retry, partial view and scenario reset preserve override bytes (914.7214ms)
+✔ unsupported version and corrupt/truncated JSON reject reads and edits without rewriting bytes (11.0307ms)
+✔ injected disk replacement failure returns HTTP error and preserves committed interpretation (86.7514ms)
+✔ startup rejects missing build, occupied port, invalid directory, corrupt and unsupported state without deletion (786.5377ms)
+✔ runtime source has no provider dependency, server outbound primitive or external client request (4.8229ms)
+✔ queued edits persist across store instances and corrupt state is not discarded (25.9941ms)
+✔ failed replacement leaves the previous committed override intact (12.5509ms)
+✔ interrupted-write temporary files never replace committed or corrupt state on restart (13.2507ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1083.182

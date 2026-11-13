@@ -92,3 +92,35 @@ ApprovedScope: First runnable synthetic browser app, deterministic fictitious fi
 PermittedEnvironment: Separately permitted controlled development/test runtime only; no inference of consent to owner physical host actions or new services.
 NotAuthorized: Owner-host changes, financial data or account access, real Plaid or Item creation, purchases, paid services, merge, WP02 or later WPs, waiver of independent Builder implementation/audit, physical host T4, G0/M0/M1 clearance.
 NextGate: Distinct Architect implementation handoff followed by separate state-only CLERK_IMPLEMENTATION_PREFLIGHT; Clerk administrative compatibility PASS required before any Builder implementation activation.
+
+## I004-WP02-EXACT-IMPLEMENTATION-APPROVAL-20261113-D602A13C — WORK_PACKAGE_IMPLEMENTATION_APPROVAL
+
+RecordType: WORK_PACKAGE_IMPLEMENTATION_APPROVAL
+Decision: APPROVED — exact reviewed WP02 v0.1.0 synthetic-state, filter, accessibility and integration implementation only
+OwnerWordingVerbatim: "approved"
+OwnerWordingContext: After Architect asked for explicit approval of WP02 Architect Plan v0.1.0 blob 7403e19b8b591082010042119a61870499202109, owner asked "What am I approving here?". Architect then explained WP02's five concrete Builder deliverables, permitted controlled development environment, no real account/Plaid, no paid services or owner-host changes, and separately gated audit/merge/UAT; owner replied "approved". This records that approval of the already identified exact plan, not a new or expanded scope.
+RecordedDate: 2026-11-13 (America/Los_Angeles; precise owner message timestamp not asserted)
+RecordedBy: ARCHITECT under verified passive AWAITING_IMPLEMENTATION_APPROVAL
+ApprovalWaitRef: refs/heads/facet/i004-wp02-synthetic-integration
+ApprovalWaitHead: d602a13c8d51ed08ead1fdffde59ec4df31f9d28
+ApprovalWaitStateBlob: 42a28a9be0e984dfd83f4805b841453c66638630
+Iteration: 004
+WorkPackage: WP02
+PlanPath: docs/iterations/iteration-004/work-packages/WP02/ARCHITECT_PLAN.md
+PlanVersion: v0.1.0
+PlanBlob: 7403e19b8b591082010042119a61870499202109
+PlanFirstContainingCommit: f514ae08fc09390aef7db0a0cb47a1c3baac37a5
+IterationAcceptancePath: docs/iterations/iteration-004/ITERATION_ACCEPTANCE.md
+IterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
+IterationAcceptanceFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+IndependentReviewPath: docs/iterations/iteration-004/work-packages/WP02/BUILDER_PLAN_REVIEW.md
+IndependentReviewBlob: 83c7eafc37eb8cc1ada0712333962ad9741b77c6
+IndependentReviewVerdict: PLAN READY
+BuilderTechnicalHead: e9699c09ba10705cda973b1675647d491666516d
+ClerkCompletionIntakeHead: 0d61a8917a3b7f9cdb8ac113f00169ecb0824c3e
+ArchitectReviewReturnHead: 8676708ff26e12dbb7f766119756e23dd75f2081
+BaselinePassiveMain: 36d302afa3657a7b147d209e2560c5d7ccbd155e
+ApprovedScope: Implement only WP02 W1–W5 against already-merged WP01: deterministic invented-data state/coverage/fault scenarios, reversible source-complete filters, keyboard/focus/accessible responsive UI, non-destructive durable interpretation/recovery regressions, and real runnable browser/API/storage cross-view integration tests and runbook under the frozen accepted I004-C01–C08.
+PermittedEnvironment: Separately permitted controlled synthetic development/test runtime; no automatic installation, configuration or modification of owner physical Windows machine, phone, drives or network; no real personal account or production data.
+NotAuthorized: Altering accepted product, scope or unreviewed material plan; bank/Navy Federal account connection, Plaid, real money, credentials, purchases, paid services, physical host T4, G0/M0/M1 clearance, WP03 or later work, autonomous merge, UAT/release approval or loss of Architect independent audit and exact-head merge authorization.
+NextGate: Architect must commit an exact approved-plan implementation handoff separately, then route a distinct state-only CLERK_IMPLEMENTATION_PREFLIGHT; Clerk must independently verify all identities and authorization before separately releasing Builder implementation. This ledger entry alone does not activate Builder or set ImplementationAuthorized true.
