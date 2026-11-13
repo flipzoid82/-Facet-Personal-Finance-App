@@ -2,19 +2,19 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: BUILDER_IMPLEMENTATION
+State: CLERK_IMPLEMENTATION_CLOSEOUT
 Iteration: 004
-ActiveRole: BUILDER
+ActiveRole: CLERK
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
 NextRole: none
-NextAction: BUILDER ONLY — independently resolve authoritative remote refs/heads/continuation/iteration-004-intake first; require exact equality with the externally supplied BuilderWorkStartHead, safely synchronize local work without discarding changes or unintended merges, then read this active BUILDER_IMPLEMENTATION state, effective-main docs/WORKFLOW.md, chatgpt/roles/BUILDER.md and the exact Clerk Handoff. Implement only the separately owner-approved I004 WP01 Architect Plan v0.1.0 at docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_PLAN.md blob 964f0db1fc07744f64e70c3e37076fcc184550ca, bounded by the original Architect implementation handoff blob c3d23abac0ac81f1cce6b8047fbb13d94c783259, iteration acceptance map blob 9abf75c97617b2963588e90b01ac981885fb59c7, owner approval ledger blob 90159e6fd991e751adad08b7d6a5faf947d4930e, and original independent Builder plan review blob 9fdacc390b8ace2c48e212803237b542acf5cbf6. Use only a permitted controlled development/test runtime and the present authorized non-main ref. Observe the installed Builder implementation, substantive-head, return-evidence and Clerk completion-intake boundaries; do not make an unauthorized branch transition, self-route, merge, access real financial data/Plaid, spend money, change main or perform unconsented owner-host actions.
-Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_BUILDER.md
-HandoffBlob: 0203716ce64bfb9386a823a9dac672f6369445be
-HandoffFirstContainingCommit: 6a8d8e6ea7eec3d0dee954ff020f20da9d969a38
+NextAction: CLERK ONLY — complete bounded I004 WP01 implementation closeout administration. Reverify authoritative remote and original pushed BuilderTechnicalHead 3cf974832384af15c237256c54acf434760d4ee6 and BUILDER_IMPLEMENTATION_RETURN.md blob 989f79f8ad001f4853f4af3c567289ca2d48d283, first-containing commit 3cf974832384af15c237256c54acf434760d4ee6, as direct evidence-only child of SubstantiveImplementationHead 169195084bd1e22d84d0170fbdf1141f1f973ea4; substantive head is a direct child of BuilderWorkStartHead 82de0b0db25ea4e8e70da04d1ed21650a0e9852c. Verify original Clerk implementation clearance docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_BUILDER.md blob 0203716ce64bfb9386a823a9dac672f6369445be first-containing commit 6a8d8e6ea7eec3d0dee954ff020f20da9d969a38, original Architect implementation handoff blob c3d23abac0ac81f1cce6b8047fbb13d94c783259 first-containing commit b703f3b8966a1efb507dd766c0400a3900a10e18, exact owner approval ledger blob 90159e6fd991e751adad08b7d6a5faf947d4930e first-containing commit ac6bf7da0e254ae1ba6767b306dbdeed718440b5, approved plan blob 964f0db1fc07744f64e70c3e37076fcc184550ca, acceptance map blob 9abf75c97617b2963588e90b01ac981885fb59c7, independent plan review blob 9fdacc390b8ace2c48e212803237b542acf5cbf6 and unchanged passive main. On continued deterministic PASS, create/reuse exactly one routine I004 WP01 PR against main as representation of already-pushed work without merging or inferring readiness, observe PreCompilationPRHead, commit Clerk-owned WP01/CLERK_TO_ARCHITECT_AUDIT.md only, then separately publish state-only READY_FOR_ARCHITECT_AUDIT for independent Architect judgment and externally verify AuditEntryPRHead. No Builder source/test changes, technical sufficiency judgment, host/data access, purchases, new approvals, merge or WP02 work.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/BUILDER_IMPLEMENTATION_RETURN.md
+HandoffBlob: 989f79f8ad001f4853f4af3c567289ca2d48d283
+HandoffFirstContainingCommit: 3cf974832384af15c237256c54acf434760d4ee6
 ApprovalRequiredFrom: none
-ImplementationAuthorized: true
+ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: IMPLEMENTATION
 DirectionKind: ROADMAP_STAGE
@@ -30,10 +30,12 @@ ApprovedArchitectPlanBlob: 964f0db1fc07744f64e70c3e37076fcc184550ca
 ApprovedArchitectPlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
 ApprovedIterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
 IndependentBuilderReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
-OriginalBuilderReviewTechnicalHead: de6c65e4f5702835172d68d836156ae8086598f6
 ArchitectImplementationHandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
 ArchitectImplementationHandoffFirstContainingCommit: b703f3b8966a1efb507dd766c0400a3900a10e18
 VerifiedInboundProducerHead: 984c18c7e89d9526c8ef2da3fddc61f37987d876
 ClerkClearanceArtifactCommit: 6a8d8e6ea7eec3d0dee954ff020f20da9d969a38
-BuilderTechnicalDestination: continuation/iteration-004-intake
+BuilderWorkStartHead: 82de0b0db25ea4e8e70da04d1ed21650a0e9852c
+SubstantiveImplementationHead: 169195084bd1e22d84d0170fbdf1141f1f973ea4
+BuilderTechnicalHead: 3cf974832384af15c237256c54acf434760d4ee6
+BuilderImplementationReturnBlob: 989f79f8ad001f4853f4af3c567289ca2d48d283
 CompatibilityCheck: PASS
