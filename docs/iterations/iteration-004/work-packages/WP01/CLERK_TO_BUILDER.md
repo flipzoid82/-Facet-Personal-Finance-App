@@ -1,31 +1,60 @@
-# Facet I004 WP01 — Clerk deterministic clearance for independent PLAN_REVIEW
+# Facet Iteration 004 WP01 — Clerk implementation clearance
 
-**CompatibilityCheck:** PASS — **administrative compatibility only**. This is not a Builder PLAN READY verdict or implementation approval. No test, coding, user-host action, financial-data access, PR, merge or release is authorized.
+Purpose: IMPLEMENTATION
+ClerkAction: CLERK_IMPLEMENTATION_PREFLIGHT
+CompatibilityCheck: PASS
+Scope: exact owner-approved WP01 synthetic application only; this is administrative clearance, not a technical judgment.
+AuthoritativeRef: refs/heads/continuation/iteration-004-intake
+VerifiedInboundProducerHead: 984c18c7e89d9526c8ef2da3fddc61f37987d876
+InboundStateBlob: 77f6ae8e7466dbb83516c2b614ce5e5f57a4423d
+InboundState: PLANNING / CLERK_IMPLEMENTATION_PREFLIGHT / Iteration 004 / WorkPackage WP01 / ActiveRole none / NextRole CLERK / ImplementationAuthorized false
+EffectivePassiveMain: 28610d824d757f34b4a40d31ddd56fc0587b05f6
+EffectiveWorkflowBlob: 088762a69caf56091121207fdaff689ae07aa8d2
+EffectiveClerkRoleBlob: bb2403b64e615099c698058436bd4bf4e93ff3bb
+AdoptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
 
-## Verified inbound producer and governing sources
+## Exact Architect producer and owner approval
 
-- Purpose: `PLAN_REVIEW` of the **original** Architect WP01 candidate and entire I004 S1 decomposition; Phase `PLANNING`; Iteration `004`; WorkPackage `WP01`.
-- Authoritative ref: `refs/heads/continuation/iteration-004-intake` (non-main).
-- **VerifiedInboundProducerHead:** `50e9c50479a8853ab260027dfd66449e5c1fea09`.
-- Inbound `.project/CURRENT_STATE.md`: blob `8bbba1950ab37d5eccbbc909dff002306ee2473e`; `PLANNING / CLERK_PLAN_REVIEW_PREFLIGHT / Iteration 004 / ActiveRole none / NextRole CLERK / WorkPackage WP01 / ImplementationAuthorized false`. Branch, baseline, exact source Handoff and recorded source identities match.
-- Original Architect Handoff: `docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_BUILDER.md`; blob `8673e2b3d9154bd3032e858e32edd8e72aca283b`; first-containing commit `c409aca20d034e8e483a896ce9ed4b0c576c0843`.
-- Original Architect acceptance map: `docs/iterations/iteration-004/ITERATION_ACCEPTANCE.md` v0.1.0; blob `9abf75c97617b2963588e90b01ac981885fb59c7`; first-containing commit `873f3b5709871510076dad043e5fafd57b27f9a1`.
-- Original Architect WP01 plan: `docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_PLAN.md` v0.1.0; blob `964f0db1fc07744f64e70c3e37076fcc184550ca`; first-containing commit `873f3b5709871510076dad043e5fafd57b27f9a1`.
-- Effective passive main / baseline D2: `28610d824d757f34b4a40d31ddd56fc0587b05f6`; main `docs/WORKFLOW.md` blob `088762a69caf56091121207fdaff689ae07aa8d2`; main `chatgpt/roles/CLERK.md` blob `bb2403b64e615099c698058436bd4bf4e93ff3bb`.
-- Accepted roadmap: `docs/PROJECT_ROADMAP.md` v0.2.0 blob `e97cf8a679e26bd1c0444465dc7b9ba685e5deab`, adoption main commit Q `72899784ecba17f8fabf01bbec8272b1f816d315` (roadmap text's historical PROPOSED header is superseded by separately verified adoption).
-- I004 planning direction ledger: `docs/iterations/iteration-004/approvals/APPROVALS.md` blob `bd079e1ee82a7d6d480148e3ae424c58faa8796c`; first containing L `7c5ddd1b09dfac4cb720f90637c9a8d4ea410293`. Planning-only `ROADMAP_STAGE / AUTO_READY_ROADMAP_PLANNING` direction. No user implementation or resource approval.
+ArchitectImplementationHandoffPath: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_CLERK_IMPLEMENTATION.md
+ArchitectImplementationHandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
+ArchitectImplementationHandoffFirstContainingCommit: b703f3b8966a1efb507dd766c0400a3900a10e18
+OwnerApprovalLedgerPath: docs/iterations/iteration-004/approvals/APPROVALS.md
+OwnerApprovalLedgerBlob: 90159e6fd991e751adad08b7d6a5faf947d4930e
+OwnerApprovalFirstContainingCommit: ac6bf7da0e254ae1ba6767b306dbdeed718440b5
+OwnerApprovalRecord: I004-WP01-EXACT-IMPLEMENTATION-APPROVAL-20261113
+OwnerApprovalWaitHead: bcb904c61b271e2558f6bc4af3846d80e74db2a5
+OwnerApprovalWaitStateBlob: 34fab5e0acc6ab007f8ead6e9a7d9c2ec37c5421
+ApprovedPlanPath: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_PLAN.md
+ApprovedPlanVersion: v0.1.0
+ApprovedPlanBlob: 964f0db1fc07744f64e70c3e37076fcc184550ca
+ApprovedPlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+IterationAcceptancePath: docs/iterations/iteration-004/ITERATION_ACCEPTANCE.md
+IterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
+IterationAcceptanceFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+OriginalArchitectReviewHandoffPath: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_BUILDER.md
+OriginalArchitectReviewHandoffBlob: 8673e2b3d9154bd3032e858e32edd8e72aca283b
+OriginalArchitectReviewHandoffFirstContainingCommit: c409aca20d034e8e483a896ce9ed4b0c576c0843
+IndependentBuilderPlanReviewPath: docs/iterations/iteration-004/work-packages/WP01/BUILDER_PLAN_REVIEW.md
+IndependentBuilderPlanReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
+IndependentBuilderPlanReviewFirstContainingCommit: de6c65e4f5702835172d68d836156ae8086598f6
+IndependentBuilderPlanReviewRecordedVerdict: PLAN READY
+PreviousBuilderPlanReviewWorkStartHead: 3870d5a1ff7b58fc88e022728865438f7bf6ffea
+OriginalBuilderTechnicalHead: de6c65e4f5702835172d68d836156ae8086598f6
+OriginalClerkCompletionIntakeHead: 1facd886a30be093dfe4a87427367bc4c9e2e631
+OriginalArchitectReviewedReturnHead: 12939bf207ba5cc840f94cf51fdb5be2c8e6b392
 
-## Deterministic verification and compatible destination
+## Deterministic compatibility findings
 
-1. Verified remote direct-parent sequence `S da32b987df11b4cfaafe13e4b1f435a2b4add72e → A 873f3b5709871510076dad043e5fafd57b27f9a1 → H c409aca20d034e8e483a896ce9ed4b0c576c0843 → R 50e9c50479a8853ab260027dfd66449e5c1fea09`. A adds only acceptance map + WP01 plan; H adds only Architect handoff; R modifies only CURRENT_STATE. L is direct child of passive D2 and adds only I004 planning ledger.
-2. The original acceptance map defines stable `I004-C01`–`I004-C08` mapped to all `S1-01`–`S1-06`, with WP01→WP02 order, WP02 executable cross-WP integration evidence responsibility and Architect final independent integration verification. The WP01 plan and original handoff bind that same map. This is **identity and structural decomposition verification only**, not technical completeness/feasibility or sufficiency judgment.
-3. Baseline/main remains passive D2; authoritative review ref is non-main. Proposed eventual implementation destination `facet/i004-wp01-synthetic-vertical` was absent on remote at preflight and **was not created**. Builder PLAN_REVIEW runs only on the authoritative continuation ref; future implementation branch, specific approval and preflight remain separate.
-4. The installed workflow/Clerk role compatibility predicate has been applied: current ref/head, role/action/state/branch/Handoff, exact plan/version/blob/first-containing commit, acceptance and S1 decomposition identities, baseline, non-main Builder destination restriction and planning-only approval all match. **CompatibilityCheck: PASS.** Builder's separate independent verdict remains pending.
+1. Exact non-main authoritative remote HEAD, current state, handoff path/blob/first-containing commit, baseline, ProjectLifecycle ACTIVE, Phase PLANNING, Purpose IMPLEMENTATION and next Clerk preflight action independently verified.
+2. Parent chain verified: original Clerk Architect-return 12939bf207ba5cc840f94cf51fdb5be2c8e6b392 → Architect approval-wait bcb904c61b271e2558f6bc4af3846d80e74db2a5 → approval ledger-only ac6bf7da0e254ae1ba6767b306dbdeed718440b5 → Architect handoff-only b703f3b8966a1efb507dd766c0400a3900a10e18 → state-only inbound 984c18c7e89d9526c8ef2da3fddc61f37987d876. Each step has the specified single-file change. Original Builder review is a direct child of its review work-start and adds only the review; no newer plan/review mutation found.
+3. Owner's recorded exact-WP implementation approval names plan v0.1.0 blob 964f0db1fc07744f64e70c3e37076fcc184550ca and current independent review blob 9fdacc390b8ace2c48e212803237b542acf5cbf6; approved acceptance map and original handoff remain byte-identical. Approval is only for permitted controlled development/test runtime and this WP, not owner physical host, real data or future packages.
+4. BranchCompatibility: PASS. Authoritative continuation/iteration-004-intake is a verified non-main descendant of passive main D2, which remains unchanged. Proposed optional facet/i004-wp01-synthetic-vertical ref was checked and is absent; no alternative ref is created or implied. The active Builder route must remain bound to this exact authoritative non-main ref until independently authorized otherwise. Main is forbidden for implementation.
+5. CompatibilityCheck: PASS for release of the exact approval-limited BUILDER_IMPLEMENTATION action only. The earlier plan-review clearance was historical evidence; this Clerk-owned update is a distinct implementation clearance, not a rewrite of that earlier Git object.
 
-## Separate release and hard stop
+## Separate state release / handoff limitations
 
-This clearance artifact is Clerk-owned and must be externally verified in its own direct-child commit before any state release. A **separate state-only direct child**, after renewed freshness/compatibility checks, may enter active `PLANNING / BUILDER_PLAN_REVIEW`, `ActiveRole BUILDER / NextRole none / WorkPackage WP01 / ImplementationAuthorized false`, with this exact Clerk artifact as Handoff and its externally observed blob/first-containing commit. `BuilderWorkStartHead` must be observed **after** publication and must not be invented in this artifact.
+Only after externally verifying this clearance's actual blob and first-containing commit may Clerk separately publish a state-only active PLANNING / BUILDER_IMPLEMENTATION / Iteration 004 / WorkPackage WP01 / ActiveRole BUILDER / NextRole none / ImplementationAuthorized true. Recheck compatibility and remote freshness before that release; externally report BuilderWorkStartHead after push, never include a predicted head in this artifact.
 
-Builder's permitted task is solely the original Architect-specified independent `PLAN_REVIEW` against the cited WP01 plan **and complete I004 acceptance/decomposition**. Expected review artifact: `docs/iterations/iteration-004/work-packages/WP01/BUILDER_PLAN_REVIEW.md`. After Builder pushes, Builder externally reports `BuilderTechnicalHead` to Clerk for bounded completion intake, without state edits. All technical review criteria and verdicts belong only to the original Architect artifacts and Builder; Clerk supplies none.
+Builder must independently resolve this exact remote ref, compare the supplied BuilderWorkStartHead, safely synchronize without overwriting local work or creating unintended merges, read .project/CURRENT_STATE.md, effective-main docs/WORKFLOW.md, chatgpt/roles/BUILDER.md and this exact handoff. Only the **original Architect-approved plan, acceptance map and implementation handoff** define technical work; Clerk adds no instructions, criteria or technical verdict. Builder's normal return path remains docs/iterations/iteration-004/work-packages/WP01/BUILDER_IMPLEMENTATION_RETURN.md and the installed workflow, with Clerk bounded completion intake after actual pushed evidence.
 
-**Nonauthorizations:** No `PLAN READY` inference, WP01 or WP02 code, installation, running tests, bank/Plaid data, owner host/phone/LAN/storage modifications, provider consent, resource spending, owner exact-plan implementation approval, PR/merge, release or change to main. Historical G0/M0/M1 and host T4 boundaries remain unresolved.
+Nonauthorizations: WP02 or later WPs, owner-host changes, installation/host trust/network/storage/backup actions outside separately consented runtime, financial data or access, bank/Plaid/API/Item activity, purchase or paid service, main modification, merge/PR authorization, release, G0/M0/M1 gate waiver, or independent Architect audit substitute.
