@@ -2,17 +2,17 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: ARCHITECT_PLANNING
+State: CLERK_PLAN_REVIEW_PREFLIGHT
 Iteration: 004
-ActiveRole: ARCHITECT
-WorkPackage: none
+ActiveRole: none
+WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
-NextRole: none
-NextAction: ARCHITECT ONLY — plan Iteration 004 S1 First functional local synthetic app under exact owner-approved and adopted roadmap v0.2.0 ReviewKey synthetic-first-20261112. Create exactly one I004 acceptance map and first actual executable-feature Work Package architecture/decomposition, then route its exact plan to Clerk for independent Builder PLAN REVIEW; do not implement, test on user host, install, access bank/Plaid, buy, activate Builder, change main or clear G0/M0/M1 without separate gates. S1 must deliver truly runnable browser UI with synthetic Overview, accounts/transactions, durable editable correction and automated tests; clear SYNTHETIC/DEMO labels. Preserve C01-C03/O01, $0 monthly, on-demand, existing storage and host/phone/financial consent.
-Handoff: docs/iterations/iteration-004/approvals/APPROVALS.md
-HandoffBlob: bd079e1ee82a7d6d480148e3ae424c58faa8796c
-HandoffFirstContainingCommit: 7c5ddd1b09dfac4cb720f90637c9a8d4ea410293
+NextRole: CLERK
+NextAction: CLERK ONLY — independently resolve the authoritative remote continuation/iteration-004-intake ref and verify the exact I004 first-WP PLAN_REVIEW producer handoff, acceptance-map/plan blobs and first-containing commit, adopted roadmap/planning ledger, baseline, non-main Builder destination compatibility and mandatory compatibility predicate against installed docs/WORKFLOW.md and chatgpt/roles/CLERK.md. If deterministic preflight PASS, author the Clerk clearance artifact then separately release BUILDER_PLAN_REVIEW with implementation false and externally verify BuilderWorkStartHead. If FAIL or unknown, use the ordinary Clerk administrative return; do not decide technical PLAN READY or authorize implementation.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_BUILDER.md
+HandoffBlob: 8673e2b3d9154bd3032e858e32edd8e72aca283b
+HandoffFirstContainingCommit: c409aca20d034e8e483a896ce9ed4b0c576c0843
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
