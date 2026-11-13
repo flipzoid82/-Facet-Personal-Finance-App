@@ -1,55 +1,27 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: MERGE
-State: MERGE_COMPLETE
+Phase: PLANNING
+State: ARCHITECT_PLANNING
 Iteration: 004
-ActiveRole: none
-WorkPackage: WP01
-Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
-Branch: main
-NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — PR #16 at owner-approved head 202016e24b2de5286507eae3bb82f8d1547ea72f was merged as fc881096ba13020780882fb1df2915357738c68b; verify post-merge state and history. WP01 merge complete; do not infer Iteration 004 release, UAT decision, WP02 authorization, financial/Plaid access, host changes, or resource consent. Determine the next lawful iteration/work-package direction under effective docs/WORKFLOW.md and approved iteration acceptance, requiring any separate necessary approvals and role handoffs.
-Handoff: none
-HandoffBlob: c1bbd08353b0bf848b5a4425897b14e635f4c356
-HandoffFirstContainingCommit: 369dd0829ceeb0bbedb4886208c63d0a84476353
+ActiveRole: ARCHITECT
+WorkPackage: WP02
+Baseline: 36d302afa3657a7b147d209e2560c5d7ccbd155e
+Branch: facet/i004-wp02-synthetic-integration
+NextRole: none
+NextAction: ARCHITECT ONLY — I004 WP01 independently audited and user-approved merged PR #16 (merge commit fc881096ba13020780882fb1df2915357738c68b); WP02 is the second and final accepted S1 Work Package in ITERATION_ACCEPTANCE.md blob 9abf75c97617b2963588e90b01ac981885fb59c7, first-containing commit 873f3b5709871510076dad043e5fafd57b27f9a1. Under effective-main NEXT_ACCEPTED_WP_PLANNING_INTAKE at 36d302afa3657a7b147d209e2560c5d7ccbd155e, author exact WP02 ARCHITECT_PLAN.md and ARCHITECT_TO_BUILDER.md for independent PLAN_REVIEW; separately route through CLERK_PLAN_REVIEW_PREFLIGHT. No Builder coding or implementation, merge, owner-host, Plaid, banking or release authorized.
+Handoff: docs/iterations/iteration-004/ITERATION_ACCEPTANCE.md
+HandoffBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
+HandoffFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
-Purpose: POST_MERGE_RECONCILIATION
-DirectionKind: ROADMAP_STAGE
-PlanningDirectionType: AUTO_READY_ROADMAP_PLANNING
+Purpose: WP02_PLAN_AUTHORING
 ReviewKey: synthetic-first-20261112
 AcceptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
-PredecessorD2Head: 28610d824d757f34b4a40d31ddd56fc0587b05f6
-PredecessorR2Blob: 7059a2d7bb1b3b5a972e54eb9a509a49c998498f
-OwnerImplementationApprovalRecord: I004-WP01-EXACT-IMPLEMENTATION-APPROVAL-20261113
-OwnerImplementationApprovalBlob: 90159e6fd991e751adad08b7d6a5faf947d4930e
-OwnerImplementationApprovalFirstContainingCommit: ac6bf7da0e254ae1ba6767b306dbdeed718440b5
-ApprovedArchitectPlanBlob: 964f0db1fc07744f64e70c3e37076fcc184550ca
-ApprovedArchitectPlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
-ApprovedIterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
-IndependentBuilderReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
-ArchitectImplementationHandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
-OriginalArchitectAuditBlob: 4123115c9b4fb64ae692d828e757bf9b274bab68
-OriginalArchitectAuditFirstContainingCommit: 2dfd22c4c2b0771be9749a8fd8510033656e9d53
-OriginalAuditEntryPRHead: e7aeec4a5ca8fb5d85b75f7baac1efe8a4392d77
-CorrectionFindingIds: F1, F2
-SeparateArchitectOwnedFindingId: C1 (WITHDRAWN; see ARCHITECT_AUDIT_C1_WITHDRAWAL.md)
-CorrectionClerkClearanceBlob: e9976dea96b95524cc6b80e812becba0c85e8261
-CorrectionClerkClearanceArtifactCommit: b2dece73cf7257c52a6f171d6e6967a4b01a2bbe
-CorrectionBuilderWorkStartHead: e1624348b09da0855e479c0d021c938747bde591
-CorrectionSubstantiveImplementationHead: fa17c44e11ca804b15802755cfbd73a1f8596236
-CorrectionBuilderTechnicalHead: 8593d780a5e8748793ce28d879ebc3515d19fb11
-CorrectionBuilderReturnBlob: 08fdc2dac7234e52d75f13eda9a6bb1f99a4a1cd
-CorrectionClerkCloseoutIntakeHead: 4e7ff29f9e7a90145433fd6f24c7c12a400a6ea6
-PreCompilationPRHead: 4e7ff29f9e7a90145433fd6f24c7c12a400a6ea6
-ClerkAuditCompilationCommit: 369dd0829ceeb0bbedb4886208c63d0a84476353
-AuditPRNumber: 16
-AuditPRURL: https://github.com/flipzoid82/-Facet-Personal-Finance-App/pull/16
-CompatibilityCheck: PASS
-
-MergedPRNumber: 16
-OwnerApprovedMergeHead: 202016e24b2de5286507eae3bb82f8d1547ea72f
-VerifiedMergeCommit: fc881096ba13020780882fb1df2915357738c68b
-ArchitectC1Disposition: WITHDRAWN
+ControllingWorkflowBlob: 57fd360379b06ab7625cc14fe17e90ef0ee1d176
+PreviousWorkPackage: WP01
+PreviousPRNumber: 16
+PreviousMergeCommit: fc881096ba13020780882fb1df2915357738c68b
+PreviousMergeReconciliationCommit: 2922aa283175d5fe0dd91931a4b9e373831bf2c9
+WP02PlanningOwnerInstructions: "Proceed to planning WP02"; "Okay, let's move on to the next work package"; "Proceed." — planning-only, not implementation approval
