@@ -2,21 +2,21 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: AWAITING_IMPLEMENTATION_APPROVAL
+State: CLERK_IMPLEMENTATION_PREFLIGHT
 Iteration: 004
 ActiveRole: none
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
-NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — await explicit informed owner approval or refusal of exact I004 WP01 Architect plan v0.1.0 blob 964f0db1fc07744f64e70c3e37076fcc184550ca, first-containing commit 873f3b5709871510076dad043e5fafd57b27f9a1, complete acceptance map blob 9abf75c97617b2963588e90b01ac981885fb59c7, and independent PLAN READY Builder review blob 9fdacc390b8ace2c48e212803237b542acf5cbf6, BuilderTechnicalHead de6c65e4f5702835172d68d836156ae8086598f6. No implementation, host changes, dependency install, financial/provider data or cost authorization is implied by this wait. On exact affirmative consent, record append-only I004 approval then separately route exact Architect implementation handoff to CLERK_IMPLEMENTATION_PREFLIGHT; on refusal remain passive.
-Handoff: docs/iterations/iteration-004/work-packages/WP01/BUILDER_PLAN_REVIEW.md
-HandoffBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
-HandoffFirstContainingCommit: de6c65e4f5702835172d68d836156ae8086598f6
-ApprovalRequiredFrom: USER
+NextRole: CLERK
+NextAction: CLERK ONLY — resolve authoritative remote first; independently validate the exact owner-approved I004 WP01 plan, original independent PLAN READY review, approval ledger blob 90159e6fd991e751adad08b7d6a5faf947d4930e, first-containing commit ac6bf7da0e254ae1ba6767b306dbdeed718440b5, and exact Architect implementation handoff blob c3d23abac0ac81f1cce6b8047fbb13d94c783259 first-containing commit b703f3b8966a1efb507dd766c0400a3900a10e18. Apply installed compatibility predicate and non-main implementation destination gate; only after PASS, commit Clerk clearance and separately release active BUILDER_IMPLEMENTATION with bounded implementation true. On FAIL/UNKNOWN administrative return; Clerk does not code, merge or expand host/data/resource consent.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_CLERK_IMPLEMENTATION.md
+HandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
+HandoffFirstContainingCommit: b703f3b8966a1efb507dd766c0400a3900a10e18
+ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
-Purpose: PLAN_REVIEW
+Purpose: IMPLEMENTATION
 DirectionKind: ROADMAP_STAGE
 PlanningDirectionType: AUTO_READY_ROADMAP_PLANNING
 ReviewKey: synthetic-first-20261112
