@@ -1,15 +1,15 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: CONTINUATION
-State: AWAITING_ROADMAP_REVISION_REF_CLAIM
+Phase: GOVERNANCE
+State: ARCHITECT_ROADMAP_REVISION_PROPOSAL
 Iteration: 003
-ActiveRole: none
+ActiveRole: ARCHITECT
 WorkPackage: none
-Baseline: c0413a31eafca9ba6518fbe05440506d024f4ee7
-Branch: main
-NextRole: ARCHITECT
-NextAction: ReviewKey synthetic-first-20261112; under installed HF-001 v0.3, Architect may only carry out ROADMAP_REVISION_REF_CLAIM via genuinely absent-only atomic create of refs/heads/review/roadmap/synthetic-first-20261112 starting at this exact D0; after read-back publish separate state-only A0 on isolated review ref. Owner direction E blob 8977ce63a0447c21ec69774c89470430457a74b5 first containing commit 95a826f2ad7f950e9332b9ebc43121838c982039. R1 verdict ROADMAP_DECISION_REQUIRED; accepted main roadmap unchanged, G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED. No I004, Builder execution, bank/host work, cost or adoption.
+Baseline: 93fe29b02db169f6a31ed19d41b4b1058cb2f43e
+Branch: review/roadmap/synthetic-first-20261112
+NextRole: none
+NextAction: ReviewKey synthetic-first-20261112; prepare a review-only proposed roadmap at docs/PROJECT_ROADMAP.md and separate exact Architect-to-Clerk/Builder roadmap-review handoff under installed HF-001 v0.3. Preserve accepted main roadmap and real-Plaid first-use promise, document independent technical feasibility, Builder review through Clerk, then mandatory separate Creative review and owner candidate approval. No I004, Builder implementation, financial or host access, cost, roadmap adoption or review-branch merge into main.
 Handoff: docs/project-planning/roadmap-revisions/synthetic-first-20261112/ROADMAP_REVISION_REVIEW_DIRECTION.md
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
