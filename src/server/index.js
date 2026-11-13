@@ -12,16 +12,16 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('FACET_
 const store = new OverrideStore(process.env.FACET_STATE_DIR ?? path.join(root, '.facet-demo-state'));
 const send = (res, status, value) => { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(value)); };
 const types = { '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html', '.svg': 'image/svg+xml' };
-export async function createServer() {
+export async function createServer({ overrideStore = store } = {}) {
   await fs.access(path.join(dist, 'index.html'));
-  await store.read();
+  await overrideStore.read();
   return http.createServer(async (req, res) => {
-    const origin = `http://127.0.0.1:${port}`;
-    if (req.headers.host !== `127.0.0.1:${port}`) return send(res, 403, { error: 'Loopback host required' });
+    const origin = `http://127.0.0.1:${req.socket.localPort}`;
+    if (req.headers.host !== `127.0.0.1:${req.socket.localPort}`) return send(res, 403, { error: 'Loopback host required' });
     const url = new URL(req.url, origin);
     if (url.pathname.startsWith('/api/')) {
       if (req.method === 'GET' && url.pathname === '/api/snapshot') {
-        try { const state = await store.read(); return send(res, 200, { ...fixture, transactions: joinedTransactions(state.overrides) }); }
+        try { const state = await overrideStore.read(); return send(res, 200, { ...fixture, transactions: joinedTransactions(state.overrides) }); }
         catch { return send(res, 503, { error: 'Demo state cannot be read safely; inspect the state file before retrying' }); }
       }
       const match = /^\/api\/transactions\/([^/]+)\/override$/.exec(url.pathname);
@@ -30,7 +30,7 @@ export async function createServer() {
         try {
           let raw = '';
           for await (const chunk of req) { raw += chunk; if (raw.length > 4096) return send(res, 413, { error: 'Edit too large' }); }
-          const saved = await store.update(decodeURIComponent(match[1]), JSON.parse(raw));
+          const saved = await overrideStore.update(decodeURIComponent(match[1]), JSON.parse(raw));
           return send(res, 200, { saved });
         } catch (error) { return send(res, error instanceof SyntaxError ? 400 : /Unknown|Only|Supply|must be/.test(error.message) ? 422 : 503, { error: error.message }); }
       }

@@ -12,9 +12,9 @@ function checked(value) {
   return value;
 }
 export class OverrideStore {
-  constructor(directory) { this.directory = path.resolve(directory); this.file = path.join(this.directory, 'overrides.json'); this.queue = Promise.resolve(); }
+  constructor(directory, operations = fs) { this.directory = path.resolve(directory); this.file = path.join(this.directory, 'overrides.json'); this.queue = Promise.resolve(); this.operations = operations; }
   async read() {
-    try { return checked(JSON.parse(await fs.readFile(this.file, 'utf8'))); }
+    try { return checked(JSON.parse(await this.operations.readFile(this.file, 'utf8'))); }
     catch (error) { if (error.code === 'ENOENT') return empty(); throw error; }
   }
   async update(id, body) {
@@ -23,10 +23,10 @@ export class OverrideStore {
     const operation = this.queue.then(async () => {
       const state = await this.read();
       const next = { version: 1, overrides: { ...state.overrides, [id]: valid } };
-      await fs.mkdir(this.directory, { recursive: true });
+      await this.operations.mkdir(this.directory, { recursive: true });
       const temporary = path.join(this.directory, `overrides-${process.pid}-${crypto.randomUUID()}.tmp`);
-      try { await fs.writeFile(temporary, JSON.stringify(next), { flag: 'wx', mode: 0o600 }); await fs.rename(temporary, this.file); }
-      finally { await fs.rm(temporary, { force: true }).catch(() => {}); }
+      try { await this.operations.writeFile(temporary, JSON.stringify(next), { flag: 'wx', mode: 0o600 }); await this.operations.rename(temporary, this.file); }
+      finally { await this.operations.rm(temporary, { force: true }).catch(() => {}); }
       return valid;
     });
     this.queue = operation.catch(() => {});

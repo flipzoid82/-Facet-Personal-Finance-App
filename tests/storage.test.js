@@ -18,3 +18,27 @@ test('queued edits persist across store instances and corrupt state is not disca
     assert.equal(await fs.readFile(path.join(directory, 'overrides.json'), 'utf8'), '{broken');
   } finally { await fs.rm(directory, { recursive: true, force: true }); }
 });
+
+test('failed replacement leaves the previous committed override intact', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'facet-failed-write-'));
+  const first = { category: 'Original', label: 'kept', notes: 'prior committed note' };
+  const replacement = { category: 'New', label: 'not saved', notes: 'must not appear' };
+  try {
+    const normal = new OverrideStore(directory);
+    await normal.update('txn-pending', first);
+    const before = await fs.readFile(path.join(directory, 'overrides.json'), 'utf8');
+    let attempted = false;
+    const failing = new OverrideStore(directory, {
+      readFile: (...args) => fs.readFile(...args),
+      mkdir: (...args) => fs.mkdir(...args),
+      writeFile: (...args) => fs.writeFile(...args),
+      rm: (...args) => fs.rm(...args),
+      rename: async () => { attempted = true; throw Object.assign(new Error('Injected replacement failure'), { code: 'EIO' }); }
+    });
+    await assert.rejects(failing.update('txn-pending', replacement), /Injected replacement failure/);
+    assert.equal(attempted, true);
+    assert.equal(await fs.readFile(path.join(directory, 'overrides.json'), 'utf8'), before);
+    assert.deepEqual((await new OverrideStore(directory).read()).overrides['txn-pending'], first);
+    assert.deepEqual((await fs.readdir(directory)).sort(), ['overrides.json']);
+  } finally { await fs.rm(directory, { recursive: true, force: true }); }
+});

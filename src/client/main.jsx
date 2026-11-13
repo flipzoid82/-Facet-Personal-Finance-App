@@ -13,8 +13,8 @@ function App() {
   const [status, setStatus] = useState('');
   const load = async () => {
     setBusy(true); setError('');
-    try { const response = await fetch('/api/snapshot'); if (!response.ok) throw new Error((await response.json()).error); setData(await response.json()); }
-    catch (failure) { setError(failure.message); }
+    try { const response = await fetch('/api/snapshot'); if (!response.ok) throw new Error((await response.json()).error); setData(await response.json()); return true; }
+    catch (failure) { setError(failure.message); return false; }
     finally { setBusy(false); }
   };
   useEffect(() => { load(); const pop = () => setPath(route()); addEventListener('popstate', pop); return () => removeEventListener('popstate', pop); }, []);
@@ -30,7 +30,10 @@ function App() {
     try {
       const response = await fetch(`/api/transactions/${encodeURIComponent(edit.id)}/override`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ category: edit.category, label: edit.label, notes: edit.notes }) });
       const result = await response.json(); if (!response.ok) throw new Error(result.error);
-      await load(); setStatus('Saved to demo disk state.'); setEdit(null);
+      const refreshed = await load();
+      if (refreshed) setStatus('Saved to demo disk state.');
+      else setStatus('Write confirmed in demo disk state, but the display could not reload. Retry loading to verify the shown value.');
+      setEdit(null);
     } catch (failure) { setStatus(`Save failed: ${failure.message}. Previous value was kept.`); }
   };
   return <><header><div className="banner">SYNTHETIC / DEMO — no real accounts connected</div><nav aria-label="Main navigation">{link('/', 'Overview')}{link('/accounts', 'Accounts')}{link('/transactions', 'Transactions')}</nav></header><main>
