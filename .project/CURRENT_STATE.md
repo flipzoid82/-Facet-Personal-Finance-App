@@ -2,21 +2,21 @@
 
 Project: [Facet] Personal Finance App
 Phase: AUDIT
-State: READY_FOR_ARCHITECT_AUDIT
+State: CLERK_IMPLEMENTATION_PREFLIGHT
 Iteration: 004
 ActiveRole: none
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
-NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — independently resolve authoritative remote refs/heads/continuation/iteration-004-intake before local synchronization; verify this exact passive audit-entry state, effective-main docs/WORKFLOW.md, chatgpt/roles/ARCHITECT.md, and Clerk audit handoff docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_ARCHITECT_AUDIT.md blob 9af9327b116e7b2e4cbea5571f1381407d396a75 first-containing ClerkAuditCompilationCommit 1ee593d62acec5f6e04fafcee5f2563a3183439a. Verify the direct-parent sequence PreCompilationPRHead 304d583ea0700d18f2eaa16e329fb895e0705fec → ClerkAuditCompilationCommit 1ee593d62acec5f6e04fafcee5f2563a3183439a → externally observed AuditEntryPRHead; open unmerged PR #16 https://github.com/flipzoid82/-Facet-Personal-Finance-App/pull/16 based on unchanged main D2; and the original BuilderWorkStartHead 82de0b0db25ea4e8e70da04d1ed21650a0e9852c, SubstantiveImplementationHead 169195084bd1e22d84d0170fbdf1141f1f973ea4, BuilderTechnicalHead 3cf974832384af15c237256c54acf434760d4ee6 and Builder return blob 989f79f8ad001f4853f4af3c567289ca2d48d283. Verify exact approved Architect plan blob 964f0db1fc07744f64e70c3e37076fcc184550ca, complete acceptance blob 9abf75c97617b2963588e90b01ac981885fb59c7, original independent PLAN READY review blob 9fdacc390b8ace2c48e212803237b542acf5cbf6, owner approval ledger blob 90159e6fd991e751adad08b7d6a5faf947d4930e, Architect implementation handoff blob c3d23abac0ac81f1cce6b8047fbb13d94c783259 and Clerk implementation clearance blob 0203716ce64bfb9386a823a9dac672f6369445be. Independently audit exact submitted software/test evidence and actual candidate/PR diff, including any main control-state implications, under installed Architect contract. Clerk supplies no technical audit PASS, merge-readiness or new approval. No PR merge, owner host operation, bank/Plaid data, purchases, WP02 or release authorization follows.
-Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_ARCHITECT_AUDIT.md
-HandoffBlob: 9af9327b116e7b2e4cbea5571f1381407d396a75
-HandoffFirstContainingCommit: 1ee593d62acec5f6e04fafcee5f2563a3183439a
+NextRole: CLERK
+NextAction: CLERK ONLY — independently resolve authoritative remote head; validate original WP01 approved plan, owner approval, Builder technical heads, PR #16 and exact Architect CHANGES_REQUIRED audit docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_AUDIT.md blob 4123115c9b4fb64ae692d828e757bf9b274bab68 first-containing commit 2dfd22c4c2b0771be9749a8fd8510033656e9d53. Perform bounded correction preflight for Builder-owned F1 and F2 only on same WP branch/PR, with implementation false until Clerk clearance and separate BUILDER_CORRECTION activation. Preserve Architect-owned C1 PR/control merge-scope blocker for later audit/merge disposition; Clerk must not edit control-state history or declare technical PASS. No merge, owner-host action, financial data, purchase, later WP or release.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_AUDIT.md
+HandoffBlob: 4123115c9b4fb64ae692d828e757bf9b274bab68
+HandoffFirstContainingCommit: 2dfd22c4c2b0771be9749a8fd8510033656e9d53
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
-Purpose: IMPLEMENTATION_AUDIT
+Purpose: IMPLEMENTATION_CORRECTION
 DirectionKind: ROADMAP_STAGE
 PlanningDirectionType: AUTO_READY_ROADMAP_PLANNING
 ReviewKey: synthetic-first-20261112
