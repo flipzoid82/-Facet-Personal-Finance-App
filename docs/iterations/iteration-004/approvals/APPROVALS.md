@@ -62,3 +62,33 @@ NotAuthorized: Implementing, building or testing software, first-WP Builder work
 ## Claim / recovery invariants
 
 L must be a single direct child of passive main D2 and add ONLY this previously absent approvals ledger while preserving .project/CURRENT_STATE.md byte-identical. The canonical ref may point to L only through a **create-only atomic absent-ref operation**; pre-reading a 404 or using a permissive create-or-update branch action is insufficient. After reading back L, a separate state-only S may be advanced only against the exact observed L and must preserve this ledger blob. Duplicate/contradictory persisted claims STOP rather than creating another ref. Main remains D2, passive. The ordinary first-WP Clerk/Builder review and separate owner exact implementation approval are still required before coding.
+
+## I004-WP01-EXACT-IMPLEMENTATION-APPROVAL-20261113 — WORK_PACKAGE_IMPLEMENTATION_APPROVAL
+
+RecordType: WORK_PACKAGE_IMPLEMENTATION_APPROVAL
+Decision: APPROVED — exact reviewed WP01 v0.1.0 synthetic application implementation only
+OwnerWordingVerbatim: "I explicitly approve implementation of Facet Iteration 004 WP01 Architect Plan v0.1.0, blob 964f0db1fc07744f64e70c3e37076fcc184550ca, as independently reviewed PLAN READY. This approval is limited to the exact synthetic application WP01 and permitted development/test runtime. It does not authorize owner-host changes, financial data, Plaid, purchases, merge, or later Work Packages. Record this approval and proceed through the required separate Clerk implementation preflight."
+RecordedDate: 2026-11-13 (conversation current date; precise message time not asserted)
+RecordedBy: ARCHITECT under verified passive AWAITING_IMPLEMENTATION_APPROVAL
+ApprovalWaitHead: bcb904c61b271e2558f6bc4af3846d80e74db2a5
+ApprovalWaitStateBlob: 34fab5e0acc6ab007f8ead6e9a7d9c2ec37c5421
+Iteration: 004
+WorkPackage: WP01
+PlanPath: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_PLAN.md
+PlanVersion: v0.1.0
+PlanBlob: 964f0db1fc07744f64e70c3e37076fcc184550ca
+PlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+IterationAcceptancePath: docs/iterations/iteration-004/ITERATION_ACCEPTANCE.md
+IterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
+IterationAcceptanceFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+IndependentReviewPath: docs/iterations/iteration-004/work-packages/WP01/BUILDER_PLAN_REVIEW.md
+IndependentReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
+IndependentReviewVerdict: PLAN READY
+BuilderTechnicalHead: de6c65e4f5702835172d68d836156ae8086598f6
+ClerkCompletionIntakeHead: 1facd886a30be093dfe4a87427367bc4c9e2e631
+ReviewedReturnHead: 12939bf207ba5cc840f94cf51fdb5be2c8e6b392
+BaselinePassiveMain: 28610d824d757f34b4a40d31ddd56fc0587b05f6
+ApprovedScope: First runnable synthetic browser app, deterministic fictitious fixtures, Overview/Accounts/account detail/Transactions, durable classification edits, visible demo labels, baseline responsive/accessibility and automated test/build/start/stop proof under exact plan.
+PermittedEnvironment: Separately permitted controlled development/test runtime only; no inference of consent to owner physical host actions or new services.
+NotAuthorized: Owner-host changes, financial data or account access, real Plaid or Item creation, purchases, paid services, merge, WP02 or later WPs, waiver of independent Builder implementation/audit, physical host T4, G0/M0/M1 clearance.
+NextGate: Distinct Architect implementation handoff followed by separate state-only CLERK_IMPLEMENTATION_PREFLIGHT; Clerk administrative compatibility PASS required before any Builder implementation activation.
