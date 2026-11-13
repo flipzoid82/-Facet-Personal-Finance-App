@@ -2,21 +2,21 @@
 
 Project: [Facet] Personal Finance App
 Phase: UAT
-State: AWAITING_UAT_DECISION
+State: AWAITING_UAT_RESULTS
 Iteration: 004
 ActiveRole: none
 WorkPackage: none
 Baseline: f286934e286d965e3068548b10e9ee43070313b5
 Branch: main
 NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — I004 WP01 and WP02 both independently audited, exact-head owner-authorized merged and reconciled. Exact substantive two-WP candidate f286934e286d965e3068548b10e9ee43070313b5; post-merge state-only reconciliation 4404819f75dbf11a8975fb5b519be0a31aa7e835. Consult exact docs/iterations/iteration-004/uat/UAT_ASSESSMENT_001.md blob 43ea3dc93db99c3b0b7f666cef95b57440431e68 first containing 7bb4b3dfeceacab0283c8e6d567e5fa57d3a1d8e: I004-C01–C08 SATISFIED at required controlled synthetic T1/Builder T2/Architect T3; UAT APPLICABLE recommendation only. Await USER distinct explicit PERFORM UAT or SKIP UAT; do not infer choice from instruction to move to UAT. On PERFORM, Architect records UAT_DECISION_001.md and numbered UAT_CHECKLIST_001.md with prerequisites and later descriptive results. On SKIP, Architect records the owner's exact skip choice. Before any execution on owner's host, separate consent and safe access are required. Neither UAT decision authorizes source implementation, real finance/Plaid, host setup, purchase, another WP, release completion, or bypass of separate release approval.
-Handoff: docs/iterations/iteration-004/uat/UAT_ASSESSMENT_001.md
-HandoffBlob: 43ea3dc93db99c3b0b7f666cef95b57440431e68
-HandoffFirstContainingCommit: 7bb4b3dfeceacab0283c8e6d567e5fa57d3a1d8e
-ApprovalRequiredFrom: USER
+NextAction: ARCHITECT ONLY — the owner explicitly chose PERFORM UAT for I004 and separately prohibited changes to the personal computer without new approval; exact choice in docs/iterations/iteration-004/uat/UAT_DECISION_001.md blob 767f5c9f21e0eda3beede5bdc6feda7ac172b1a7 first-containing ffd53bc31949a62f7f3f7354194dcddbf4faa1bb. User-facing UAT_CHECKLIST_001.md blob 5c86268960c2df9766054b17140e3475def8ec94 first-containing 1c10310ecd00505aa9ac4be16a5a8f7fc47a1e34 lists eleven numbered actions/expected observations. UAT execution is NOT YET PERFORMED and is BLOCKED ON ACCESS to an actually available, separately permitted owner-accessible controlled synthetic demo. Do not install/configure anything on user's physical Windows computer/phone/drives/network or touch real financial data/Plaid without fresh separate permission. Once safe access is confirmed, invite numbered descriptive owner observations; preserve exactly in UAT_REPORT_001.md and conduct independent Architect triage through ARCHITECT_UAT_TRIAGE. Do not infer user PASS, skipped UAT, defects, release approval, further implementation or new WP from this wait.
+Handoff: docs/iterations/iteration-004/uat/UAT_CHECKLIST_001.md
+HandoffBlob: 5c86268960c2df9766054b17140e3475def8ec94
+HandoffFirstContainingCommit: 1c10310ecd00505aa9ac4be16a5a8f7fc47a1e34
+ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
-Purpose: UAT_ASSESSMENT
+Purpose: UAT_RESULTS_INTAKE
 ReviewKey: synthetic-first-20261112
 AcceptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
 ControllingWorkflowBlob: 57fd360379b06ab7625cc14fe17e90ef0ee1d176
@@ -103,4 +103,16 @@ UATAssessmentFirstContainingCommit: 7bb4b3dfeceacab0283c8e6d567e5fa57d3a1d8e
 UATRecommendation: APPLICABLE (owner decision pending)
 UATSubstantiveCandidate: f286934e286d965e3068548b10e9ee43070313b5
 UATPostMergeReconciliationHead: 4404819f75dbf11a8975fb5b519be0a31aa7e835
-UATChoiceRecorded: none
+UATChoiceRecorded: PERFORM UAT — I004-UAT-DECISION-001-20261113
+
+UATDecisionPath: docs/iterations/iteration-004/uat/UAT_DECISION_001.md
+UATDecisionBlob: 767f5c9f21e0eda3beede5bdc6feda7ac172b1a7
+UATDecisionFirstContainingCommit: ffd53bc31949a62f7f3f7354194dcddbf4faa1bb
+UATNormalizedDecision: PERFORM UAT
+UATChecklistPath: docs/iterations/iteration-004/uat/UAT_CHECKLIST_001.md
+UATChecklistBlob: 5c86268960c2df9766054b17140e3475def8ec94
+UATChecklistFirstContainingCommit: 1c10310ecd00505aa9ac4be16a5a8f7fc47a1e34
+UATExecutionStatus: NOT_STARTED — no verified permitted owner-accessible runtime
+UATExecutionPrerequisite: BLOCKED_ON_APPROVED_ACCESSIBLE_CONTROLLED_SYNTHETIC_RUNTIME
+UATUserObservations: none
+UATReportStatus: not created; requires actual observations
