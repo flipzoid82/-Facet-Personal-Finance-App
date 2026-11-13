@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.facet-demo-state/
+playwright-report/
+test-results/

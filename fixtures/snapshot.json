@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "observedAt": "2026-01-15T12:00:00.000Z",
+  "origin": "Invented local fixture",
+  "coverage": "Two invented accounts and six sample transactions only",
+  "accounts": [
+    {"id":"acct-sample-checking","name":"Sample Checking","currency":"USD","balanceCents":245000},
+    {"id":"acct-sample-savings","name":"Sample Savings","currency":"USD","balanceCents":870000}
+  ],
+  "transactions": [
+    {"id":"txn-grocery","accountId":"acct-sample-checking","date":"2026-01-14","merchant":"Invented Market","amountCents":-4235,"pending":false,"category":"Groceries","label":"","notes":""},
+    {"id":"txn-pending","accountId":"acct-sample-checking","date":"2026-01-15","merchant":"Sample Pending Cafe","amountCents":-875,"pending":true,"category":null,"label":"","notes":""},
+    {"id":"txn-unidentified","accountId":"acct-sample-checking","date":"2026-01-13","merchant":null,"amountCents":-1200,"pending":false,"category":null,"label":"","notes":""},
+    {"id":"txn-pay","accountId":"acct-sample-checking","date":"2026-01-12","merchant":"Fictional Payroll","amountCents":190000,"pending":false,"category":"Sample income","label":"","notes":""},
+    {"id":"txn-save","accountId":"acct-sample-savings","date":"2026-01-11","merchant":"Made-up Transfer","amountCents":5000,"pending":false,"category":"Transfer","label":"","notes":""},
+    {"id":"txn-interest","accountId":"acct-sample-savings","date":"2026-01-10","merchant":"Imaginary Interest","amountCents":125,"pending":false,"category":null,"label":"","notes":""}
+  ]
+}
