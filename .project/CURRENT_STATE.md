@@ -2,23 +2,27 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: CLERK_PLAN_REVIEW_PREFLIGHT
+State: BUILDER_PLAN_REVIEW
 Iteration: 004
-ActiveRole: none
+ActiveRole: BUILDER
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
-NextRole: CLERK
-NextAction: CLERK ONLY — independently resolve the authoritative remote continuation/iteration-004-intake ref and verify the exact I004 first-WP PLAN_REVIEW producer handoff, acceptance-map/plan blobs and first-containing commit, adopted roadmap/planning ledger, baseline, non-main Builder destination compatibility and mandatory compatibility predicate against installed docs/WORKFLOW.md and chatgpt/roles/CLERK.md. If deterministic preflight PASS, author the Clerk clearance artifact then separately release BUILDER_PLAN_REVIEW with implementation false and externally verify BuilderWorkStartHead. If FAIL or unknown, use the ordinary Clerk administrative return; do not decide technical PLAN READY or authorize implementation.
-Handoff: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_BUILDER.md
-HandoffBlob: 8673e2b3d9154bd3032e858e32edd8e72aca283b
-HandoffFirstContainingCommit: c409aca20d034e8e483a896ce9ed4b0c576c0843
+NextRole: none
+NextAction: BUILDER ONLY — independently resolve the authoritative remote continuation/iteration-004-intake ref first and require equality with the externally supplied BuilderWorkStartHead before safe local synchronization. Validate this active BUILDER_PLAN_REVIEW state and exact Clerk Handoff, then perform only the independent PLAN_REVIEW of the original Architect WP01 plan and complete I004 acceptance/decomposition identified in that Handoff and the original ARCHITECT_TO_BUILDER.md. Publish and push only the Builder-owned WP01/BUILDER_PLAN_REVIEW.md, externally observe BuilderTechnicalHead, and signal Clerk for bounded completion intake without state/routing edits. No implementation, user host/resource action, real data, approval, PR/merge or release.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_BUILDER.md
+HandoffBlob: 266de5d5c7f8f211a44adaf2f5e70f83d3ec6ccb
+HandoffFirstContainingCommit: 227740fe329b0cac6ef4dfa9483cc6e7db835f64
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
+Purpose: PLAN_REVIEW
 DirectionKind: ROADMAP_STAGE
 PlanningDirectionType: AUTO_READY_ROADMAP_PLANNING
 ReviewKey: synthetic-first-20261112
 AcceptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
 PredecessorD2Head: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 PredecessorR2Blob: 7059a2d7bb1b3b5a972e54eb9a509a49c998498f
+VerifiedInboundProducerHead: 50e9c50479a8853ab260027dfd66449e5c1fea09
+ClerkClearanceArtifactCommit: 227740fe329b0cac6ef4dfa9483cc6e7db835f64
+CompatibilityCheck: PASS
