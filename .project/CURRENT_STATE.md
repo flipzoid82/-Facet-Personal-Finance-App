@@ -2,19 +2,19 @@
 
 Project: [Facet] Personal Finance App
 Phase: AUDIT
-State: BUILDER_CORRECTION
+State: CLERK_IMPLEMENTATION_CLOSEOUT
 Iteration: 004
-ActiveRole: BUILDER
+ActiveRole: CLERK
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
 NextRole: none
-NextAction: BUILDER ONLY — independently resolve authoritative remote refs/heads/continuation/iteration-004-intake first and require exact equality to the externally supplied BuilderWorkStartHead before safely synchronizing local work without discarding changes or unintended merges. Validate this active AUDIT / BUILDER_CORRECTION / I004 WP01 state, effective-main docs/WORKFLOW.md, chatgpt/roles/BUILDER.md and exact Clerk Handoff docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_BUILDER.md blob e9976dea96b95524cc6b80e812becba0c85e8261 first-containing ClerkClearanceArtifactCommit b2dece73cf7257c52a6f171d6e6967a4b01a2bbe. Perform only numbered Builder-owned F1 and F2 as authored in original immutable Architect CHANGES_REQUIRED audit docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_AUDIT.md blob 4123115c9b4fb64ae692d828e757bf9b274bab68 first-containing commit 2dfd22c4c2b0771be9749a8fd8510033656e9d53, on this same WP01 non-main branch and existing open unmerged PR #16. C1 is a separate Architect-owned control/merge-scope finding: do not change control history, redesign the PR or claim C1 cleared. Original approved plan, acceptance, owner approval and evidence remain binding; Clerk supplies no technical criteria or test instructions. Builder must follow the installed correction source/evidence return procedure, externally observe its pushed technical head and return to Clerk for bounded completion intake without state/routing modification. No merge, main change, later WP, real financial/Plaid data, purchase or unconsented owner-host/resource action.
-Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_BUILDER.md
-HandoffBlob: e9976dea96b95524cc6b80e812becba0c85e8261
-HandoffFirstContainingCommit: b2dece73cf7257c52a6f171d6e6967a4b01a2bbe
+NextAction: CLERK ONLY — complete bounded I004 WP01 Architect-audit F1/F2 Builder correction intake. Verify remote BuilderTechnicalHead 8593d780a5e8748793ce28d879ebc3515d19fb11 and appended original WP01/BUILDER_IMPLEMENTATION_RETURN.md blob 08fdc2dac7234e52d75f13eda9a6bb1f99a4a1cd first-containing commit 8593d780a5e8748793ce28d879ebc3515d19fb11; correction SubstantiveImplementationHead fa17c44e11ca804b15802755cfbd73a1f8596236 is its direct parent and directly descends from correction BuilderWorkStartHead e1624348b09da0855e479c0d021c938747bde591. Verify original immutable Architect audit docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_AUDIT.md blob 4123115c9b4fb64ae692d828e757bf9b274bab68 first-containing 2dfd22c4c2b0771be9749a8fd8510033656e9d53, and Clerk correction clearance WP01/CLERK_TO_BUILDER.md blob e9976dea96b95524cc6b80e812becba0c85e8261 first-containing b2dece73cf7257c52a6f171d6e6967a4b01a2bbe. Verify exact approved WP01 plan, full acceptance, independent review, approval ledger, Architect implementation handoff, unchanged main and single open unmerged PR #16 against main. Update only the same PR representation of already-pushed work; derive exact PreCompilationPRHead; publish Clerk-owned WP01/CLERK_TO_ARCHITECT_AUDIT.md without self/future commit references; separately route state-only READY_FOR_ARCHITECT_AUDIT with implementation false and independently observe AuditEntryPRHead. Forward original Builder evidence unchanged. Architect alone independently reassesses numbered F1/F2 and retains Architect-only C1 control/merge-scope blocker. Clerk makes no technical PASS, correction sufficiency, merge policy, owner approval or release determination; no source/test edits, main changes, owner-host action, financial data/Plaid, purchases, later WP or merge.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/BUILDER_IMPLEMENTATION_RETURN.md
+HandoffBlob: 08fdc2dac7234e52d75f13eda9a6bb1f99a4a1cd
+HandoffFirstContainingCommit: 8593d780a5e8748793ce28d879ebc3515d19fb11
 ApprovalRequiredFrom: none
-ImplementationAuthorized: true
+ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: IMPLEMENTATION_CORRECTION
 DirectionKind: ROADMAP_STAGE
@@ -28,11 +28,12 @@ CorrectionAuditBlob: 4123115c9b4fb64ae692d828e757bf9b274bab68
 CorrectionAuditFirstContainingCommit: 2dfd22c4c2b0771be9749a8fd8510033656e9d53
 CorrectionFindingIds: F1, F2
 SeparateArchitectOwnedFindingId: C1
-OriginalAuditEntryPRHead: e7aeec4a5ca8fb5d85b75f7baac1efe8a4392d77
-OriginalSubstantiveImplementationHead: 169195084bd1e22d84d0170fbdf1141f1f973ea4
-OriginalBuilderTechnicalHead: 3cf974832384af15c237256c54acf434760d4ee6
-OriginalBuilderReturnBlob: 989f79f8ad001f4853f4af3c567289ca2d48d283
-OriginalBuilderWorkStartHead: 82de0b0db25ea4e8e70da04d1ed21650a0e9852c
+CorrectionVerifiedInboundProducerHead: ba6bab1d300843a59edc21f5049982cbfe3d0a9c
+CorrectionClerkClearanceArtifactCommit: b2dece73cf7257c52a6f171d6e6967a4b01a2bbe
+CorrectionBuilderWorkStartHead: e1624348b09da0855e479c0d021c938747bde591
+CorrectionSubstantiveImplementationHead: fa17c44e11ca804b15802755cfbd73a1f8596236
+CorrectionBuilderTechnicalHead: 8593d780a5e8748793ce28d879ebc3515d19fb11
+CorrectionBuilderReturnBlob: 08fdc2dac7234e52d75f13eda9a6bb1f99a4a1cd
 OwnerImplementationApprovalRecord: I004-WP01-EXACT-IMPLEMENTATION-APPROVAL-20261113
 OwnerImplementationApprovalBlob: 90159e6fd991e751adad08b7d6a5faf947d4930e
 OwnerImplementationApprovalFirstContainingCommit: ac6bf7da0e254ae1ba6767b306dbdeed718440b5
@@ -41,10 +42,9 @@ ApprovedArchitectPlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27
 ApprovedIterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
 IndependentBuilderReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
 ArchitectImplementationHandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
-OriginalClerkImplementationClearanceBlob: 0203716ce64bfb9386a823a9dac672f6369445be
-CorrectionVerifiedInboundProducerHead: ba6bab1d300843a59edc21f5049982cbfe3d0a9c
-CorrectionClerkClearanceArtifactCommit: b2dece73cf7257c52a6f171d6e6967a4b01a2bbe
+OriginalSubstantiveImplementationHead: 169195084bd1e22d84d0170fbdf1141f1f973ea4
+OriginalBuilderTechnicalHead: 3cf974832384af15c237256c54acf434760d4ee6
+OriginalAuditEntryPRHead: e7aeec4a5ca8fb5d85b75f7baac1efe8a4392d77
 AuditPRNumber: 16
 AuditPRURL: https://github.com/flipzoid82/-Facet-Personal-Finance-App/pull/16
-BuilderTechnicalDestination: continuation/iteration-004-intake
 CompatibilityCheck: PASS
