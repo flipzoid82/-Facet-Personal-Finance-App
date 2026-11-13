@@ -2,19 +2,19 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: CLERK_IMPLEMENTATION_PREFLIGHT
+State: BUILDER_IMPLEMENTATION
 Iteration: 004
-ActiveRole: none
+ActiveRole: BUILDER
 WorkPackage: WP02
 Baseline: 36d302afa3657a7b147d209e2560c5d7ccbd155e
 Branch: facet/i004-wp02-synthetic-integration
-NextRole: CLERK
-NextAction: CLERK ONLY — on authoritative refs/heads/facet/i004-wp02-synthetic-integration verify this PLANNING / CLERK_IMPLEMENTATION_PREFLIGHT / Iteration 004 / WP02 passive state, current remote tip, independently resolved effective-main docs/WORKFLOW.md at 36d302afa3657a7b147d209e2560c5d7ccbd155e, chatgpt/roles/CLERK.md and the exact Handoff docs/iterations/iteration-004/work-packages/WP02/ARCHITECT_TO_CLERK_IMPLEMENTATION.md blob b29daceb6a7167554d2c3056ac55401939384e9e first-containing commit 34fbf6825417eba81f4fe04a6cad18454bb66156. Verify owner WP02 exact-plan implementation approval APPPROVALS.md blob 8195d2ef7290f1e1d90a01d11becc511ff9f1b26 first-containing 2450d0d366ea8deec62591730ae1e887f16dc4e2, plan v0.1.0 blob 7403e19b8b591082010042119a61870499202109, Builder PLAN READY blob 83c7eafc37eb8cc1ada0712333962ad9741b77c6 and unchanged accepted iteration map blob 9abf75c97617b2963588e90b01ac981885fb59c7. Perform deterministic Clerk implementation compatibility preflight only: independently commit exact Clerk implementation clearance, then distinctly state-only release BUILDER_IMPLEMENTATION with ImplementationAuthorized true on this existing non-main branch, read-back and supply BuilderWorkStartHead. This Clerk state itself has ImplementationAuthorized false. No Clerk coding, approval judgment, new product scope, owner host, Plaid/financial access, merge or release.
-Handoff: docs/iterations/iteration-004/work-packages/WP02/ARCHITECT_TO_CLERK_IMPLEMENTATION.md
-HandoffBlob: b29daceb6a7167554d2c3056ac55401939384e9e
-HandoffFirstContainingCommit: 34fbf6825417eba81f4fe04a6cad18454bb66156
+NextRole: none
+NextAction: BUILDER ONLY — independently resolve authoritative remote refs/heads/facet/i004-wp02-synthetic-integration first and require exact equality to the externally supplied BuilderWorkStartHead before safely synchronizing local work without discarding changes or creating unintended merges. Validate this active PLANNING / BUILDER_IMPLEMENTATION / I004 WP02 state, effective-main docs/WORKFLOW.md, chatgpt/roles/BUILDER.md, and exact Clerk implementation clearance docs/iterations/iteration-004/work-packages/WP02/CLERK_TO_BUILDER.md blob 3a2d2d88f3b22eadddd625becb1a5eddb7701539 first-containing ClerkClearanceArtifactCommit 7b7e26c01152b823b48319cf467bbe46964932ba. Perform only the exact owner-approved WP02 Architect Plan v0.1.0 blob 7403e19b8b591082010042119a61870499202109 and original Architect implementation handoff docs/iterations/iteration-004/work-packages/WP02/ARCHITECT_TO_CLERK_IMPLEMENTATION.md blob b29daceb6a7167554d2c3056ac55401939384e9e first-containing 34fbf6825417eba81f4fe04a6cad18454bb66156, with original independent PLAN READY review blob 83c7eafc37eb8cc1ada0712333962ad9741b77c6, owner approval ledger blob 8195d2ef7290f1e1d90a01d11becc511ff9f1b26 record I004-WP02-EXACT-IMPLEMENTATION-APPROVAL-20261113-D602A13C and accepted iteration map blob 9abf75c97617b2963588e90b01ac981885fb59c7. Technical implementation scope, test and evidence requirements are contained solely in those original Architect/Builder sources. Work only on this authorized non-main WP02 branch in the approved separately permitted controlled synthetic development/test envelope; produce and push substantive source/tests before the implementation return, then externally verify BuilderTechnicalHead and return to Clerk for bounded completion intake without changing routing/control state. No owner-host changes, bank/financial/Plaid accounts or credentials, purchases, paid services, plan/product/acceptance expansion, main changes, merge, audit PASS, WP03, UAT or release.
+Handoff: docs/iterations/iteration-004/work-packages/WP02/CLERK_TO_BUILDER.md
+HandoffBlob: 3a2d2d88f3b22eadddd625becb1a5eddb7701539
+HandoffFirstContainingCommit: 7b7e26c01152b823b48319cf467bbe46964932ba
 ApprovalRequiredFrom: none
-ImplementationAuthorized: false
+ImplementationAuthorized: true
 ProjectLifecycle: ACTIVE
 Purpose: IMPLEMENTATION
 ReviewKey: synthetic-first-20261112
@@ -34,9 +34,9 @@ OriginalArchitectReviewHandoffFirstContainingCommit: 3c792b098490cde8e8a0a09a9b0
 IterationAcceptancePath: docs/iterations/iteration-004/ITERATION_ACCEPTANCE.md
 IterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
 IterationAcceptanceFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
-VerifiedInboundProducerHead: cb30519d1537b6b1bad084bb44a26240c0eba2e9
-ClerkClearanceArtifactCommit: 521053ecbd1ae2acd44a94d717ea115f9f64cf67
-ClerkClearanceArtifactBlob: 1ba67443e77bb35b652828244a84f7a842cf7cde
+VerifiedInboundProducerHead: 6bd94e98157edbb4263f181bce3696facac65f8b
+ClerkClearanceArtifactCommit: 7b7e26c01152b823b48319cf467bbe46964932ba
+ClerkClearanceArtifactBlob: 3a2d2d88f3b22eadddd625becb1a5eddb7701539
 BuilderTechnicalDestination: facet/i004-wp02-synthetic-integration
 ReviewSubject: WP02_IMPLEMENTATION
 CompatibilityCheck: PASS
@@ -58,3 +58,9 @@ OwnerImplementationApprovalFirstContainingCommit: 2450d0d366ea8deec62591730ae1e8
 ArchitectImplementationHandoffBlob: b29daceb6a7167554d2c3056ac55401939384e9e
 ArchitectImplementationHandoffFirstContainingCommit: 34fbf6825417eba81f4fe04a6cad18454bb66156
 OriginalPlanReviewSubject: WP02_PLAN_REVIEW
+PlanReviewVerifiedInboundProducerHead: cb30519d1537b6b1bad084bb44a26240c0eba2e9
+PlanReviewClerkClearanceArtifactCommit: 521053ecbd1ae2acd44a94d717ea115f9f64cf67
+PlanReviewClerkClearanceArtifactBlob: 1ba67443e77bb35b652828244a84f7a842cf7cde
+ImplementationVerifiedInboundProducerHead: 6bd94e98157edbb4263f181bce3696facac65f8b
+ImplementationClerkClearanceArtifactCommit: 7b7e26c01152b823b48319cf467bbe46964932ba
+ImplementationClerkClearanceArtifactBlob: 3a2d2d88f3b22eadddd625becb1a5eddb7701539
