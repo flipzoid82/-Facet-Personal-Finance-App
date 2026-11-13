@@ -1,22 +1,22 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: MERGE
-State: MERGE_COMPLETE
+Phase: UAT
+State: AWAITING_UAT_DECISION
 Iteration: 004
 ActiveRole: none
-WorkPackage: WP02
-Baseline: 36d302afa3657a7b147d209e2560c5d7ccbd155e
+WorkPackage: none
+Baseline: f286934e286d965e3068548b10e9ee43070313b5
 Branch: main
 NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — WP02 PR #18 at owner-approved exact head 08f81a4d3ee886b077f0486c376b6e5053c1213d was merged as f286934e286d965e3068548b10e9ee43070313b5 into effective main; verify this post-merge reconciliation, original WP02 Builder/Architect proof, and the already merged WP01 PR #16 fc881096ba13020780882fb1df2915357738c68b. All intended I004 WP01 and WP02 packages are audited, separately authorized and merged. Next, Architect prepares an iteration-level I004-C01–C08 proof/exit matrix in a new numbered UAT_ASSESSMENT_XXX.md against the exact substantive candidate, independently checks T1/T2/T3 coverage and any BLOCKED items, then separately routes AWAITING_UAT_DECISION if evidence supports it. User alone chooses PERFORM UAT or SKIP UAT. Neither this merge nor MERGE_COMPLETE authorizes UAT choice, release, WP03, real financial/Plaid data, host modification or purchases.
-Handoff: none
-HandoffBlob: none
-HandoffFirstContainingCommit: none
-ApprovalRequiredFrom: none
+NextAction: ARCHITECT ONLY — I004 WP01 and WP02 both independently audited, exact-head owner-authorized merged and reconciled. Exact substantive two-WP candidate f286934e286d965e3068548b10e9ee43070313b5; post-merge state-only reconciliation 4404819f75dbf11a8975fb5b519be0a31aa7e835. Consult exact docs/iterations/iteration-004/uat/UAT_ASSESSMENT_001.md blob 43ea3dc93db99c3b0b7f666cef95b57440431e68 first containing 7bb4b3dfeceacab0283c8e6d567e5fa57d3a1d8e: I004-C01–C08 SATISFIED at required controlled synthetic T1/Builder T2/Architect T3; UAT APPLICABLE recommendation only. Await USER distinct explicit PERFORM UAT or SKIP UAT; do not infer choice from instruction to move to UAT. On PERFORM, Architect records UAT_DECISION_001.md and numbered UAT_CHECKLIST_001.md with prerequisites and later descriptive results. On SKIP, Architect records the owner's exact skip choice. Before any execution on owner's host, separate consent and safe access are required. Neither UAT decision authorizes source implementation, real finance/Plaid, host setup, purchase, another WP, release completion, or bypass of separate release approval.
+Handoff: docs/iterations/iteration-004/uat/UAT_ASSESSMENT_001.md
+HandoffBlob: 43ea3dc93db99c3b0b7f666cef95b57440431e68
+HandoffFirstContainingCommit: 7bb4b3dfeceacab0283c8e6d567e5fa57d3a1d8e
+ApprovalRequiredFrom: USER
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
-Purpose: POST_MERGE_RECONCILIATION
+Purpose: UAT_ASSESSMENT
 ReviewKey: synthetic-first-20261112
 AcceptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
 ControllingWorkflowBlob: 57fd360379b06ab7625cc14fe17e90ef0ee1d176
@@ -38,7 +38,7 @@ VerifiedInboundProducerHead: 6bd94e98157edbb4263f181bce3696facac65f8b
 ClerkClearanceArtifactCommit: 7b7e26c01152b823b48319cf467bbe46964932ba
 ClerkClearanceArtifactBlob: 3a2d2d88f3b22eadddd625becb1a5eddb7701539
 BuilderTechnicalDestination: facet/i004-wp02-synthetic-integration
-ReviewSubject: WP02_IMPLEMENTATION
+ReviewSubject: I004_UAT_DECISION
 CompatibilityCheck: PASS
 PlanReviewBuilderWorkStartHead: 1833c130c61be24186c0294305d4f05007640ee9
 PlanReviewBuilderTechnicalHead: e9699c09ba10705cda973b1675647d491666516d
@@ -95,3 +95,12 @@ OwnerMergeApprovalWording: "I explicitly authorize merging PR #18 at head `08f81
 WP02ArchitectAuditBlob: a7988f24c61f04008724ade22622d0a27a2a4cb7
 IterationFinalWorkPackage: WP02
 BothWorkPackagesMerged: true
+
+UATCycle: 001
+UATAssessmentPath: docs/iterations/iteration-004/uat/UAT_ASSESSMENT_001.md
+UATAssessmentBlob: 43ea3dc93db99c3b0b7f666cef95b57440431e68
+UATAssessmentFirstContainingCommit: 7bb4b3dfeceacab0283c8e6d567e5fa57d3a1d8e
+UATRecommendation: APPLICABLE (owner decision pending)
+UATSubstantiveCandidate: f286934e286d965e3068548b10e9ee43070313b5
+UATPostMergeReconciliationHead: 4404819f75dbf11a8975fb5b519be0a31aa7e835
+UATChoiceRecorded: none
