@@ -42,3 +42,22 @@ test('failed replacement leaves the previous committed override intact', async (
     assert.deepEqual((await fs.readdir(directory)).sort(), ['overrides.json']);
   } finally { await fs.rm(directory, { recursive: true, force: true }); }
 });
+
+test('interrupted-write temporary files never replace committed or corrupt state on restart', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'facet-interrupted-'));
+  try {
+    const store = new OverrideStore(directory);
+    const first = { category: 'Committed', label: 'kept', notes: 'old' };
+    await store.update('txn-pending', first);
+    const old = await fs.readFile(store.file, 'utf8');
+    const orphan = path.join(directory, 'overrides-interrupted.tmp');
+    const bytes = '{"version":1,"overrides":{"txn-pending":{"category":"Uncommitted","label":"","notes":""}}}';
+    await fs.writeFile(orphan, bytes);
+    assert.deepEqual((await new OverrideStore(directory).read()).overrides['txn-pending'], first);
+    assert.equal(await fs.readFile(store.file, 'utf8'), old);
+    await fs.writeFile(store.file, '{broken');
+    await assert.rejects(new OverrideStore(directory).read());
+    assert.equal(await fs.readFile(store.file, 'utf8'), '{broken');
+    assert.equal(await fs.readFile(orphan, 'utf8'), bytes);
+  } finally { await fs.rm(directory, { recursive: true, force: true }); }
+});

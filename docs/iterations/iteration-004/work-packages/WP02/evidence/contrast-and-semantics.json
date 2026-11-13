@@ -1,0 +1,39 @@
+{
+  "pairs": [
+    {
+      "selector": "main",
+      "foreground": "rgb(24, 48, 71)",
+      "background": "rgb(245, 248, 250)",
+      "ratio": 12.681832167682305
+    },
+    {
+      "selector": ".banner",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(22, 61, 89)",
+      "ratio": 11.376775214640455
+    },
+    {
+      "selector": "nav a",
+      "foreground": "rgb(7, 87, 133)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 7.746209905414112
+    },
+    {
+      "selector": "button",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(7, 87, 133)",
+      "ratio": 7.746209905414112
+    },
+    {
+      "selector": "select",
+      "foreground": "rgb(24, 48, 71)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 13.525651411405251
+    }
+  ],
+  "focus": {
+    "color": "rgb(138, 68, 0)",
+    "width": "3px",
+    "style": "solid"
+  }
+}

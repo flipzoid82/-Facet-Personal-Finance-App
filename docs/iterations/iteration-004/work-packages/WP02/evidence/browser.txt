@@ -1,0 +1,14 @@
+
+> facet-synthetic@0.1.0 test:e2e
+> playwright test
+
+
+Running 3 tests using 1 worker
+
+(node:29816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\s1-journey.spec.js:33:1 › S1 real-server/disk journey: IDs, reversible filters, keyboard edits, restart, faults and both viewports (18.5s)
+  ok 2 tests\e2e\s1-journey.spec.js:153:1 › recorded contrast, named controls and visible keyboard focus (333ms)
+  ok 3 tests\e2e\smoke.spec.js:7:1 › four routes, source-visible rows, browser edit and separate-process restart (1.1s)
+
+  3 passed (20.7s)

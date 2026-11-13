@@ -14,6 +14,10 @@ function checked(value) {
 export class OverrideStore {
   constructor(directory, operations = fs) { this.directory = path.resolve(directory); this.file = path.join(this.directory, 'overrides.json'); this.queue = Promise.resolve(); this.operations = operations; }
   async read() {
+    try {
+      const info = await (this.operations.stat ?? fs.stat)(this.directory);
+      if (!info.isDirectory()) throw new Error('Demo state directory is not a directory; no data was discarded');
+    } catch (error) { if (error.code !== 'ENOENT') throw error; }
     try { return checked(JSON.parse(await this.operations.readFile(this.file, 'utf8'))); }
     catch (error) { if (error.code === 'ENOENT') return empty(); throw error; }
   }

@@ -1,0 +1,19 @@
+{
+  "firstPid": 12820,
+  "secondPid": 36116,
+  "sourceIds": [
+    "txn-grocery",
+    "txn-pending",
+    "txn-unidentified",
+    "txn-pay",
+    "txn-save",
+    "txn-interest"
+  ],
+  "widths": [
+    375,
+    1280
+  ],
+  "outbound": [],
+  "errors": [],
+  "browser": "158.0.8127.18"
+}
