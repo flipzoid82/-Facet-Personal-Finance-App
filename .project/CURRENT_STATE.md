@@ -2,15 +2,23 @@
 
 Project: [Facet] Personal Finance App
 Phase: CONTINUATION
-State: AWAITING_ROADMAP_REVISION_REF_CLAIM
+State: ARCHITECT_NEXT_ITERATION_PREP
 Iteration: 003
-ActiveRole: none
+ActiveRole: ARCHITECT
 WorkPackage: none
-Baseline: c0413a31eafca9ba6518fbe05440506d024f4ee7
+Baseline: 72899784ecba17f8fabf01bbec8272b1f816d315
 Branch: main
-NextRole: ARCHITECT
-NextAction: ReviewKey synthetic-first-20261112; under installed HF-001 v0.3, Architect may only carry out ROADMAP_REVISION_REF_CLAIM via genuinely absent-only atomic create of refs/heads/review/roadmap/synthetic-first-20261112 starting at this exact D0; after read-back publish separate state-only A0 on isolated review ref. Owner direction E blob 8977ce63a0447c21ec69774c89470430457a74b5 first containing commit 95a826f2ad7f950e9332b9ebc43121838c982039. R1 verdict ROADMAP_DECISION_REQUIRED; accepted main roadmap unchanged, G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED. No I004, Builder execution, bank/host work, cost or adoption.
-Handoff: docs/project-planning/roadmap-revisions/synthetic-first-20261112/ROADMAP_REVISION_REVIEW_DIRECTION.md
+NextRole: none
+NextAction: ARCHITECT only — evaluate actual S1 first-stage planning readiness under the adopted v0.2.0 synthetic-first roadmap for ReviewKey synthetic-first-20261112. Record one immutable, honest R2 at docs/project-planning/roadmap-revisions/synthetic-first-20261112/NEXT_ITERATION_READINESS_POST_ADOPTION.md and later relinquish with a separate passive D2. Preserve inherited G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED; C01-C03/O01 and all costs/security/consent gates. Do not activate I004, open WorkPackage, use bank/host, implement, spend or infer readiness from the owner's version/publication approvals.
+Handoff: docs/governance/bridges/I003/POST_ADOPTION_READINESS_APPROVAL_RECEIPT.md
+HandoffBlob: 0c4fb6c809e6da4e5181ea4e4508a55695ed6aae
+HandoffFirstContainingCommit: 961ee2f2070ecd741944d42c92584a466722f9a9
 ApprovalRequiredFrom: none
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
+Purpose: POST_ADOPTION_READINESS_REENTRY
+ReviewContext: HF001_V0_3_ROADMAP_REVISION
+ReviewKey: synthetic-first-20261112
+PublishedAdoptionHeadQ: 72899784ecba17f8fabf01bbec8272b1f816d315
+AdoptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
+HistoricalR1Blob: a85007d2739f8a8c781f1ba2e4119d40d7c34db5
