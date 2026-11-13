@@ -1,24 +1,50 @@
 # Current State
 
 Project: [Facet] Personal Finance App
-Phase: CONTINUATION
-State: AWAITING_NEXT_ITERATION_ACTIVATION
-Iteration: 003
+Phase: AUDIT
+State: READY_TO_MERGE
+Iteration: 004
 ActiveRole: none
-WorkPackage: none
-Baseline: 72899784ecba17f8fabf01bbec8272b1f816d315
-Branch: main
+WorkPackage: WP01
+Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
+Branch: continuation/iteration-004-intake
 NextRole: ARCHITECT
-NextAction: S1 synthetic-first successor planning prerequisites are READY per exact Architect R2, but Iteration 004 is NOT YET ACTIVATED. Only if all current installed canonical I004 continuation gates are independently satisfied may the separately guarded absent-only refs/heads/continuation/iteration-004-intake L/S planning claim proceed; it authorizes only planning, not WorkPackage execution or implementation. Target first genuinely functional local synthetic Facet app (S1-01–S1-06), with real Plaid G0 NOT CLEARED, M0 PAUSED, M1 NOT AUTHORIZED. Preserve owner $0 recurring/on-demand boundaries, C01-C03/O01 and distinct host, financial data, and implementation consent. Do not reopen settled roadmap or imply cleared live-data gates.
-Handoff: docs/project-planning/roadmap-revisions/synthetic-first-20261112/NEXT_ITERATION_READINESS_POST_ADOPTION.md
-HandoffBlob: 7059a2d7bb1b3b5a972e54eb9a509a49c998498f
-HandoffFirstContainingCommit: 34b69271139c596d37956b263337e3478dde2d5b
-ApprovalRequiredFrom: none
+NextAction: ARCHITECT ONLY — independently verify exact current PR #16 head, unchanged effective main, approved WP01 plan/acceptance/implementation identities, correction audit 002 and ARCHITECT_AUDIT_C1_WITHDRAWAL.md; verify all post-Builder changes are Architect-owned audit/control-only and no substantive implementation change occurred. F1/F2 RESOLVED, C1 WITHDRAWN, audit PASS. Give the required exact-head merge approval report and await explicit USER authorization before any merge. On authorization verify the unchanged approved head, perform the installed merge, reconcile history/state to MERGE_COMPLETE, and preserve UAT/release and all host/resource consent gates.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_ARCHITECT_AUDIT.md
+HandoffBlob: c1bbd08353b0bf848b5a4425897b14e635f4c356
+HandoffFirstContainingCommit: 369dd0829ceeb0bbedb4886208c63d0a84476353
+ApprovalRequiredFrom: USER
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
-Purpose: POST_ADOPTION_READINESS_RELINQUISHMENT
-ReviewContext: HF001_V0_3_ROADMAP_REVISION
+Purpose: IMPLEMENTATION_AUDIT
+DirectionKind: ROADMAP_STAGE
+PlanningDirectionType: AUTO_READY_ROADMAP_PLANNING
 ReviewKey: synthetic-first-20261112
-AdoptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
-ActualAdoptedHeadQ: 72899784ecba17f8fabf01bbec8272b1f816d315
-NextReadinessVerdict: READY_FOR_S1_PLANNING_ONLY
+AcceptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
+PredecessorD2Head: 28610d824d757f34b4a40d31ddd56fc0587b05f6
+PredecessorR2Blob: 7059a2d7bb1b3b5a972e54eb9a509a49c998498f
+OwnerImplementationApprovalRecord: I004-WP01-EXACT-IMPLEMENTATION-APPROVAL-20261113
+OwnerImplementationApprovalBlob: 90159e6fd991e751adad08b7d6a5faf947d4930e
+OwnerImplementationApprovalFirstContainingCommit: ac6bf7da0e254ae1ba6767b306dbdeed718440b5
+ApprovedArchitectPlanBlob: 964f0db1fc07744f64e70c3e37076fcc184550ca
+ApprovedArchitectPlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+ApprovedIterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
+IndependentBuilderReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
+ArchitectImplementationHandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
+OriginalArchitectAuditBlob: 4123115c9b4fb64ae692d828e757bf9b274bab68
+OriginalArchitectAuditFirstContainingCommit: 2dfd22c4c2b0771be9749a8fd8510033656e9d53
+OriginalAuditEntryPRHead: e7aeec4a5ca8fb5d85b75f7baac1efe8a4392d77
+CorrectionFindingIds: F1, F2
+SeparateArchitectOwnedFindingId: C1 (WITHDRAWN; see ARCHITECT_AUDIT_C1_WITHDRAWAL.md)
+CorrectionClerkClearanceBlob: e9976dea96b95524cc6b80e812becba0c85e8261
+CorrectionClerkClearanceArtifactCommit: b2dece73cf7257c52a6f171d6e6967a4b01a2bbe
+CorrectionBuilderWorkStartHead: e1624348b09da0855e479c0d021c938747bde591
+CorrectionSubstantiveImplementationHead: fa17c44e11ca804b15802755cfbd73a1f8596236
+CorrectionBuilderTechnicalHead: 8593d780a5e8748793ce28d879ebc3515d19fb11
+CorrectionBuilderReturnBlob: 08fdc2dac7234e52d75f13eda9a6bb1f99a4a1cd
+CorrectionClerkCloseoutIntakeHead: 4e7ff29f9e7a90145433fd6f24c7c12a400a6ea6
+PreCompilationPRHead: 4e7ff29f9e7a90145433fd6f24c7c12a400a6ea6
+ClerkAuditCompilationCommit: 369dd0829ceeb0bbedb4886208c63d0a84476353
+AuditPRNumber: 16
+AuditPRURL: https://github.com/flipzoid82/-Facet-Personal-Finance-App/pull/16
+CompatibilityCheck: PASS
