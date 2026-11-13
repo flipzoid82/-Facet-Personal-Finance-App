@@ -2,18 +2,18 @@
 
 Project: [Facet] Personal Finance App
 Phase: AUDIT
-State: READY_FOR_ARCHITECT_AUDIT
+State: READY_TO_MERGE
 Iteration: 004
 ActiveRole: none
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
 NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — independently resolve authoritative remote refs/heads/continuation/iteration-004-intake before safe local synchronization; validate this passive AUDIT / READY_FOR_ARCHITECT_AUDIT state, effective-main docs/WORKFLOW.md, chatgpt/roles/ARCHITECT.md, and exact Clerk Handoff docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_ARCHITECT_AUDIT.md blob c1bbd08353b0bf848b5a4425897b14e635f4c356 first-containing ClerkAuditCompilationCommit 369dd0829ceeb0bbedb4886208c63d0a84476353. Require the direct-parent sequence PreCompilationPRHead 4e7ff29f9e7a90145433fd6f24c7c12a400a6ea6 → ClerkAuditCompilationCommit 369dd0829ceeb0bbedb4886208c63d0a84476353 → externally verified AuditEntryPRHead, and confirm open unmerged PR #16 against unchanged main D2. Verify original Architect CHANGES_REQUIRED audit WP01/ARCHITECT_AUDIT.md blob 4123115c9b4fb64ae692d828e757bf9b274bab68 and correction BuilderWorkStartHead e1624348b09da0855e479c0d021c938747bde591, correction SubstantiveImplementationHead fa17c44e11ca804b15802755cfbd73a1f8596236, correction BuilderTechnicalHead 8593d780a5e8748793ce28d879ebc3515d19fb11, original Builder implementation return with appended correction evidence blob 08fdc2dac7234e52d75f13eda9a6bb1f99a4a1cd, exact approved plan/acceptance/review/owner ledger, and Clerk clearance. Architect alone independently reassesses original numbered F1/F2 correction evidence and separately retains control/merge-scope blocker C1. No Clerk technical PASS, PR/control-tree resolution, merge consent or release authorization is inferred; do not bypass owner/host/resource consent or activate WP02.
+NextAction: ARCHITECT ONLY — independently verify exact current PR #16 head, unchanged effective main, approved WP01 plan/acceptance/implementation identities, correction audit 002 and ARCHITECT_AUDIT_C1_WITHDRAWAL.md; verify all post-Builder changes are Architect-owned audit/control-only and no substantive implementation change occurred. F1/F2 RESOLVED, C1 WITHDRAWN, audit PASS. Give the required exact-head merge approval report and await explicit USER authorization before any merge. On authorization verify the unchanged approved head, perform the installed merge, reconcile history/state to MERGE_COMPLETE, and preserve UAT/release and all host/resource consent gates.
 Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_ARCHITECT_AUDIT.md
 HandoffBlob: c1bbd08353b0bf848b5a4425897b14e635f4c356
 HandoffFirstContainingCommit: 369dd0829ceeb0bbedb4886208c63d0a84476353
-ApprovalRequiredFrom: none
+ApprovalRequiredFrom: USER
 ImplementationAuthorized: false
 ProjectLifecycle: ACTIVE
 Purpose: IMPLEMENTATION_AUDIT
@@ -35,7 +35,7 @@ OriginalArchitectAuditBlob: 4123115c9b4fb64ae692d828e757bf9b274bab68
 OriginalArchitectAuditFirstContainingCommit: 2dfd22c4c2b0771be9749a8fd8510033656e9d53
 OriginalAuditEntryPRHead: e7aeec4a5ca8fb5d85b75f7baac1efe8a4392d77
 CorrectionFindingIds: F1, F2
-SeparateArchitectOwnedFindingId: C1
+SeparateArchitectOwnedFindingId: C1 (WITHDRAWN; see ARCHITECT_AUDIT_C1_WITHDRAWAL.md)
 CorrectionClerkClearanceBlob: e9976dea96b95524cc6b80e812becba0c85e8261
 CorrectionClerkClearanceArtifactCommit: b2dece73cf7257c52a6f171d6e6967a4b01a2bbe
 CorrectionBuilderWorkStartHead: e1624348b09da0855e479c0d021c938747bde591
