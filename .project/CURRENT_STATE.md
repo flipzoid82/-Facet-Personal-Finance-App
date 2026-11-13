@@ -2,19 +2,19 @@
 
 Project: [Facet] Personal Finance App
 Phase: PLANNING
-State: CLERK_IMPLEMENTATION_PREFLIGHT
+State: BUILDER_IMPLEMENTATION
 Iteration: 004
-ActiveRole: none
+ActiveRole: BUILDER
 WorkPackage: WP01
 Baseline: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 Branch: continuation/iteration-004-intake
-NextRole: CLERK
-NextAction: CLERK ONLY — resolve authoritative remote first; independently validate the exact owner-approved I004 WP01 plan, original independent PLAN READY review, approval ledger blob 90159e6fd991e751adad08b7d6a5faf947d4930e, first-containing commit ac6bf7da0e254ae1ba6767b306dbdeed718440b5, and exact Architect implementation handoff blob c3d23abac0ac81f1cce6b8047fbb13d94c783259 first-containing commit b703f3b8966a1efb507dd766c0400a3900a10e18. Apply installed compatibility predicate and non-main implementation destination gate; only after PASS, commit Clerk clearance and separately release active BUILDER_IMPLEMENTATION with bounded implementation true. On FAIL/UNKNOWN administrative return; Clerk does not code, merge or expand host/data/resource consent.
-Handoff: docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_TO_CLERK_IMPLEMENTATION.md
-HandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
-HandoffFirstContainingCommit: b703f3b8966a1efb507dd766c0400a3900a10e18
+NextRole: none
+NextAction: BUILDER ONLY — independently resolve authoritative remote refs/heads/continuation/iteration-004-intake first; require exact equality with the externally supplied BuilderWorkStartHead, safely synchronize local work without discarding changes or unintended merges, then read this active BUILDER_IMPLEMENTATION state, effective-main docs/WORKFLOW.md, chatgpt/roles/BUILDER.md and the exact Clerk Handoff. Implement only the separately owner-approved I004 WP01 Architect Plan v0.1.0 at docs/iterations/iteration-004/work-packages/WP01/ARCHITECT_PLAN.md blob 964f0db1fc07744f64e70c3e37076fcc184550ca, bounded by the original Architect implementation handoff blob c3d23abac0ac81f1cce6b8047fbb13d94c783259, iteration acceptance map blob 9abf75c97617b2963588e90b01ac981885fb59c7, owner approval ledger blob 90159e6fd991e751adad08b7d6a5faf947d4930e, and original independent Builder plan review blob 9fdacc390b8ace2c48e212803237b542acf5cbf6. Use only a permitted controlled development/test runtime and the present authorized non-main ref. Observe the installed Builder implementation, substantive-head, return-evidence and Clerk completion-intake boundaries; do not make an unauthorized branch transition, self-route, merge, access real financial data/Plaid, spend money, change main or perform unconsented owner-host actions.
+Handoff: docs/iterations/iteration-004/work-packages/WP01/CLERK_TO_BUILDER.md
+HandoffBlob: 0203716ce64bfb9386a823a9dac672f6369445be
+HandoffFirstContainingCommit: 6a8d8e6ea7eec3d0dee954ff020f20da9d969a38
 ApprovalRequiredFrom: none
-ImplementationAuthorized: false
+ImplementationAuthorized: true
 ProjectLifecycle: ACTIVE
 Purpose: IMPLEMENTATION
 DirectionKind: ROADMAP_STAGE
@@ -23,9 +23,17 @@ ReviewKey: synthetic-first-20261112
 AcceptedRoadmapBlob: e97cf8a679e26bd1c0444465dc7b9ba685e5deab
 PredecessorD2Head: 28610d824d757f34b4a40d31ddd56fc0587b05f6
 PredecessorR2Blob: 7059a2d7bb1b3b5a972e54eb9a509a49c998498f
-VerifiedInboundProducerHead: 50e9c50479a8853ab260027dfd66449e5c1fea09
-ClerkClearanceArtifactCommit: 227740fe329b0cac6ef4dfa9483cc6e7db835f64
-BuilderWorkStartHead: 3870d5a1ff7b58fc88e022728865438f7bf6ffea
-BuilderTechnicalHead: de6c65e4f5702835172d68d836156ae8086598f6
-ClerkCompletionIntakeHead: 1facd886a30be093dfe4a87427367bc4c9e2e631
+OwnerImplementationApprovalRecord: I004-WP01-EXACT-IMPLEMENTATION-APPROVAL-20261113
+OwnerImplementationApprovalBlob: 90159e6fd991e751adad08b7d6a5faf947d4930e
+OwnerImplementationApprovalFirstContainingCommit: ac6bf7da0e254ae1ba6767b306dbdeed718440b5
+ApprovedArchitectPlanBlob: 964f0db1fc07744f64e70c3e37076fcc184550ca
+ApprovedArchitectPlanFirstContainingCommit: 873f3b5709871510076dad043e5fafd57b27f9a1
+ApprovedIterationAcceptanceBlob: 9abf75c97617b2963588e90b01ac981885fb59c7
+IndependentBuilderReviewBlob: 9fdacc390b8ace2c48e212803237b542acf5cbf6
+OriginalBuilderReviewTechnicalHead: de6c65e4f5702835172d68d836156ae8086598f6
+ArchitectImplementationHandoffBlob: c3d23abac0ac81f1cce6b8047fbb13d94c783259
+ArchitectImplementationHandoffFirstContainingCommit: b703f3b8966a1efb507dd766c0400a3900a10e18
+VerifiedInboundProducerHead: 984c18c7e89d9526c8ef2da3fddc61f37987d876
+ClerkClearanceArtifactCommit: 6a8d8e6ea7eec3d0dee954ff020f20da9d969a38
+BuilderTechnicalDestination: continuation/iteration-004-intake
 CompatibilityCheck: PASS
