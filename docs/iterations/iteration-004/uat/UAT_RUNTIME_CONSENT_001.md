@@ -1,0 +1,29 @@
+# Facet Iteration 004 — Owner UAT runtime access consent 001
+
+**Record class:** Architect-owned, non-behavioral UAT owner-consent / runtime-access prerequisite evidence. **Not** a Builder work-package implementation approval, production/host-security clearance, role activation, product redesign, governance amendment, or UAT pass.
+
+**Date:** 2026-11-13 (America/Los_Angeles); actual precise owner message time not asserted.
+**Repository:** `flipzoid82/-Facet-Personal-Finance-App`; authoritative `refs/heads/main` owner consent intake head `ed15468e96f3b080534fb5cc98ae07e19f8315ab`, `.project/CURRENT_STATE.md` blob `3b378789533c1b1e8e59fc51b7d1acc5b683dc8f` (`UAT / AWAITING_UAT_RESULTS / Iteration 004 / WorkPackage none / ActiveRole none / NextRole ARCHITECT / ImplementationAuthorized false`).
+**Substantive application candidate:** `f286934e286d965e3068548b10e9ee43070313b5` (WP01 and WP02 audited/merged). **UAT assessment:** `UAT_ASSESSMENT_001.md` blob `43ea3dc93db99c3b0b7f666cef95b57440431e68`. **UAT decision:** PERFORM, `UAT_DECISION_001.md` original blob `767f5c9f21e0eda3beede5bdc6feda7ac172b1a7`. **UAT checklist:** `UAT_CHECKLIST_001.md` blob `5c86268960c2df9766054b17140e3475def8ec94`. **Installed workflow:** `docs/WORKFLOW.md` blob `57fd360379b06ab7625cc14fe17e90ef0ee1d176`.
+
+## Actual owner direction and Builder feedback
+
+The owner originally said: **"I explicitly choose PERFORM UAT for Facet Iteration 004. Record the UAT decision and prepare the numbered UAT checklist. Do not make changes to my personal computer without separate approval."**
+
+After Architect explained that the previous no-host-changes restriction impeded direct local testing, the owner separately said: **"Well, I'm un-prohibiting such restrictions."** Architect explained that this lifts the earlier host-use restriction for **necessary local Facet synthetic UAT** only, with continuing zero recurring cost, no real finance/provider connection, no public service and preserved files.
+
+The owner subsequently supplied the original Codex Builder's read-only preflight report: **"Located the original workspace: `C:\Projects\[Facet] Personal Finance App`. Its tracked working tree is clean."** Builder said that no application was started and no source/dependencies/configuration changed, and returned the request to Architect because durable UAT state does not select active Builder action. This is **Builder's attributed report** of a local workspace, not a claim that Architect directly inspected the physical machine.
+
+## Exact bounded permission / negative authority
+
+The user's changed owner-host consent **permits the owner personally to run** the *already merged* synthetic Facet app locally, and to make reasonable, reversible free user-level setup changes **needed solely for this UAT**, if verified necessary and performed through an appropriately authorized local operator. Eligible types: inspect existing clean workspace and installed Node/npm/browser; install missing free app dependencies in the project workspace if needed without admin; build the unmodified merged app; create one new dedicated synthetic override-state directory without touching existing state; start one process bound only to `127.0.0.1`; interact in the local browser; stop only that process and preserve user-edited synthetic demo state. Avoid overwriting existing files or running cleanup outside owned ephemeral test resources. Report actual commands, start URL, relevant observed status, stoppage and changes. The owner has **not** authorized unlimited host administration, unrelated packages, paid services, public hosting or network/firewall changes.
+
+The revised consent **does not transfer cross-role authority**: installed `docs/WORKFLOW.md` §Universal Authority Preflight requires the exact durable state and Handoff to select an active role/action. Current `AWAITING_UAT_RESULTS` has `ActiveRole none`, `NextRole ARCHITECT`, and `ImplementationAuthorized false`; the original `UAT_CHECKLIST_001.md` Handoff is for Architect-owned owner feedback, not Builder launch/implementation. No `BUILDER_UAT_RUNTIME` state or Clerk UAT clearance exists in installed workflow. **Architect must not fake a Builder role release by editing the state/Handoff or treating this receipt as a new implementation-plan consent.** The Codex Builder may not claim new Builder authority from this record or execute the local launch under its Builder role solely because of it.
+
+A **direct owner-operated local UAT launch** (without invoking Builder role) is a distinct voluntary route; the owner may receive a concrete safe command guide. If the owner wants **Builder** as the operating actor, that requires a separate lawful governance/role route and independent controls; a standalone consent receipt is not sufficient and any material workflow change needs proper user/governance approval. Architect cannot bypass the role contract to create that route in this UAT state.
+
+## Actual result and pending obligation
+
+This record changes **permission only**; no application runtime, build, install, demo URL or User Acceptance Test has been performed or verified. Existing UAT PERFORM choice remains intact, `UAT_CHECKLIST_001.md` remains the authoritative owner test checklist, and workflow state stays `AWAITING_UAT_RESULTS`. Access is still not confirmed. No `UAT_REPORT_001.md` or release-completion approval can be inferred.
+
+**Next:** The owner may operate the merged synthetic app using a verified safe local guide; supply its exact local URL, subsequent UAT-01–UAT-11 item-specific observations, and any access blocker to Architect for UAT_REPORT and triage. If the owner insists an AI Builder operate it, Architect must first identify a genuinely lawful existing or separately approved governance/role authority; do not improvise a role selector or invent unapproved implementation.
