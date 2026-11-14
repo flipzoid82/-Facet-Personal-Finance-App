@@ -9,7 +9,7 @@ WorkPackage: none
 Baseline: f286934e286d965e3068548b10e9ee43070313b5
 Branch: main
 NextRole: ARCHITECT
-NextAction: ARCHITECT ONLY — the owner explicitly chose PERFORM UAT for I004 and separately prohibited changes to the personal computer without new approval; exact choice in docs/iterations/iteration-004/uat/UAT_DECISION_001.md blob 767f5c9f21e0eda3beede5bdc6feda7ac172b1a7 first-containing ffd53bc31949a62f7f3f7354194dcddbf4faa1bb. User-facing UAT_CHECKLIST_001.md blob 5c86268960c2df9766054b17140e3475def8ec94 first-containing 1c10310ecd00505aa9ac4be16a5a8f7fc47a1e34 lists eleven numbered actions/expected observations. UAT execution is NOT YET PERFORMED and is BLOCKED ON ACCESS to an actually available, separately permitted owner-accessible controlled synthetic demo. Do not install/configure anything on user's physical Windows computer/phone/drives/network or touch real financial data/Plaid without fresh separate permission. Once safe access is confirmed, invite numbered descriptive owner observations; preserve exactly in UAT_REPORT_001.md and conduct independent Architect triage through ARCHITECT_UAT_TRIAGE. Do not infer user PASS, skipped UAT, defects, release approval, further implementation or new WP from this wait.
+NextAction: ARCHITECT ONLY — Iteration 004 UAT-001 remains AWAITING_UAT_RESULTS; the owner has explicitly chosen PERFORM UAT, and Architect has separately recorded the owner's later withdrawal of the prior personal-computer-change restriction for bounded, reversible, free local synthetic UAT in docs/iterations/iteration-004/uat/UAT_RUNTIME_CONSENT_001.md blob a2bcdec34e6c4403514fde94e19dba6444962811 first-containing commit 817358809ac020fd8d2a371d508d6170e10e3f51. This owner host consent is NOT Builder-role/implementation authorization: ActiveRole none, NextRole ARCHITECT, ImplementationAuthorized false and Handoff UAT_CHECKLIST_001.md remain unchanged. Installed workflow has no BUILDER_UAT_RUNTIME state. Do not manufacture one or activate Builder to launch the app; only the owner personally, or another separately lawful authorized operator, may start the merged synthetic localhost app after verifying project/dependencies/isolated demo state. No live instance, app URL or user UAT outcomes are yet verified. Await actual accessible localhost demo and UAT-01–UAT-11 descriptive owner observations; record them in UAT_REPORT_001.md and perform Architect triage. Release and real financial/host-security/paid-service authority remain unapproved.
 Handoff: docs/iterations/iteration-004/uat/UAT_CHECKLIST_001.md
 HandoffBlob: 5c86268960c2df9766054b17140e3475def8ec94
 HandoffFirstContainingCommit: 1c10310ecd00505aa9ac4be16a5a8f7fc47a1e34
@@ -113,6 +113,12 @@ UATChecklistPath: docs/iterations/iteration-004/uat/UAT_CHECKLIST_001.md
 UATChecklistBlob: 5c86268960c2df9766054b17140e3475def8ec94
 UATChecklistFirstContainingCommit: 1c10310ecd00505aa9ac4be16a5a8f7fc47a1e34
 UATExecutionStatus: NOT_STARTED — no verified permitted owner-accessible runtime
-UATExecutionPrerequisite: BLOCKED_ON_APPROVED_ACCESSIBLE_CONTROLLED_SYNTHETIC_RUNTIME
+UATExecutionPrerequisite: BLOCKED_ON_VERIFIED_RUNNING_ACCESSIBLE_DEMO — owner local synthetic UAT consent recorded, Builder role not active
 UATUserObservations: none
 UATReportStatus: not created; requires actual observations
+
+UATOwnerRuntimeConsentPath: docs/iterations/iteration-004/uat/UAT_RUNTIME_CONSENT_001.md
+UATOwnerRuntimeConsentBlob: a2bcdec34e6c4403514fde94e19dba6444962811
+UATOwnerRuntimeConsentFirstContainingCommit: 817358809ac020fd8d2a371d508d6170e10e3f51
+UATLocalRuntimeExecutionPermission: Owner-scope granted; no Builder role grant
+UATBuilderRuntimeRoleAuthority: NOT AUTHORIZED by installed workflow/current state
